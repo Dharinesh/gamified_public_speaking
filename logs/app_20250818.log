@@ -414,3 +414,397 @@
 2025-08-18 03:18:24,167 [INFO] managers.transcription_manager: Waiting for transcription completion
 2025-08-18 03:18:55,463 [ERROR] managers.transcription_manager: Transcription error: Transcoding failed. File does not appear to contain audio. File type is application/octet-stream (data).
 2025-08-18 03:18:55,464 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:18:55] "[31m[1mPOST /api/upload-audio HTTP/1.1[0m" 400 -
+2025-08-18 03:32:44,007 [INFO] managers.database_manager: Database connection established
+2025-08-18 03:32:44,012 [INFO] managers.database_manager: Database tables created/verified
+2025-08-18 03:32:44,057 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.187:5000
+2025-08-18 03:32:44,057 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2025-08-18 03:32:44,057 [INFO] werkzeug:  * Restarting with stat
+2025-08-18 03:32:45,126 [INFO] managers.database_manager: Database connection established
+2025-08-18 03:32:45,136 [INFO] managers.database_manager: Database tables created/verified
+2025-08-18 03:32:45,172 [WARNING] werkzeug:  * Debugger is active!
+2025-08-18 03:32:45,175 [INFO] werkzeug:  * Debugger PIN: 281-547-217
+2025-08-18 03:32:47,657 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:32:47] "[32mGET / HTTP/1.1[0m" 302 -
+2025-08-18 03:32:47,682 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:32:47] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 03:32:47,912 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:32:47] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 03:32:48,024 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:32:48] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-08-18 03:32:48,959 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:32:48] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 03:32:51,899 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:32:51] "GET /level/1 HTTP/1.1" 200 -
+2025-08-18 03:32:52,196 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:32:52] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 03:32:52,231 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:32:52] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 03:32:52,561 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:32:52] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 03:33:00,909 [INFO] services.routes: Audio file saved: static/audio\user_1_1755468180.wav, size: 573484 bytes, type: audio/wav
+2025-08-18 03:33:00,919 [INFO] managers.transcription_manager: Processing audio file: static/audio\user_1_1755468180.wav, size: 573484 bytes, type: audio/wav
+2025-08-18 03:33:00,919 [INFO] managers.transcription_manager: Uploading audio file for transcription with content type: audio/wav
+2025-08-18 03:33:00,920 [INFO] managers.transcription_manager: Audio data read: 573484 bytes
+2025-08-18 03:33:00,920 [INFO] managers.transcription_manager: WAV header validation passed
+2025-08-18 03:33:03,030 [INFO] managers.transcription_manager: Audio uploaded successfully to AssemblyAI
+2025-08-18 03:33:04,172 [INFO] managers.transcription_manager: Transcription started with ID: 9d27cc49-dee1-4181-8da1-7484dde55511
+2025-08-18 03:33:04,174 [INFO] managers.transcription_manager: Waiting for transcription completion
+2025-08-18 03:33:05,059 [ERROR] managers.transcription_manager: Transcription error: Transcoding failed. File does not appear to contain audio. File type is application/octet-stream (data).
+2025-08-18 03:33:05,060 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:33:05] "[31m[1mPOST /api/upload-audio HTTP/1.1[0m" 400 -
+2025-08-18 03:34:40,889 [INFO] services.routes: Audio file saved: static/audio\user_1_1755468280.wav, size: 753708 bytes, type: audio/wav
+2025-08-18 03:34:40,898 [INFO] managers.transcription_manager: Processing audio file: static/audio\user_1_1755468280.wav, size: 753708 bytes, type: audio/wav
+2025-08-18 03:34:40,898 [INFO] managers.transcription_manager: Uploading audio file for transcription with content type: audio/wav
+2025-08-18 03:34:40,899 [INFO] managers.transcription_manager: Audio data read: 753708 bytes
+2025-08-18 03:34:40,899 [INFO] managers.transcription_manager: WAV header validation passed
+2025-08-18 03:34:43,167 [INFO] managers.transcription_manager: Audio uploaded successfully to AssemblyAI
+2025-08-18 03:34:43,989 [INFO] managers.transcription_manager: Transcription started with ID: 751d388a-91b2-4b16-97bc-3aefd5851ed8
+2025-08-18 03:34:43,991 [INFO] managers.transcription_manager: Waiting for transcription completion
+2025-08-18 03:34:44,799 [ERROR] managers.transcription_manager: Transcription error: Transcoding failed. File does not appear to contain audio. File type is application/octet-stream (data).
+2025-08-18 03:34:44,799 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:34:44] "[31m[1mPOST /api/upload-audio HTTP/1.1[0m" 400 -
+2025-08-18 03:39:13,655 [INFO] werkzeug:  * Detected change in 'E:\\gamified_public_speaking\\managers\\transcription_manager.py', reloading
+2025-08-18 03:39:13,815 [INFO] werkzeug:  * Restarting with stat
+2025-08-18 03:39:15,003 [INFO] managers.database_manager: Database connection established
+2025-08-18 03:39:15,012 [INFO] managers.database_manager: Database tables created/verified
+2025-08-18 03:39:15,052 [WARNING] werkzeug:  * Debugger is active!
+2025-08-18 03:39:15,054 [INFO] werkzeug:  * Debugger PIN: 281-547-217
+2025-08-18 03:39:20,321 [INFO] werkzeug:  * Detected change in 'E:\\gamified_public_speaking\\services\\routes.py', reloading
+2025-08-18 03:39:20,478 [INFO] werkzeug:  * Restarting with stat
+2025-08-18 03:41:25,973 [INFO] managers.database_manager: Database connection established
+2025-08-18 03:41:25,981 [INFO] managers.database_manager: Database tables created/verified
+2025-08-18 03:41:26,031 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.187:5000
+2025-08-18 03:41:26,032 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2025-08-18 03:41:26,033 [INFO] werkzeug:  * Restarting with stat
+2025-08-18 03:41:27,162 [INFO] managers.database_manager: Database connection established
+2025-08-18 03:41:27,172 [INFO] managers.database_manager: Database tables created/verified
+2025-08-18 03:41:27,211 [WARNING] werkzeug:  * Debugger is active!
+2025-08-18 03:41:27,213 [INFO] werkzeug:  * Debugger PIN: 281-547-217
+2025-08-18 03:41:28,926 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:41:28] "[32mGET / HTTP/1.1[0m" 302 -
+2025-08-18 03:41:28,951 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:41:28] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 03:41:29,169 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:41:29] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 03:41:29,279 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:41:29] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 03:41:30,211 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:41:30] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 03:41:31,964 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:41:31] "GET /level/1 HTTP/1.1" 200 -
+2025-08-18 03:41:32,265 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:41:32] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 03:41:32,292 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:41:32] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 03:41:32,616 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:41:32] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 03:41:41,605 [INFO] services.routes: Audio file saved: static/audio\user_1_1755468701.wav, size: 647212 bytes
+2025-08-18 03:41:41,606 [INFO] managers.transcription_manager: Processing audio file: static/audio\user_1_1755468701.wav, size: 647212 bytes
+2025-08-18 03:41:41,606 [INFO] managers.transcription_manager: Uploading audio file...
+2025-08-18 03:41:43,801 [INFO] managers.transcription_manager: Audio uploaded successfully!
+2025-08-18 03:41:43,802 [INFO] managers.transcription_manager: Starting transcription...
+2025-08-18 03:41:44,613 [INFO] managers.transcription_manager: Transcription started with ID: 85369e38-be5d-4e19-897e-ea031c0ddfad
+2025-08-18 03:41:44,613 [INFO] managers.transcription_manager: Waiting for transcription completion
+2025-08-18 03:41:45,401 [ERROR] managers.transcription_manager: Transcription error: Transcoding failed. File does not appear to contain audio. File type is application/octet-stream (data).
+2025-08-18 03:41:45,403 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:41:45] "[31m[1mPOST /api/upload-audio HTTP/1.1[0m" 400 -
+2025-08-18 03:42:24,064 [INFO] services.routes: Audio file saved: static/audio\user_1_1755468744.wav, size: 532524 bytes
+2025-08-18 03:42:24,064 [INFO] managers.transcription_manager: Processing audio file: static/audio\user_1_1755468744.wav, size: 532524 bytes
+2025-08-18 03:42:24,065 [INFO] managers.transcription_manager: Uploading audio file...
+2025-08-18 03:42:26,190 [INFO] managers.transcription_manager: Audio uploaded successfully!
+2025-08-18 03:42:26,191 [INFO] managers.transcription_manager: Starting transcription...
+2025-08-18 03:42:27,030 [INFO] managers.transcription_manager: Transcription started with ID: 92171136-34d1-470f-8e3f-35a5e7edbe0d
+2025-08-18 03:42:27,030 [INFO] managers.transcription_manager: Waiting for transcription completion
+2025-08-18 03:42:27,899 [ERROR] managers.transcription_manager: Transcription error: Transcoding failed. File does not appear to contain audio. File type is application/octet-stream (data).
+2025-08-18 03:42:27,900 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:42:27] "[31m[1mPOST /api/upload-audio HTTP/1.1[0m" 400 -
+2025-08-18 03:43:20,453 [INFO] services.routes: Audio file saved: static/audio\user_1_1755468800.wav, size: 573484 bytes
+2025-08-18 03:43:20,454 [INFO] managers.transcription_manager: Processing audio file: static/audio\user_1_1755468800.wav, size: 573484 bytes
+2025-08-18 03:43:20,454 [INFO] managers.transcription_manager: Uploading audio file...
+2025-08-18 03:43:23,812 [INFO] managers.transcription_manager: Audio uploaded successfully!
+2025-08-18 03:43:23,812 [INFO] managers.transcription_manager: Starting transcription...
+2025-08-18 03:43:24,626 [INFO] managers.transcription_manager: Transcription started with ID: 2d004323-13d5-409d-8046-4ba4975cb632
+2025-08-18 03:43:24,626 [INFO] managers.transcription_manager: Waiting for transcription completion
+2025-08-18 03:43:25,419 [ERROR] managers.transcription_manager: Transcription error: Transcoding failed. File does not appear to contain audio. File type is application/octet-stream (data).
+2025-08-18 03:43:25,420 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:43:25] "[31m[1mPOST /api/upload-audio HTTP/1.1[0m" 400 -
+2025-08-18 04:07:18,324 [INFO] managers.database_manager: Database connection established
+2025-08-18 04:07:18,333 [INFO] managers.database_manager: Database tables created/verified
+2025-08-18 04:07:18,388 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.187:5000
+2025-08-18 04:07:18,388 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2025-08-18 04:07:18,388 [INFO] werkzeug:  * Restarting with stat
+2025-08-18 04:07:19,452 [INFO] managers.database_manager: Database connection established
+2025-08-18 04:07:19,461 [INFO] managers.database_manager: Database tables created/verified
+2025-08-18 04:07:19,503 [WARNING] werkzeug:  * Debugger is active!
+2025-08-18 04:07:19,503 [INFO] werkzeug:  * Debugger PIN: 281-547-217
+2025-08-18 04:07:21,313 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:07:21] "[32mGET / HTTP/1.1[0m" 302 -
+2025-08-18 04:07:21,337 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:07:21] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 04:07:21,565 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:07:21] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 04:07:21,653 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:07:21] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 04:07:22,565 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:07:22] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 04:07:24,726 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:07:24] "GET /level/1 HTTP/1.1" 200 -
+2025-08-18 04:07:25,017 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:07:25] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 04:07:25,052 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:07:25] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 04:07:25,370 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:07:25] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 04:07:32,908 [INFO] services.routes: Audio file saved: static/audio\user_1_1755470252.wav, size: 507948 bytes
+2025-08-18 04:07:32,918 [INFO] managers.transcription_manager: Processing audio file: static/audio\user_1_1755470252.wav, size: 507948 bytes
+2025-08-18 04:07:32,918 [INFO] managers.transcription_manager: Converting WAV to MP3 for AssemblyAI compatibility...
+2025-08-18 04:07:32,919 [INFO] managers.transcription_manager: Converting static/audio\user_1_1755470252.wav to static/audio\user_1_1755470252.mp3
+2025-08-18 04:07:32,928 [ERROR] managers.transcription_manager: WAV to MP3 conversion error: [WinError 2] The system cannot find the file specified
+2025-08-18 04:07:32,928 [ERROR] services.routes: Transcription failed: Failed to convert WAV to MP3
+2025-08-18 04:07:32,929 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:07:32] "[35m[1mPOST /api/upload-audio HTTP/1.1[0m" 500 -
+2025-08-18 04:13:42,188 [INFO] managers.database_manager: Database connection established
+2025-08-18 04:13:42,197 [INFO] managers.database_manager: Database tables created/verified
+2025-08-18 04:13:42,249 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.187:5000
+2025-08-18 04:13:42,249 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2025-08-18 04:13:42,250 [INFO] werkzeug:  * Restarting with stat
+2025-08-18 04:13:43,319 [INFO] managers.database_manager: Database connection established
+2025-08-18 04:13:43,331 [INFO] managers.database_manager: Database tables created/verified
+2025-08-18 04:13:43,369 [WARNING] werkzeug:  * Debugger is active!
+2025-08-18 04:13:43,371 [INFO] werkzeug:  * Debugger PIN: 281-547-217
+2025-08-18 04:13:44,970 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:13:44] "[32mGET / HTTP/1.1[0m" 302 -
+2025-08-18 04:13:44,994 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:13:44] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 04:13:45,225 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:13:45] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 04:13:45,317 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:13:45] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 04:13:46,248 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:13:46] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 04:13:47,450 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:13:47] "GET /level/1 HTTP/1.1" 200 -
+2025-08-18 04:13:47,748 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:13:47] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 04:13:47,776 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:13:47] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 04:13:48,093 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:13:48] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 04:13:54,388 [INFO] services.routes: Audio file saved: static/audio\user_1_1755470634.wav, size: 409644 bytes
+2025-08-18 04:13:54,389 [INFO] managers.transcription_manager: Processing audio file: static/audio\user_1_1755470634.wav, size: 409644 bytes
+2025-08-18 04:13:54,389 [INFO] managers.transcription_manager: Converting WAV to MP3 using online converter...
+2025-08-18 04:13:54,389 [INFO] managers.transcription_manager: Attempting conversion with ConvertAPI...
+2025-08-18 04:13:57,478 [WARNING] managers.transcription_manager: ConvertAPI conversion failed
+2025-08-18 04:13:57,479 [INFO] managers.transcription_manager: Attempting conversion with CloudConvert...
+2025-08-18 04:13:58,714 [WARNING] managers.transcription_manager: CloudConvert conversion failed
+2025-08-18 04:13:58,715 [WARNING] managers.transcription_manager: All conversion methods failed, will try WAV directly
+2025-08-18 04:13:58,715 [ERROR] services.routes: Transcription failed: Failed to convert WAV to MP3
+2025-08-18 04:13:58,715 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:13:58] "[35m[1mPOST /api/upload-audio HTTP/1.1[0m" 500 -
+2025-08-18 04:24:36,869 [INFO] managers.database_manager: Database connection established
+2025-08-18 04:24:36,896 [INFO] managers.database_manager: Database tables created/verified
+2025-08-18 04:24:37,081 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.187:5000
+2025-08-18 04:24:37,081 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2025-08-18 04:24:37,084 [INFO] werkzeug:  * Restarting with stat
+2025-08-18 04:24:38,534 [INFO] managers.database_manager: Database connection established
+2025-08-18 04:24:38,542 [INFO] managers.database_manager: Database tables created/verified
+2025-08-18 04:24:38,591 [WARNING] werkzeug:  * Debugger is active!
+2025-08-18 04:24:38,594 [INFO] werkzeug:  * Debugger PIN: 281-547-217
+2025-08-18 04:24:57,451 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:24:57] "[32mGET / HTTP/1.1[0m" 302 -
+2025-08-18 04:24:57,537 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:24:57] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 04:24:57,699 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:24:57] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-08-18 04:24:57,879 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:24:57] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-08-18 04:24:58,858 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:24:58] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 04:25:06,537 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:25:06] "GET /level/1 HTTP/1.1" 200 -
+2025-08-18 04:25:06,803 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:25:06] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 04:25:06,866 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:25:06] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 04:25:07,208 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:25:07] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 04:25:17,816 [INFO] managers.ai_manager: Quick task generated successfully
+2025-08-18 04:25:17,844 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:25:17] "GET /quick-task HTTP/1.1" 200 -
+2025-08-18 04:25:22,570 [INFO] services.routes: Audio file saved: static/audio\user_1_1755471322.wav, size: 860204 bytes
+2025-08-18 04:25:22,570 [INFO] managers.transcription_manager: Processing audio file: static/audio\user_1_1755471322.wav, size: 860204 bytes
+2025-08-18 04:25:22,571 [INFO] managers.transcription_manager: Converting WAV to MP3 using CloudConvert...
+2025-08-18 04:25:22,571 [INFO] managers.transcription_manager: Starting CloudConvert conversion for: static/audio\user_1_1755471322.wav
+2025-08-18 04:25:22,890 [INFO] managers.transcription_manager: Uploading WAV file to CloudConvert...
+2025-08-18 04:26:40,115 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:26:40] "GET /level/1 HTTP/1.1" 200 -
+2025-08-18 04:26:40,440 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:26:40] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 04:26:40,440 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:26:40] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 04:26:40,696 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:26:40] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 04:28:13,497 [INFO] managers.transcription_manager: WAV file uploaded to CloudConvert successfully
+2025-08-18 04:28:13,498 [INFO] managers.transcription_manager: Waiting for CloudConvert conversion...
+2025-08-18 04:28:19,348 [INFO] managers.transcription_manager: CloudConvert conversion completed!
+2025-08-18 04:28:19,349 [INFO] managers.transcription_manager: Downloading converted MP3 to: static/audio\user_1_1755471322.mp3
+2025-08-18 04:31:08,786 [INFO] managers.transcription_manager: MP3 downloaded successfully: 39227 bytes
+2025-08-18 04:31:08,788 [INFO] managers.transcription_manager: Uploading audio file to AssemblyAI...
+2025-08-18 04:31:09,928 [INFO] managers.transcription_manager: Audio uploaded to AssemblyAI successfully!
+2025-08-18 04:31:09,928 [INFO] managers.transcription_manager: Starting AssemblyAI transcription...
+2025-08-18 04:31:10,783 [INFO] managers.transcription_manager: Transcription started with ID: 924d3244-f4fa-4c32-888a-527b9117c454
+2025-08-18 04:31:10,784 [INFO] managers.transcription_manager: Waiting for AssemblyAI transcription completion...
+2025-08-18 04:31:11,617 [INFO] managers.transcription_manager: AssemblyAI transcription completed successfully
+2025-08-18 04:31:11,618 [INFO] managers.transcription_manager: Cleaned up temporary file: static/audio\user_1_1755471322.mp3
+2025-08-18 04:31:11,619 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:31:11] "[31m[1mPOST /api/upload-audio HTTP/1.1[0m" 400 -
+2025-08-18 04:31:35,534 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:31:35] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 04:31:35,618 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:31:35] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 04:31:35,804 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:31:35] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 04:31:36,445 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:31:36] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 04:31:36,820 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:31:36] "GET /profile HTTP/1.1" 200 -
+2025-08-18 04:31:36,885 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:31:36] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 04:31:37,037 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:31:37] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 04:31:37,150 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:31:37] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 04:31:59,475 [INFO] werkzeug:  * Detected change in 'E:\\gamified_public_speaking\\managers\\transcription_manager.py', reloading
+2025-08-18 04:33:32,190 [INFO] managers.database_manager: Database connection established
+2025-08-18 04:33:32,201 [INFO] managers.database_manager: Database tables created/verified
+2025-08-18 04:33:32,287 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.187:5000
+2025-08-18 04:33:32,287 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2025-08-18 04:33:32,290 [INFO] werkzeug:  * Restarting with stat
+2025-08-18 04:33:33,498 [INFO] managers.database_manager: Database connection established
+2025-08-18 04:33:33,506 [INFO] managers.database_manager: Database tables created/verified
+2025-08-18 04:33:33,542 [WARNING] werkzeug:  * Debugger is active!
+2025-08-18 04:33:33,544 [INFO] werkzeug:  * Debugger PIN: 281-547-217
+2025-08-18 04:33:34,830 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:33:34] "[32mGET / HTTP/1.1[0m" 302 -
+2025-08-18 04:33:34,880 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:33:34] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 04:33:35,080 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:33:35] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 04:33:35,198 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:33:35] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 04:33:36,142 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:33:36] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 04:33:37,844 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:33:37] "GET /level/1 HTTP/1.1" 200 -
+2025-08-18 04:33:38,121 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:33:38] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 04:33:38,174 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:33:38] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 04:33:38,493 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:33:38] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 04:33:58,240 [INFO] services.routes: Audio file saved: static/audio\user_1_1755471838.wav, size: 1622060 bytes
+2025-08-18 04:33:58,241 [INFO] managers.transcription_manager: Processing audio file: static/audio\user_1_1755471838.wav, size: 1622060 bytes
+2025-08-18 04:33:58,241 [INFO] managers.transcription_manager: Uploading audio file...
+2025-08-18 04:34:01,180 [INFO] managers.transcription_manager: Audio uploaded successfully!
+2025-08-18 04:34:01,180 [INFO] managers.transcription_manager: Starting transcription...
+2025-08-18 04:34:01,993 [INFO] managers.transcription_manager: Transcription started with ID: 78efc903-732e-4b13-bd5a-39f784722851
+2025-08-18 04:34:01,994 [INFO] managers.transcription_manager: Waiting for transcription completion
+2025-08-18 04:34:02,836 [INFO] managers.transcription_manager: Processing...
+2025-08-18 04:34:06,624 [INFO] managers.transcription_manager: Processing...
+2025-08-18 04:34:10,426 [INFO] managers.transcription_manager: Processing...
+2025-08-18 04:34:14,213 [INFO] managers.transcription_manager: Processing...
+2025-08-18 04:34:18,039 [ERROR] managers.transcription_manager: Transcription error: Transcoding failed. File does not appear to contain audio. File type is application/octet-stream (data).
+2025-08-18 04:34:18,041 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:34:18] "[31m[1mPOST /api/upload-audio HTTP/1.1[0m" 400 -
+2025-08-18 04:34:57,606 [INFO] werkzeug:  * Detected change in 'E:\\gamified_public_speaking\\managers\\transcription_manager.py', reloading
+2025-08-18 04:34:57,743 [INFO] werkzeug:  * Restarting with stat
+2025-08-18 04:34:59,075 [INFO] managers.database_manager: Database connection established
+2025-08-18 04:34:59,082 [INFO] managers.database_manager: Database tables created/verified
+2025-08-18 04:34:59,126 [WARNING] werkzeug:  * Debugger is active!
+2025-08-18 04:34:59,130 [INFO] werkzeug:  * Debugger PIN: 281-547-217
+2025-08-18 04:36:24,275 [INFO] managers.database_manager: Database connection established
+2025-08-18 04:36:24,285 [INFO] managers.database_manager: Database tables created/verified
+2025-08-18 04:36:24,346 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.187:5000
+2025-08-18 04:36:24,346 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2025-08-18 04:36:24,348 [INFO] werkzeug:  * Restarting with stat
+2025-08-18 04:36:25,603 [INFO] managers.database_manager: Database connection established
+2025-08-18 04:36:25,610 [INFO] managers.database_manager: Database tables created/verified
+2025-08-18 04:36:25,649 [WARNING] werkzeug:  * Debugger is active!
+2025-08-18 04:36:25,652 [INFO] werkzeug:  * Debugger PIN: 281-547-217
+2025-08-18 04:36:27,729 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:36:27] "[32mGET / HTTP/1.1[0m" 302 -
+2025-08-18 04:36:27,754 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:36:27] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 04:36:27,997 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:36:27] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 04:36:28,076 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:36:28] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 04:36:29,022 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:36:29] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 04:36:44,338 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:36:44] "GET /level/1 HTTP/1.1" 200 -
+2025-08-18 04:36:44,631 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:36:44] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 04:36:44,660 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:36:44] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 04:36:44,989 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:36:44] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 04:36:59,098 [INFO] services.routes: Audio file saved: static/audio\user_1_1755472019.wav, size: 1081388 bytes
+2025-08-18 04:36:59,109 [INFO] managers.transcription_manager: Processing audio file: static/audio\user_1_1755472019.wav, size: 1081388 bytes
+2025-08-18 04:36:59,110 [INFO] managers.transcription_manager: Converting WAV to MP3 for AssemblyAI compatibility...
+2025-08-18 04:36:59,110 [INFO] managers.transcription_manager: Converting static/audio\user_1_1755472019.wav to static/audio\user_1_1755472019.mp3
+2025-08-18 04:36:59,903 [INFO] managers.transcription_manager: Successfully converted to MP3: 197319 bytes
+2025-08-18 04:36:59,904 [INFO] managers.transcription_manager: Uploading audio file to AssemblyAI...
+2025-08-18 04:37:01,624 [INFO] managers.transcription_manager: Audio uploaded successfully!
+2025-08-18 04:37:01,624 [INFO] managers.transcription_manager: Starting transcription...
+2025-08-18 04:37:02,463 [INFO] managers.transcription_manager: Transcription started with ID: 7746758c-647b-487a-95a4-aa8f3275721e
+2025-08-18 04:37:02,463 [INFO] managers.transcription_manager: Waiting for transcription completion
+2025-08-18 04:37:03,312 [INFO] managers.transcription_manager: Transcription completed successfully
+2025-08-18 04:37:03,313 [INFO] managers.transcription_manager: Cleaned up temporary file: static/audio\user_1_1755472019.mp3
+2025-08-18 04:37:03,314 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:37:03] "[31m[1mPOST /api/upload-audio HTTP/1.1[0m" 400 -
+2025-08-18 04:42:04,880 [INFO] managers.database_manager: Database connection established
+2025-08-18 04:42:04,887 [INFO] managers.database_manager: Database tables created/verified
+2025-08-18 04:42:04,933 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.187:5000
+2025-08-18 04:42:04,933 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2025-08-18 04:42:04,935 [INFO] werkzeug:  * Restarting with stat
+2025-08-18 04:42:06,030 [INFO] managers.database_manager: Database connection established
+2025-08-18 04:42:06,038 [INFO] managers.database_manager: Database tables created/verified
+2025-08-18 04:42:06,073 [WARNING] werkzeug:  * Debugger is active!
+2025-08-18 04:42:06,075 [INFO] werkzeug:  * Debugger PIN: 281-547-217
+2025-08-18 04:42:08,730 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:42:08] "[32mGET / HTTP/1.1[0m" 302 -
+2025-08-18 04:42:08,754 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:42:08] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 04:42:08,983 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:42:08] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 04:42:09,078 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:42:09] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 04:42:10,023 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:42:10] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 04:42:12,432 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:42:12] "GET /level/1 HTTP/1.1" 200 -
+2025-08-18 04:42:12,724 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:42:12] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 04:42:12,756 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:42:12] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 04:42:13,083 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:42:13] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 04:42:23,234 [INFO] services.routes: Audio file saved: static/audio\user_1_1755472343.wav, size: 491564 bytes
+2025-08-18 04:42:23,244 [INFO] managers.transcription_manager: Processing audio file: static/audio\user_1_1755472343.wav, size: 491564 bytes
+2025-08-18 04:42:23,245 [INFO] managers.transcription_manager: Converting WAV to MP3 for AssemblyAI compatibility...
+2025-08-18 04:42:23,245 [INFO] managers.transcription_manager: Converting static/audio\user_1_1755472343.wav to static/audio\user_1_1755472343.mp3
+2025-08-18 04:42:23,365 [INFO] managers.transcription_manager: Successfully converted to MP3: 90322 bytes
+2025-08-18 04:42:23,365 [INFO] managers.transcription_manager: Uploading audio file to AssemblyAI...
+2025-08-18 04:42:24,737 [INFO] managers.transcription_manager: Audio uploaded successfully!
+2025-08-18 04:42:24,738 [INFO] managers.transcription_manager: Starting transcription...
+2025-08-18 04:42:25,604 [INFO] managers.transcription_manager: Transcription started with ID: 24016fe7-8ba7-4f62-b175-6e392c554915
+2025-08-18 04:42:25,604 [INFO] managers.transcription_manager: Waiting for transcription completion
+2025-08-18 04:42:26,448 [INFO] managers.transcription_manager: Processing...
+2025-08-18 04:42:30,272 [INFO] managers.transcription_manager: Transcription completed successfully
+2025-08-18 04:42:30,273 [INFO] managers.transcription_manager: Cleaned up temporary file: static/audio\user_1_1755472343.mp3
+2025-08-18 04:42:30,274 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:42:30] "[31m[1mPOST /api/upload-audio HTTP/1.1[0m" 400 -
+2025-08-18 04:42:52,585 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:42:52] "GET /level/1 HTTP/1.1" 200 -
+2025-08-18 04:42:52,600 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:42:52] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 04:42:52,853 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:42:52] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 04:42:53,179 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:42:53] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 04:43:18,670 [INFO] services.routes: Audio file saved: static/audio\user_1_1755472398.wav, size: 319532 bytes
+2025-08-18 04:43:18,681 [INFO] managers.transcription_manager: Processing audio file: static/audio\user_1_1755472398.wav, size: 319532 bytes
+2025-08-18 04:43:18,682 [INFO] managers.transcription_manager: Converting WAV to MP3 for AssemblyAI compatibility...
+2025-08-18 04:43:18,682 [INFO] managers.transcription_manager: Converting static/audio\user_1_1755472398.wav to static/audio\user_1_1755472398.mp3
+2025-08-18 04:43:18,789 [INFO] managers.transcription_manager: Successfully converted to MP3: 58975 bytes
+2025-08-18 04:43:18,790 [INFO] managers.transcription_manager: Uploading audio file to AssemblyAI...
+2025-08-18 04:43:20,094 [INFO] managers.transcription_manager: Audio uploaded successfully!
+2025-08-18 04:43:20,094 [INFO] managers.transcription_manager: Starting transcription...
+2025-08-18 04:43:20,906 [INFO] managers.transcription_manager: Transcription started with ID: 64ff95d7-77d7-47a7-ad3f-1c53340c9d31
+2025-08-18 04:43:20,906 [INFO] managers.transcription_manager: Waiting for transcription completion
+2025-08-18 04:43:21,711 [INFO] managers.transcription_manager: Transcription completed successfully
+2025-08-18 04:43:21,711 [INFO] managers.transcription_manager: Cleaned up temporary file: static/audio\user_1_1755472398.mp3
+2025-08-18 04:43:21,712 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:43:21] "[31m[1mPOST /api/upload-audio HTTP/1.1[0m" 400 -
+2025-08-18 04:45:33,889 [INFO] services.routes: Audio file saved: static/audio\user_1_1755472533.wav, size: 540716 bytes
+2025-08-18 04:45:33,899 [INFO] managers.transcription_manager: Processing audio file: static/audio\user_1_1755472533.wav, size: 540716 bytes
+2025-08-18 04:45:33,899 [INFO] managers.transcription_manager: Converting WAV to MP3 for AssemblyAI compatibility...
+2025-08-18 04:45:33,899 [INFO] managers.transcription_manager: Converting static/audio\user_1_1755472533.wav to static/audio\user_1_1755472533.mp3
+2025-08-18 04:45:34,012 [INFO] managers.transcription_manager: Successfully converted to MP3: 99099 bytes
+2025-08-18 04:45:34,012 [INFO] managers.transcription_manager: Uploading audio file to AssemblyAI...
+2025-08-18 04:45:35,379 [INFO] managers.transcription_manager: Audio uploaded successfully!
+2025-08-18 04:45:35,380 [INFO] managers.transcription_manager: Starting transcription...
+2025-08-18 04:45:36,233 [INFO] managers.transcription_manager: Transcription started with ID: 9dea9402-03e4-4824-a024-42bacf076810
+2025-08-18 04:45:36,234 [INFO] managers.transcription_manager: Waiting for transcription completion
+2025-08-18 04:45:37,000 [INFO] managers.transcription_manager: Transcription completed successfully
+2025-08-18 04:45:37,001 [INFO] managers.transcription_manager: Cleaned up temporary file: static/audio\user_1_1755472533.mp3
+2025-08-18 04:45:37,002 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:45:37] "[31m[1mPOST /api/upload-audio HTTP/1.1[0m" 400 -
+2025-08-18 04:46:16,722 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:46:16] "[32mGET /auth/logout HTTP/1.1[0m" 302 -
+2025-08-18 04:46:17,058 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:46:17] "GET /auth/login HTTP/1.1" 200 -
+2025-08-18 04:46:17,396 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:46:17] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 04:46:17,396 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:46:17] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 04:46:17,639 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:46:17] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 04:49:31,636 [INFO] managers.database_manager: Database connection established
+2025-08-18 04:49:31,645 [INFO] managers.database_manager: Database tables created/verified
+2025-08-18 04:49:31,698 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.187:5000
+2025-08-18 04:49:31,699 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2025-08-18 04:49:31,700 [INFO] werkzeug:  * Restarting with stat
+2025-08-18 04:49:33,015 [INFO] managers.database_manager: Database connection established
+2025-08-18 04:49:33,025 [INFO] managers.database_manager: Database tables created/verified
+2025-08-18 04:49:33,068 [WARNING] werkzeug:  * Debugger is active!
+2025-08-18 04:49:33,071 [INFO] werkzeug:  * Debugger PIN: 281-547-217
+2025-08-18 04:50:01,527 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:50:01] "GET / HTTP/1.1" 200 -
+2025-08-18 04:50:01,544 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:50:01] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 04:50:01,772 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:50:01] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 04:50:02,742 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:50:02] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 04:50:18,016 [INFO] managers.auth_manager: User authenticated: abc
+2025-08-18 04:50:18,018 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:50:18] "[32mPOST /auth/login HTTP/1.1[0m" 302 -
+2025-08-18 04:50:18,226 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:50:18] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 04:50:18,557 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:50:18] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 04:50:18,557 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:50:18] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 04:50:18,818 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:50:18] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 04:50:28,111 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:50:28] "GET /level/1 HTTP/1.1" 200 -
+2025-08-18 04:50:28,405 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:50:28] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 04:50:28,452 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:50:28] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 04:50:28,779 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:50:28] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 04:51:05,359 [INFO] services.routes: Audio file saved: static/audio\user_1_1755472865.wav, size: 557100 bytes
+2025-08-18 04:51:05,369 [INFO] managers.transcription_manager: Processing audio file: static/audio\user_1_1755472865.wav, size: 557100 bytes
+2025-08-18 04:51:05,369 [INFO] managers.transcription_manager: Converting WAV to MP3 for AssemblyAI compatibility...
+2025-08-18 04:51:05,369 [INFO] managers.transcription_manager: Converting static/audio\user_1_1755472865.wav to static/audio\user_1_1755472865.mp3
+2025-08-18 04:51:05,481 [INFO] managers.transcription_manager: Successfully converted to MP3: 102025 bytes
+2025-08-18 04:51:05,482 [INFO] managers.transcription_manager: Uploading audio file to AssemblyAI...
+2025-08-18 04:51:06,865 [INFO] managers.transcription_manager: Audio uploaded successfully!
+2025-08-18 04:51:06,865 [INFO] managers.transcription_manager: Starting transcription...
+2025-08-18 04:51:07,726 [INFO] managers.transcription_manager: Transcription started with ID: 087b4c97-2138-4ac5-b633-0bb5d249dcf6
+2025-08-18 04:51:07,726 [INFO] managers.transcription_manager: Waiting for transcription completion
+2025-08-18 04:51:08,509 [INFO] managers.transcription_manager: Processing...
+2025-08-18 04:51:12,330 [INFO] managers.transcription_manager: Transcription completed successfully
+2025-08-18 04:51:12,331 [INFO] managers.transcription_manager: Cleaned up temporary file: static/audio\user_1_1755472865.mp3
+2025-08-18 04:51:12,332 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:51:12] "[31m[1mPOST /api/upload-audio HTTP/1.1[0m" 400 -

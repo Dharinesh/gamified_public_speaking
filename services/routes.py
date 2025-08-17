@@ -111,61 +111,35 @@ def create_routes(app, db_manager, auth_manager):
             import time
             timestamp = int(time.time())
             
-            # Determine file extension from filename or default to wav
-            filename = audio_file.filename.lower()
-            if filename.endswith('.wav'):
-                file_extension = '.wav'
-                content_type = 'audio/wav'
-            elif filename.endswith('.mp3'):
-                file_extension = '.mp3'
-                content_type = 'audio/mpeg'
-            else:
-                # Default to WAV since we're now recording in WAV format
-                file_extension = '.wav'
-                content_type = 'audio/wav'
-            
-            filename = f"user_{current_user.id}_{timestamp}{file_extension}"
+            # Always save as WAV since we're recording in WAV format
+            filename = f"user_{current_user.id}_{timestamp}.wav"
             filepath = os.path.join(current_app.config['UPLOAD_FOLDER'], filename)
             
             # Save the audio file
             audio_file.save(filepath)
             
             # Verify file was saved and has content
-            if not os.path.exists(filepath) or os.path.getsize(filepath) == 0:
+            if not os.path.exists(filepath):
                 return jsonify({'error': 'Failed to save audio file'}), 500
             
             file_size = os.path.getsize(filepath)
-            logger.info(f"Audio file saved: {filepath}, size: {file_size} bytes, type: {content_type}")
+            logger.info(f"Audio file saved: {filepath}, size: {file_size} bytes")
             
-            # Check minimum file size (WAV header is 44 bytes + data)
-            if file_size < 100:  # Very small files are likely empty
+            # Check minimum file size 
+            if file_size < 1000:  # Less than 1KB is likely empty
                 logger.error(f"Audio file too small: {file_size} bytes")
-                try:
-                    os.remove(filepath)
-                except:
-                    pass
                 return jsonify({'error': 'Audio file is too small. Please record a longer message.'}), 400
             
-            # Get audio duration (basic estimation for WAV files)
+            # Get audio duration
             audio_duration = transcription_manager.get_audio_duration(filepath)
             
-            # Transcribe audio - explicitly pass content type
-            transcription, error = transcription_manager.transcribe_audio(filepath, content_type)
+            # Transcribe audio using simplified method
+            transcription, error = transcription_manager.transcribe_audio(filepath, 'audio/wav')
             if error:
                 logger.error(f"Transcription failed: {error}")
-                # Clean up file before returning error
-                try:
-                    os.remove(filepath)
-                except:
-                    pass
                 return jsonify({'error': f'Transcription failed: {error}'}), 500
             
             if not transcription or len(transcription.strip()) < 3:
-                # Clean up file
-                try:
-                    os.remove(filepath)
-                except:
-                    pass
                 return jsonify({'error': 'Could not transcribe audio or speech too short. Please speak clearly for at least 3-5 seconds.'}), 400
             
             logger.info(f"Transcription successful: {transcription[:100]}...")
@@ -188,11 +162,12 @@ def create_routes(app, db_manager, auth_manager):
                 if score >= 60:  # Passing score
                     game_manager.complete_level(current_user.id, level_number, score)
             
-            # Clean up audio file
+            # Clean up audio file ONLY after successful processing
             try:
                 os.remove(filepath)
-            except:
-                pass
+                logger.info(f"Cleaned up audio file: {filepath}")
+            except Exception as cleanup_error:
+                logger.warning(f"Could not clean up file: {cleanup_error}")
             
             return jsonify({
                 'success': True,

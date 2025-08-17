@@ -9,3 +9,4 @@ requests
 google-generativeai
 werkzeug
 Pillow
+pydub

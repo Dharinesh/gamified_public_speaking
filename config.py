@@ -11,6 +11,7 @@ class Config:
     MYSQL_DB = os.environ.get('MYSQL_DB', 'gamified_speaking')
     ASSEMBLY_AI_KEY = os.environ.get('assembly_key')
     GEMINI_API_KEY = os.environ.get('gemini_api_key')   
+    CLOUDCONVERT_API_KEY = os.environ.get('cloud_convert_key')
     UPLOAD_FOLDER = 'static/audio'
     MAX_CONTENT_LENGTH = 50 * 1024 * 1024  # 50MB max file size
     LOG_LEVEL = 'INFO'
