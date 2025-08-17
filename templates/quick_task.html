@@ -129,8 +129,6 @@
 
 {% block scripts %}
 <script>
-// Generate new task functionality is handled by the QuickTaskGenerator class in main.js
-
 // Add some motivation messages
 const motivationMessages = [
     "You've got this! Speak with confidence. 💪",
@@ -151,3 +149,27 @@ function showMotivation() {
         background: var(--bg-secondary);
         color: var(--accent-primary);
         padding: 1rem 2rem;
+        border-radius: var(--radius);
+        border: 1px solid var(--accent-primary);
+        z-index: 1000;
+        text-align: center;
+        box-shadow: var(--shadow-lg);
+        animation: fadeInOut 3s ease-in-out;
+    `;
+    motivationDiv.textContent = message;
+    
+    document.body.appendChild(motivationDiv);
+    
+    setTimeout(() => {
+        if (motivationDiv.parentNode) {
+            motivationDiv.remove();
+        }
+    }, 3000);
+}
+
+// Show motivation message when page loads
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(showMotivation, 2000);
+});
+</script>
+{% endblock %}

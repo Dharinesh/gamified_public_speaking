@@ -107,22 +107,22 @@ def create_routes(app, db_manager, auth_manager):
             if audio_file.filename == '':
                 return jsonify({'error': 'No file selected'}), 400
             
-            # Determine file extension and MIME type
+            # Generate timestamp-based filename
             import time
             timestamp = int(time.time())
             
-            # Check the actual file content to determine format
+            # Determine file extension from filename or default to wav
             filename = audio_file.filename.lower()
-            if filename.endswith('.wav') or 'wav' in str(audio_file.content_type):
+            if filename.endswith('.wav'):
                 file_extension = '.wav'
                 content_type = 'audio/wav'
-            elif filename.endswith('.mp3') or 'mp3' in str(audio_file.content_type):
+            elif filename.endswith('.mp3'):
                 file_extension = '.mp3'
                 content_type = 'audio/mpeg'
             else:
-                # Default to WebM but we'll handle it specially
-                file_extension = '.webm'
-                content_type = 'audio/webm'
+                # Default to WAV since we're now recording in WAV format
+                file_extension = '.wav'
+                content_type = 'audio/wav'
             
             filename = f"user_{current_user.id}_{timestamp}{file_extension}"
             filepath = os.path.join(current_app.config['UPLOAD_FOLDER'], filename)
@@ -134,19 +134,39 @@ def create_routes(app, db_manager, auth_manager):
             if not os.path.exists(filepath) or os.path.getsize(filepath) == 0:
                 return jsonify({'error': 'Failed to save audio file'}), 500
             
-            logger.info(f"Audio file saved: {filepath}, size: {os.path.getsize(filepath)} bytes, type: {content_type}")
+            file_size = os.path.getsize(filepath)
+            logger.info(f"Audio file saved: {filepath}, size: {file_size} bytes, type: {content_type}")
             
-            # Get audio duration
+            # Check minimum file size (WAV header is 44 bytes + data)
+            if file_size < 100:  # Very small files are likely empty
+                logger.error(f"Audio file too small: {file_size} bytes")
+                try:
+                    os.remove(filepath)
+                except:
+                    pass
+                return jsonify({'error': 'Audio file is too small. Please record a longer message.'}), 400
+            
+            # Get audio duration (basic estimation for WAV files)
             audio_duration = transcription_manager.get_audio_duration(filepath)
             
-            # Transcribe audio with format information
+            # Transcribe audio - explicitly pass content type
             transcription, error = transcription_manager.transcribe_audio(filepath, content_type)
             if error:
                 logger.error(f"Transcription failed: {error}")
+                # Clean up file before returning error
+                try:
+                    os.remove(filepath)
+                except:
+                    pass
                 return jsonify({'error': f'Transcription failed: {error}'}), 500
             
-            if not transcription or len(transcription.strip()) < 5:
-                return jsonify({'error': 'Could not transcribe audio or speech too short'}), 400
+            if not transcription or len(transcription.strip()) < 3:
+                # Clean up file
+                try:
+                    os.remove(filepath)
+                except:
+                    pass
+                return jsonify({'error': 'Could not transcribe audio or speech too short. Please speak clearly for at least 3-5 seconds.'}), 400
             
             logger.info(f"Transcription successful: {transcription[:100]}...")
             
@@ -183,7 +203,7 @@ def create_routes(app, db_manager, auth_manager):
             
         except Exception as e:
             logger.error(f"Upload audio error: {e}")
-            return jsonify({'error': 'Processing failed'}), 500
+            return jsonify({'error': 'Processing failed. Please try again.'}), 500
     
     @app.route('/api/generate-quick-task')
     @login_required

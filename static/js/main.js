@@ -9,6 +9,11 @@ class AudioRecorder {
         this.recordingStartTime = null;
         this.timerInterval = null;
         
+        // WAV recording setup
+        this.sampleRate = 44100;
+        this.recordedBuffers = [];
+        this.processor = null;
+        
         this.initializeElements();
     }
 
@@ -34,25 +39,27 @@ class AudioRecorder {
 
     async startRecording() {
         try {
-            console.log('Starting recording...');
+            console.log('Starting WAV recording...');
             
-            // Request microphone with specific constraints
+            // Request microphone access
             this.stream = await navigator.mediaDevices.getUserMedia({ 
                 audio: {
-                    echoCancellation: false,  // Turn off processing that might interfere
+                    echoCancellation: false,
                     noiseSuppression: false,
                     autoGainControl: false,
-                    sampleRate: 44100,
-                    channelCount: 1  // Mono audio
+                    sampleRate: this.sampleRate,
+                    channelCount: 1
                 },
                 video: false
             });
 
             console.log('Microphone access granted');
-            console.log('Stream tracks:', this.stream.getTracks());
 
-            // Setup audio context for visualization
-            this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            // Setup audio context for WAV recording
+            this.audioContext = new (window.AudioContext || window.webkitAudioContext)({
+                sampleRate: this.sampleRate
+            });
+            
             this.analyser = this.audioContext.createAnalyser();
             const source = this.audioContext.createMediaStreamSource(this.stream);
             source.connect(this.analyser);
@@ -60,58 +67,31 @@ class AudioRecorder {
             this.analyser.fftSize = 256;
             this.analyser.smoothingTimeConstant = 0.8;
 
-            // Configure MediaRecorder with simple, reliable options
-            let options = {};
+            // Setup WAV recording using ScriptProcessorNode
+            this.recordedBuffers = [];
             
-            // Try different MIME types in order of preference
-            const mimeTypes = [
-                'audio/webm;codecs=opus',
-                'audio/webm',
-                'audio/mp4',
-                'audio/ogg;codecs=opus',
-                ''  // Let browser choose
-            ];
+            // Create processor for recording raw audio data
+            this.processor = this.audioContext.createScriptProcessor(4096, 1, 1);
             
-            for (const mimeType of mimeTypes) {
-                if (mimeType === '' || MediaRecorder.isTypeSupported(mimeType)) {
-                    options.mimeType = mimeType;
-                    console.log('Using MIME type:', mimeType);
-                    break;
-                }
-            }
-
-            this.mediaRecorder = new MediaRecorder(this.stream, options);
-            
-            console.log('MediaRecorder created with options:', options);
-            console.log('MediaRecorder state:', this.mediaRecorder.state);
-
-            this.audioChunks = [];
-            
-            this.mediaRecorder.ondataavailable = (event) => {
-                console.log('Data available:', event.data.size, 'bytes');
-                if (event.data && event.data.size > 0) {
-                    this.audioChunks.push(event.data);
+            this.processor.onaudioprocess = (event) => {
+                if (this.isRecording) {
+                    const inputBuffer = event.inputBuffer;
+                    const inputData = inputBuffer.getChannelData(0);
+                    
+                    // Copy the data (important: create new array)
+                    const bufferCopy = new Float32Array(inputData.length);
+                    bufferCopy.set(inputData);
+                    this.recordedBuffers.push(bufferCopy);
                 }
             };
 
-            this.mediaRecorder.onstop = () => {
-                console.log('MediaRecorder stopped');
-                console.log('Total chunks:', this.audioChunks.length);
-                console.log('Total size:', this.audioChunks.reduce((sum, chunk) => sum + chunk.size, 0), 'bytes');
-                this.processRecording();
-            };
+            source.connect(this.processor);
+            this.processor.connect(this.audioContext.destination);
 
-            this.mediaRecorder.onerror = (event) => {
-                console.error('MediaRecorder error:', event.error);
-                this.showError('Recording error: ' + event.error);
-            };
-
-            // Start recording with time slice for better data collection
-            this.mediaRecorder.start(1000); // Collect data every second
             this.isRecording = true;
             this.recordingStartTime = Date.now();
 
-            console.log('Recording started');
+            console.log('WAV recording started');
 
             this.updateUI('recording');
             this.startTimer();
@@ -124,13 +104,15 @@ class AudioRecorder {
     }
 
     stopRecording() {
-        console.log('Stopping recording...');
+        console.log('Stopping WAV recording...');
         
-        if (this.mediaRecorder && this.isRecording) {
-            this.mediaRecorder.stop();
+        if (this.isRecording) {
             this.isRecording = false;
             
-            console.log('MediaRecorder.stop() called');
+            if (this.processor) {
+                this.processor.disconnect();
+                this.processor = null;
+            }
             
             if (this.stream) {
                 this.stream.getTracks().forEach(track => {
@@ -138,14 +120,99 @@ class AudioRecorder {
                     console.log('Track stopped:', track.kind);
                 });
             }
-            
-            if (this.audioContext) {
-                this.audioContext.close();
-            }
 
             this.stopTimer();
             this.updateUI('processing');
+            
+            // Process the recorded buffers into WAV
+            this.processWAVRecording();
         }
+    }
+
+    processWAVRecording() {
+        console.log('Processing WAV recording...');
+        console.log('Recorded buffers:', this.recordedBuffers.length);
+        
+        if (this.recordedBuffers.length === 0) {
+            this.showError('No audio recorded');
+            this.updateUI('idle');
+            return;
+        }
+
+        // Calculate total length
+        const totalLength = this.recordedBuffers.reduce((sum, buffer) => sum + buffer.length, 0);
+        console.log('Total samples:', totalLength);
+
+        if (totalLength === 0) {
+            this.showError('Audio recording is empty. Please try again.');
+            this.updateUI('idle');
+            return;
+        }
+
+        // Combine all buffers into one
+        const combinedBuffer = new Float32Array(totalLength);
+        let offset = 0;
+        
+        for (const buffer of this.recordedBuffers) {
+            combinedBuffer.set(buffer, offset);
+            offset += buffer.length;
+        }
+
+        // Convert to WAV format
+        const wavBlob = this.createWAVBlob(combinedBuffer, this.sampleRate);
+        console.log('Created WAV blob:', wavBlob.size, 'bytes');
+
+        this.uploadAudio(wavBlob);
+    }
+
+    createWAVBlob(audioBuffer, sampleRate) {
+        const length = audioBuffer.length;
+        const arrayBuffer = new ArrayBuffer(44 + length * 2);
+        const view = new DataView(arrayBuffer);
+
+        // WAV header
+        const writeString = (offset, string) => {
+            for (let i = 0; i < string.length; i++) {
+                view.setUint8(offset + i, string.charCodeAt(i));
+            }
+        };
+
+        const writeUint32 = (offset, value) => {
+            view.setUint32(offset, value, true);
+        };
+
+        const writeUint16 = (offset, value) => {
+            view.setUint16(offset, value, true);
+        };
+
+        // RIFF header
+        writeString(0, 'RIFF');
+        writeUint32(4, 36 + length * 2);
+        writeString(8, 'WAVE');
+
+        // fmt chunk
+        writeString(12, 'fmt ');
+        writeUint32(16, 16);
+        writeUint16(20, 1); // PCM format
+        writeUint16(22, 1); // Mono
+        writeUint32(24, sampleRate);
+        writeUint32(28, sampleRate * 2);
+        writeUint16(32, 2);
+        writeUint16(34, 16);
+
+        // data chunk
+        writeString(36, 'data');
+        writeUint32(40, length * 2);
+
+        // Convert float samples to 16-bit PCM
+        let offset = 44;
+        for (let i = 0; i < length; i++) {
+            const sample = Math.max(-1, Math.min(1, audioBuffer[i]));
+            view.setInt16(offset, sample * 0x7FFF, true);
+            offset += 2;
+        }
+
+        return new Blob([arrayBuffer], { type: 'audio/wav' });
     }
 
     startTimer() {
@@ -224,40 +291,6 @@ class AudioRecorder {
         }
     }
 
-    async processRecording() {
-        console.log('Processing recording...');
-        console.log('Audio chunks:', this.audioChunks.length);
-        
-        if (this.audioChunks.length === 0) {
-            this.showError('No audio recorded');
-            this.updateUI('idle');
-            return;
-        }
-
-        // Calculate total size
-        const totalSize = this.audioChunks.reduce((sum, chunk) => sum + chunk.size, 0);
-        console.log('Total audio size:', totalSize, 'bytes');
-
-        if (totalSize === 0) {
-            this.showError('Audio file is empty. Please try recording again.');
-            this.updateUI('idle');
-            return;
-        }
-
-        // Create blob from chunks
-        const audioBlob = new Blob(this.audioChunks, { 
-            type: this.mediaRecorder.mimeType || 'audio/webm' 
-        });
-        
-        console.log('Created audio blob:', audioBlob.size, 'bytes, type:', audioBlob.type);
-
-        // Test the blob by creating a URL (for debugging)
-        const audioUrl = URL.createObjectURL(audioBlob);
-        console.log('Audio blob URL created:', audioUrl);
-
-        await this.uploadAudio(audioBlob);
-    }
-
     async uploadAudio(audioBlob) {
         // Show loading overlay
         if (this.loadingOverlay) {
@@ -266,11 +299,11 @@ class AudioRecorder {
 
         const formData = new FormData();
         
-        // Use the original blob with proper filename
-        const fileName = `recording.webm`;
+        // Use proper WAV filename
+        const fileName = `recording_${Date.now()}.wav`;
         formData.append('audio', audioBlob, fileName);
         
-        console.log('Uploading audio blob:', audioBlob.size, 'bytes');
+        console.log('Uploading WAV audio blob:', audioBlob.size, 'bytes');
         
         // Get task context
         const levelNumber = document.getElementById('level-number')?.value;
@@ -309,6 +342,11 @@ class AudioRecorder {
             // Reset timer display
             if (this.recordingTimer) {
                 this.recordingTimer.textContent = '0:00';
+            }
+
+            // Clean up audio context
+            if (this.audioContext && this.audioContext.state !== 'closed') {
+                this.audioContext.close();
             }
         }
     }
@@ -455,7 +493,6 @@ class QuickTaskGenerator {
     }
 
     showError(message) {
-        // Reuse the error display method from AudioRecorder
         const recorder = new AudioRecorder();
         recorder.showError(message);
     }
