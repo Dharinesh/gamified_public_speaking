@@ -1,0 +1,11 @@
+Flask
+Flask-Login
+Flask-WTF
+WTForms
+PyMySQL
+cryptography
+python-dotenv
+requests
+google-generativeai
+werkzeug
+Pillow

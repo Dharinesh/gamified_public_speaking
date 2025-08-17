@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title %}Login - Gamified Public Speaking{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <div style="text-align: center; margin-bottom: 2rem;">
+        <i class="fas fa-microphone-alt" style="font-size: 3rem; color: var(--accent-primary);"></i>
+        <h1 style="margin-top: 1rem; color: var(--text-primary);">Welcome to SpeakUp</h1>
+        <p style="color: var(--text-secondary);">Transform your public speaking skills with AI-powered feedback</p>
+    </div>
+
+    <form method="POST" action="{{ url_for('auth.login') }}">
+        <div class="form-group">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" id="username" name="username" class="form-input" required>
+        </div>
+
+        <div class="form-group">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" id="password" name="password" class="form-input" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%; margin-bottom: 1rem;">
+            <i class="fas fa-sign-in-alt"></i> Sign In
+        </button>
+    </form>
+
+    <div style="text-align: center; margin-top: 1.5rem;">
+        <p style="color: var(--text-secondary);">
+            Don't have an account? 
+            <a href="{{ url_for('auth.register') }}" style="color: var(--accent-primary); text-decoration: none;">
+                Sign up here
+            </a>
+        </p>
+    </div>
+</div>
+
+<div style="text-align: center; margin-top: 3rem; color: var(--text-secondary);">
+    <div class="grid grid-3" style="max-width: 800px; margin: 0 auto;">
+        <div class="card" style="text-align: center; padding: 1.5rem;">
+            <i class="fas fa-microphone" style="font-size: 2rem; color: var(--accent-primary); margin-bottom: 1rem;"></i>
+            <h3>AI-Powered Analysis</h3>
+            <p>Get detailed feedback on your speech patterns, flow, and confidence</p>
+        </div>
+        
+        <div class="card" style="text-align: center; padding: 1.5rem;">
+            <i class="fas fa-trophy" style="font-size: 2rem; color: var(--accent-primary); margin-bottom: 1rem;"></i>
+            <h3>Gamified Learning</h3>
+            <p>Progress through levels and unlock new speaking challenges</p>
+        </div>
+        
+        <div class="card" style="text-align: center; padding: 1.5rem;">
+            <i class="fas fa-chart-line" style="font-size: 2rem; color: var(--accent-primary); margin-bottom: 1rem;"></i>
+            <h3>Track Progress</h3>
+            <p>Monitor your improvement with detailed statistics and insights</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

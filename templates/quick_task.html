@@ -1,0 +1,153 @@
+{% extends "base.html" %}
+
+{% block title %}Quick Task - SpeakUp{% endblock %}
+
+{% block content %}
+<div style="text-align: center; margin-bottom: 2rem;">
+    <div style="background: var(--accent-primary); color: var(--bg-primary); width: 80px; height: 80px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 2rem; margin-bottom: 1rem;">
+        <i class="fas fa-bolt"></i>
+    </div>
+    <h1 style="color: var(--text-primary); margin-bottom: 0.5rem;">Quick Speaking Task</h1>
+    <p style="color: var(--text-secondary); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">
+        Practice with AI-generated prompts for instant feedback. Perfect for daily speaking practice!
+    </p>
+</div>
+
+<!-- Task Container -->
+<div id="quick-task-container" class="card" style="max-width: 800px; margin: 0 auto 2rem;">
+    <div class="card-header" style="text-align: center;">
+        <h3 class="card-title">
+            <i class="fas fa-lightbulb" style="color: var(--accent-primary);"></i>
+            Your Speaking Prompt
+        </h3>
+        <button id="generate-task-btn" class="btn btn-secondary" style="margin-top: 1rem;">
+            <i class="fas fa-sync-alt"></i> Generate New Task
+        </button>
+    </div>
+    
+    <div class="task-prompt">
+        <h3><i class="fas fa-quote-left"></i> Complete This Thought</h3>
+        <div class="prompt-text" id="task-prompt">
+            {{ task.sentence_starter if task else "Loading your speaking challenge..." }}
+        </div>
+        
+        {% if task and task.example_completion %}
+        <div class="example-text" id="task-example">
+            Example: {{ task.example_completion }}
+        </div>
+        {% endif %}
+        
+        {% if task and task.topic_hint %}
+        <div style="margin-top: 1rem; padding: 1rem; background: var(--bg-tertiary); border-radius: var(--radius); border-left: 4px solid var(--accent-primary);">
+            <strong style="color: var(--accent-primary);">💡 Hint:</strong>
+            <span id="task-hint" style="color: var(--text-secondary);">{{ task.topic_hint }}</span>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+<!-- Instructions -->
+<div class="card" style="max-width: 800px; margin: 0 auto 2rem; background: linear-gradient(135deg, var(--bg-secondary) 0%, rgba(0, 255, 136, 0.05) 100%);">
+    <h4 style="color: var(--accent-primary); margin-bottom: 1rem;">
+        <i class="fas fa-info-circle"></i> How It Works
+    </h4>
+    <div class="grid grid-2" style="gap: 1.5rem;">
+        <div>
+            <h5 style="color: var(--text-primary); margin-bottom: 0.5rem;">1. Think & Prepare</h5>
+            <p style="color: var(--text-secondary); font-size: 0.9rem;">Take a moment to think about how you'd complete the sentence. Consider your personal experience or perspective.</p>
+        </div>
+        <div>
+            <h5 style="color: var(--text-primary); margin-bottom: 0.5rem;">2. Record Your Response</h5>
+            <p style="color: var(--text-secondary); font-size: 0.9rem;">Click the microphone and speak naturally. Aim for 30-60 seconds of thoughtful response.</p>
+        </div>
+        <div>
+            <h5 style="color: var(--text-primary); margin-bottom: 0.5rem;">3. Get AI Feedback</h5>
+            <p style="color: var(--text-secondary); font-size: 0.9rem;">Receive instant analysis on your speech flow, confidence, filler words, and clarity.</p>
+        </div>
+        <div>
+            <h5 style="color: var(--text-primary); margin-bottom: 0.5rem;">4. Practice Daily</h5>
+            <p style="color: var(--text-secondary); font-size: 0.9rem;">Regular practice builds confidence. Try a new prompt whenever you have a few minutes!</p>
+        </div>
+    </div>
+</div>
+
+<!-- Recording Interface -->
+<div class="recording-interface" style="max-width: 600px; margin: 0 auto;">
+    <div class="microphone-container">
+        <button id="microphone-btn" class="microphone-btn">
+            <i class="fas fa-microphone"></i>
+        </button>
+        <div id="voice-visualizer" class="voice-visualizer"></div>
+    </div>
+    
+    <div id="recording-status" class="recording-status">Click to start recording</div>
+    <div id="recording-timer" class="recording-timer">0:00</div>
+    
+    <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <button id="generate-task-btn" class="btn btn-secondary">
+            <i class="fas fa-refresh"></i> New Prompt
+        </button>
+        <a href="{{ url_for('dashboard') }}" class="btn btn-secondary">
+            <i class="fas fa-home"></i> Dashboard
+        </a>
+    </div>
+</div>
+
+<!-- Results Container -->
+<div id="results-container" style="max-width: 800px; margin: 2rem auto 0;"></div>
+
+<!-- Quick Stats -->
+<div class="card" style="max-width: 800px; margin: 3rem auto 0; text-align: center;">
+    <h4 style="color: var(--accent-primary); margin-bottom: 1rem;">
+        <i class="fas fa-chart-bar"></i> Why Quick Tasks Matter
+    </h4>
+    <div class="grid grid-3">
+        <div>
+            <div style="font-size: 2rem; color: var(--accent-primary); margin-bottom: 0.5rem;">🎯</div>
+            <h5 style="color: var(--text-primary);">Builds Confidence</h5>
+            <p style="color: var(--text-secondary); font-size: 0.9rem;">Regular practice in a low-pressure environment</p>
+        </div>
+        <div>
+            <div style="font-size: 2rem; color: var(--accent-primary); margin-bottom: 0.5rem;">⚡</div>
+            <h5 style="color: var(--text-primary);">Quick Feedback</h5>
+            <p style="color: var(--text-secondary); font-size: 0.9rem;">Instant AI analysis helps you improve faster</p>
+        </div>
+        <div>
+            <div style="font-size: 2rem; color: var(--accent-primary); margin-bottom: 0.5rem;">🧠</div>
+            <h5 style="color: var(--text-primary);">Mental Agility</h5>
+            <p style="color: var(--text-secondary); font-size: 0.9rem;">Improves thinking on your feet and spontaneous speaking</p>
+        </div>
+    </div>
+</div>
+
+<!-- Hidden inputs -->
+<input type="hidden" id="level-number" value="">
+<input type="hidden" id="task-id" value="">
+<input type="hidden" id="is-quick-task" value="true">
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+// Generate new task functionality is handled by the QuickTaskGenerator class in main.js
+
+// Add some motivation messages
+const motivationMessages = [
+    "You've got this! Speak with confidence. 💪",
+    "Every expert was once a beginner. Keep practicing! 🌟",
+    "Great speakers are made through practice, not born. 🎤",
+    "Your voice matters. Share your thoughts boldly! 🗣️",
+    "Progress, not perfection. You're improving with each attempt! 📈"
+];
+
+function showMotivation() {
+    const message = motivationMessages[Math.floor(Math.random() * motivationMessages.length)];
+    const motivationDiv = document.createElement('div');
+    motivationDiv.style.cssText = `
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: var(--bg-secondary);
+        color: var(--accent-primary);
+        padding: 1rem 2rem;

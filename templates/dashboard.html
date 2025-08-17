@@ -1,0 +1,184 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - SpeakUp{% endblock %}
+
+{% block content %}
+<div class="dashboard-header" style="text-align: center; margin-bottom: 3rem;">
+    <h1 style="color: var(--text-primary); margin-bottom: 0.5rem;">
+        Welcome back, {{ current_user.username }}! 🎤
+    </h1>
+    <p style="color: var(--text-secondary); font-size: 1.1rem;">
+        Ready to level up your speaking skills?
+    </p>
+</div>
+
+<!-- User Statistics -->
+{% if user_stats %}
+<div class="stats-grid">
+    <div class="stat-card">
+        <span class="stat-value">{{ user_stats.total_speeches or 0 }}</span>
+        <span class="stat-label">Total Speeches</span>
+    </div>
+    <div class="stat-card">
+        <span class="stat-value">{{ user_stats.best_level_completed or 0 }}</span>
+        <span class="stat-label">Highest Level</span>
+    </div>
+    <div class="stat-card">
+        <span class="stat-value">{{ "%.1f"|format(user_stats.avg_flow_score or 0) }}</span>
+        <span class="stat-label">Avg Flow Score</span>
+    </div>
+    <div class="stat-card">
+        <span class="stat-value">{{ "%.1f"|format(user_stats.avg_filler_count or 0) }}</span>
+        <span class="stat-label">Avg Fillers</span>
+    </div>
+</div>
+{% endif %}
+
+<!-- Quick Actions -->
+<div class="grid grid-2" style="margin-bottom: 3rem;">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                <i class="fas fa-bolt" style="color: var(--accent-primary);"></i>
+                Quick Practice
+            </h3>
+            <p class="card-subtitle">Jump into a random speaking challenge</p>
+        </div>
+        <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+            Practice with AI-generated prompts for instant feedback and improvement.
+        </p>
+        <a href="{{ url_for('quick_task') }}" class="btn btn-primary">
+            <i class="fas fa-play"></i> Start Quick Task
+        </a>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                <i class="fas fa-user" style="color: var(--accent-primary);"></i>
+                Your Profile
+            </h3>
+            <p class="card-subtitle">View detailed progress and history</p>
+        </div>
+        <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+            See your complete speaking journey, analyze patterns, and track growth.
+        </p>
+        <a href="{{ url_for('profile') }}" class="btn btn-secondary">
+            <i class="fas fa-chart-line"></i> View Profile
+        </a>
+    </div>
+</div>
+
+<!-- Levels Grid -->
+<div class="levels-section">
+    <h2 style="color: var(--text-primary); margin-bottom: 1.5rem; text-align: center;">
+        <i class="fas fa-layer-group"></i> Speaking Levels
+    </h2>
+    
+    <div class="grid grid-2">
+        {% for level in levels %}
+        <div class="level-card {{ 'completed' if level.is_completed else ('locked' if level.level_number > 1 and not level.is_completed) }}" 
+             data-level="{{ level.level_number }}">
+            
+            <div class="level-number {{ 'completed' if level.is_completed else ('locked' if level.level_number > 1 and not level.is_completed) }}">
+                {% if level.is_completed %}
+                    <i class="fas fa-check"></i>
+                {% else %}
+                    {{ level.level_number }}
+                {% endif %}
+            </div>
+            
+            <h3 class="level-title">{{ level.title }}</h3>
+            <p class="level-description">{{ level.description }}</p>
+            
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
+                <span class="level-difficulty difficulty-{{ level.difficulty }}">
+                    {{ level.difficulty }}
+                </span>
+                
+                {% if level.is_completed %}
+                    <span style="color: var(--accent-primary); font-weight: bold;">
+                        <i class="fas fa-star"></i> Score: {{ level.score or 0 }}
+                    </span>
+                {% elif level.level_number > 1 and not level.is_completed %}
+                    <span style="color: var(--text-secondary); font-size: 0.9rem;">
+                        <i class="fas fa-lock"></i> Complete previous level
+                    </span>
+                {% else %}
+                    <span style="color: var(--accent-primary); font-weight: bold;">
+                        <i class="fas fa-play"></i> Start Level
+                    </span>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- Recent Activity -->
+{% if recent_speeches %}
+<div class="recent-activity" style="margin-top: 3rem;">
+    <h3 style="color: var(--text-primary); margin-bottom: 1.5rem;">
+        <i class="fas fa-history"></i> Recent Activity
+    </h3>
+    
+    <div class="activity-grid">
+        {% for speech in recent_speeches[:3] %}
+        <div class="card" style="padding: 1rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <strong style="color: var(--text-primary);">
+                    {% if speech.is_quick_task %}
+                        Quick Task
+                    {% else %}
+                        Level {{ speech.level_number }}
+                    {% endif %}
+                </strong>
+                <small style="color: var(--text-secondary);">
+                    {{ speech.created_at.strftime('%m/%d at %I:%M %p') if speech.created_at else 'Recently' }}
+                </small>
+            </div>
+            
+            {% if speech.ai_feedback and speech.ai_feedback.flow_score %}
+            <div style="display: flex; gap: 1rem; font-size: 0.9rem;">
+                <span style="color: var(--accent-primary);">
+                    Flow: {{ speech.ai_feedback.flow_score }}%
+                </span>
+                <span style="color: var(--accent-primary);">
+                    Confidence: {{ speech.ai_feedback.confidence_score or 0 }}%
+                </span>
+            </div>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+<div style="text-align: center; margin-top: 3rem; padding: 2rem; background: var(--bg-secondary); border-radius: var(--radius); border: 1px solid var(--border-color);">
+    <h3 style="color: var(--accent-primary); margin-bottom: 1rem;">Ready to improve your speaking?</h3>
+    <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+        Choose a level to practice structured skills, or try a quick task for instant feedback.
+    </p>
+    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="{{ url_for('quick_task') }}" class="btn btn-primary">
+            <i class="fas fa-bolt"></i> Quick Practice
+        </a>
+        {% set next_level_found = false %}
+        {% for level in levels %}
+            {% if not level.is_completed and not next_level_found %}
+                {% if level.level_number == 1 %}
+                    <a href="{{ url_for('level_page', level_number=level.level_number) }}" class="btn btn-secondary">
+                        <i class="fas fa-play"></i> Level {{ level.level_number }}
+                    </a>
+                    {% set next_level_found = true %}
+                {% elif levels[level.level_number-2] and levels[level.level_number-2].is_completed %}
+                    <a href="{{ url_for('level_page', level_number=level.level_number) }}" class="btn btn-secondary">
+                        <i class="fas fa-play"></i> Level {{ level.level_number }}
+                    </a>
+                    {% set next_level_found = true %}
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,250 @@
+{% extends "base.html" %}
+
+{% block title %}Level {{ level.level_number }} - {{ level.title }}{% endblock %}
+
+{% block content %}
+<div style="text-align: center; margin-bottom: 2rem;">
+    <div style="display: inline-flex; background: var(--accent-primary); color: var(--bg-primary); width: 60px; height: 60px; border-radius: 50%; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem;">
+        {{ level.level_number }}
+    </div>
+    <h1 style="color: var(--text-primary); margin-bottom: 0.5rem;">{{ level.title }}</h1>
+    <p style="color: var(--text-secondary); font-size: 1.1rem;">{{ level.description }}</p>
+    <span class="level-difficulty difficulty-{{ level.difficulty }}" style="margin-top: 1rem; display: inline-block;">
+        {{ level.difficulty }} level
+    </span>
+</div>
+
+{% if level.is_completed %}
+<div class="card" style="text-align: center; margin-bottom: 2rem; background: linear-gradient(135deg, var(--bg-secondary) 0%, rgba(0, 255, 136, 0.1) 100%); border-color: var(--accent-primary);">
+    <h3 style="color: var(--accent-primary); margin-bottom: 0.5rem;">
+        <i class="fas fa-trophy"></i> Level Completed!
+    </h3>
+    <p style="color: var(--text-secondary);">
+        You scored {{ level.score or 0 }} points on {{ level.completed_at.strftime('%B %d, %Y') if level.completed_at else 'this level' }}
+    </p>
+    <p style="color: var(--text-secondary); margin-top: 1rem;">
+        Feel free to practice again to improve your score!
+    </p>
+</div>
+{% endif %}
+
+<!-- Task Selection -->
+<div class="tasks-section">
+    <h2 style="color: var(--text-primary); margin-bottom: 1.5rem; text-align: center;">
+        <i class="fas fa-tasks"></i> Choose Your Challenge
+    </h2>
+    
+    <div class="grid grid-2">
+        {% for task in level.tasks %}
+        <div class="task-card card" data-task-id="{{ task.id }}" data-prompt="{{ task.prompt }}" data-example="{{ task.example_response or '' }}">
+            <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                <div style="background: var(--accent-primary); color: var(--bg-primary); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem;">
+                    {% if task.task_type == 'analogy' %}
+                        <i class="fas fa-lightbulb"></i>
+                    {% elif task.task_type == 'story' %}
+                        <i class="fas fa-book"></i>
+                    {% else %}
+                        <i class="fas fa-presentation"></i>
+                    {% endif %}
+                </div>
+                <div>
+                    <h4 style="color: var(--text-primary); margin: 0;">{{ task.task_type.title() }} Challenge</h4>
+                    <small style="color: var(--text-secondary);">{{ task.task_type.title() }} practice</small>
+                </div>
+            </div>
+            
+            <p style="color: var(--text-primary); font-weight: 500; margin-bottom: 1rem;">
+                "{{ task.prompt }}"
+            </p>
+            
+            {% if task.example_response %}
+            <p style="color: var(--text-secondary); font-style: italic; font-size: 0.9rem;">
+                Example: {{ task.example_response }}
+            </p>
+            {% endif %}
+            
+            <div style="text-align: center; margin-top: 1rem;">
+                <button class="btn btn-primary task-select-btn" data-task-id="{{ task.id }}">
+                    <i class="fas fa-microphone"></i> Start Recording
+                </button>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- Selected Task Display -->
+<div id="selected-task" class="task-prompt" style="display: none; margin-top: 2rem;">
+    <h3><i class="fas fa-target"></i> Your Challenge</h3>
+    <div class="prompt-text" id="task-prompt"></div>
+    <div class="example-text" id="task-example" style="margin-top: 1rem;"></div>
+</div>
+
+<!-- Recording Interface -->
+<div id="recording-section" class="recording-interface" style="display: none;">
+    <div class="microphone-container">
+        <button id="microphone-btn" class="microphone-btn">
+            <i class="fas fa-microphone"></i>
+        </button>
+        <div id="voice-visualizer" class="voice-visualizer"></div>
+    </div>
+    
+    <div id="recording-status" class="recording-status">Click to start recording</div>
+    <div id="recording-timer" class="recording-timer">0:00</div>
+    
+    <div style="margin-top: 2rem;">
+        <button class="btn btn-secondary" onclick="backToTaskSelection()">
+            <i class="fas fa-arrow-left"></i> Choose Different Task
+        </button>
+    </div>
+</div>
+
+<!-- Results Container -->
+<div id="results-container"></div>
+
+<!-- Navigation -->
+<div style="text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color);">
+    <a href="{{ url_for('dashboard') }}" class="btn btn-secondary">
+        <i class="fas fa-home"></i> Back to Dashboard
+    </a>
+    
+    {% if level.level_number > 1 %}
+    <a href="{{ url_for('level_page', level_number=level.level_number - 1) }}" class="btn btn-secondary">
+        <i class="fas fa-arrow-left"></i> Previous Level
+    </a>
+    {% endif %}
+    
+    {% if level.level_number < 5 and level.is_completed %}
+    <a href="{{ url_for('level_page', level_number=level.level_number + 1) }}" class="btn btn-primary">
+        Next Level <i class="fas fa-arrow-right"></i>
+    </a>
+    {% endif %}
+</div>
+
+<!-- Hidden inputs for task data -->
+<input type="hidden" id="level-number" value="{{ level.level_number }}">
+<input type="hidden" id="task-id" value="">
+<input type="hidden" id="is-quick-task" value="false">
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+// Task selection functionality
+function selectTask(taskId, prompt, example) {
+    console.log('Selecting task:', taskId, prompt);
+    
+    // Update hidden inputs
+    document.getElementById('task-id').value = taskId;
+    
+    // Show task details
+    const taskPrompt = document.getElementById('task-prompt');
+    const taskExample = document.getElementById('task-example');
+    const selectedTask = document.getElementById('selected-task');
+    const recordingSection = document.getElementById('recording-section');
+    
+    if (taskPrompt) taskPrompt.textContent = prompt;
+    if (taskExample) taskExample.textContent = example ? `Example: ${example}` : '';
+    
+    // Hide task selection, show selected task and recording
+    const tasksSection = document.querySelector('.tasks-section');
+    if (tasksSection) tasksSection.style.display = 'none';
+    if (selectedTask) selectedTask.style.display = 'block';
+    if (recordingSection) recordingSection.style.display = 'block';
+    
+    // Scroll to recording section
+    if (recordingSection) {
+        recordingSection.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+function backToTaskSelection() {
+    // Show task selection, hide others
+    const tasksSection = document.querySelector('.tasks-section');
+    const selectedTask = document.getElementById('selected-task');
+    const recordingSection = document.getElementById('recording-section');
+    const resultsContainer = document.getElementById('results-container');
+    
+    if (tasksSection) tasksSection.style.display = 'block';
+    if (selectedTask) selectedTask.style.display = 'none';
+    if (recordingSection) recordingSection.style.display = 'none';
+    if (resultsContainer) resultsContainer.innerHTML = '';
+    
+    // Reset task ID
+    const taskIdInput = document.getElementById('task-id');
+    if (taskIdInput) taskIdInput.value = '';
+    
+    // Scroll to task selection
+    if (tasksSection) {
+        tasksSection.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+// Initialize event handlers when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('Level page loaded, setting up task handlers...');
+    
+    // Add click handlers to task cards
+    const taskCards = document.querySelectorAll('.task-card');
+    console.log('Found task cards:', taskCards.length);
+    
+    taskCards.forEach(function(card, index) {
+        console.log('Setting up card', index);
+        
+        card.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            console.log('Task card clicked!');
+            
+            const taskId = card.getAttribute('data-task-id');
+            const prompt = card.getAttribute('data-prompt');
+            const example = card.getAttribute('data-example');
+            
+            console.log('Task data:', { taskId, prompt, example });
+            
+            if (taskId && prompt) {
+                selectTask(taskId, prompt, example);
+            } else {
+                console.error('Missing task data');
+            }
+        });
+        
+        // Also add click handler to the button inside
+        const selectBtn = card.querySelector('.task-select-btn');
+        if (selectBtn) {
+            selectBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const taskId = this.getAttribute('data-task-id');
+                const prompt = card.getAttribute('data-prompt');
+                const example = card.getAttribute('data-example');
+                
+                console.log('Task button clicked:', { taskId, prompt, example });
+                
+                if (taskId && prompt) {
+                    selectTask(taskId, prompt, example);
+                }
+            });
+        }
+    });
+    
+    // Add hover effects to task cards
+    taskCards.forEach(function(card) {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-3px)';
+            this.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.4)';
+            this.style.borderColor = 'var(--accent-primary)';
+            this.style.cursor = 'pointer';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+            this.style.boxShadow = 'var(--shadow)';
+            this.style.borderColor = 'var(--border-color)';
+        });
+    });
+});
+</script>
+{% endblock %}

@@ -1,0 +1,416 @@
+2025-08-18 02:03:08,891 [ERROR] managers.database_manager: Database connection failed: (2003, "Can't connect to MySQL server on 'localhost' ([WinError 10061] No connection could be made because the target machine actively refused it)")
+2025-08-18 02:12:09,726 [ERROR] managers.database_manager: Database connection failed: (1049, "Unknown database 'gamified_speaking'")
+2025-08-18 02:17:30,491 [INFO] managers.database_manager: Database connection established
+2025-08-18 02:17:30,505 [INFO] managers.database_manager: Database tables created/verified
+2025-08-18 02:17:30,575 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.187:5000
+2025-08-18 02:17:30,576 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2025-08-18 02:17:30,577 [INFO] werkzeug:  * Restarting with stat
+2025-08-18 02:17:31,811 [INFO] managers.database_manager: Database connection established
+2025-08-18 02:17:31,821 [INFO] managers.database_manager: Database tables created/verified
+2025-08-18 02:17:31,853 [WARNING] werkzeug:  * Debugger is active!
+2025-08-18 02:17:31,860 [INFO] werkzeug:  * Debugger PIN: 281-547-217
+2025-08-18 02:17:37,032 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:17:37] "GET / HTTP/1.1" 200 -
+2025-08-18 02:17:37,060 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:17:37] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-08-18 02:17:37,263 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:17:37] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-08-18 02:17:38,393 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:17:38] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-08-18 02:17:40,033 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:17:40] "GET /auth/register HTTP/1.1" 200 -
+2025-08-18 02:17:40,323 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:17:40] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 02:17:40,363 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:17:40] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 02:17:40,683 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:17:40] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-08-18 02:18:05,046 [INFO] managers.auth_manager: New user created: abc
+2025-08-18 02:18:05,047 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:18:05] "[32mPOST /auth/register HTTP/1.1[0m" 302 -
+2025-08-18 02:18:05,226 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:18:05] "GET /auth/login HTTP/1.1" 200 -
+2025-08-18 02:18:05,555 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:18:05] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 02:18:05,556 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:18:05] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 02:18:05,821 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:18:05] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-08-18 02:18:16,028 [ERROR] managers.auth_manager: Authentication error: property 'is_active' of 'User' object has no setter
+2025-08-18 02:18:16,030 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:18:16] "POST /auth/login HTTP/1.1" 200 -
+2025-08-18 02:18:16,212 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:18:16] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 02:18:16,365 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:18:16] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 02:18:16,698 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:18:16] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-08-18 02:18:22,958 [ERROR] managers.auth_manager: Authentication error: property 'is_active' of 'User' object has no setter
+2025-08-18 02:18:22,959 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:18:22] "POST /auth/login HTTP/1.1" 200 -
+2025-08-18 02:18:23,146 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:18:23] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 02:18:23,288 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:18:23] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 02:18:23,624 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:18:23] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-08-18 02:18:51,789 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:18:51] "GET /auth/register HTTP/1.1" 200 -
+2025-08-18 02:18:52,095 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:18:52] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 02:18:52,121 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:18:52] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 02:18:52,453 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:18:52] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-08-18 02:19:45,272 [INFO] managers.database_manager: Database connection established
+2025-08-18 02:19:45,283 [INFO] managers.database_manager: Database tables created/verified
+2025-08-18 02:19:45,326 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.187:5000
+2025-08-18 02:19:45,326 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2025-08-18 02:19:45,328 [INFO] werkzeug:  * Restarting with stat
+2025-08-18 02:19:46,485 [INFO] managers.database_manager: Database connection established
+2025-08-18 02:19:46,497 [INFO] managers.database_manager: Database tables created/verified
+2025-08-18 02:19:46,528 [WARNING] werkzeug:  * Debugger is active!
+2025-08-18 02:19:46,530 [INFO] werkzeug:  * Debugger PIN: 281-547-217
+2025-08-18 02:19:53,486 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:19:53] "GET / HTTP/1.1" 200 -
+2025-08-18 02:19:53,505 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:19:53] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 02:19:53,737 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:19:53] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 02:19:54,733 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:19:54] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-08-18 02:19:58,933 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:19:58] "GET /auth/register HTTP/1.1" 200 -
+2025-08-18 02:19:59,251 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:19:59] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 02:19:59,265 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:19:59] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 02:19:59,597 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:19:59] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-08-18 02:20:20,455 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:20:20] "POST /auth/register HTTP/1.1" 200 -
+2025-08-18 02:20:20,757 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:20:20] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 02:20:20,780 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:20:20] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 02:20:21,105 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:20:21] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-08-18 02:20:23,668 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:20:23] "GET /auth/login HTTP/1.1" 200 -
+2025-08-18 02:20:23,980 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:20:23] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 02:20:23,996 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:20:23] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 02:20:24,330 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:20:24] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-08-18 02:20:41,385 [ERROR] managers.auth_manager: Authentication error: property 'is_active' of 'User' object has no setter
+2025-08-18 02:20:41,386 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:20:41] "POST /auth/login HTTP/1.1" 200 -
+2025-08-18 02:20:41,574 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:20:41] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 02:20:41,716 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:20:41] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 02:20:42,050 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:20:42] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-08-18 02:22:38,871 [INFO] werkzeug:  * Detected change in 'E:\\gamified_public_speaking\\managers\\auth_manager.py', reloading
+2025-08-18 02:22:39,005 [INFO] werkzeug:  * Restarting with stat
+2025-08-18 02:22:40,281 [INFO] managers.database_manager: Database connection established
+2025-08-18 02:22:40,293 [INFO] managers.database_manager: Database tables created/verified
+2025-08-18 02:22:40,325 [WARNING] werkzeug:  * Debugger is active!
+2025-08-18 02:22:40,328 [INFO] werkzeug:  * Debugger PIN: 281-547-217
+2025-08-18 02:22:41,440 [INFO] werkzeug:  * Detected change in 'E:\\gamified_public_speaking\\managers\\auth_manager.py', reloading
+2025-08-18 02:22:41,571 [INFO] werkzeug:  * Restarting with stat
+2025-08-18 02:22:42,950 [INFO] managers.database_manager: Database connection established
+2025-08-18 02:22:42,960 [INFO] managers.database_manager: Database tables created/verified
+2025-08-18 02:22:43,003 [WARNING] werkzeug:  * Debugger is active!
+2025-08-18 02:22:43,005 [INFO] werkzeug:  * Debugger PIN: 281-547-217
+2025-08-18 02:23:23,007 [INFO] managers.database_manager: Database connection established
+2025-08-18 02:23:23,016 [INFO] managers.database_manager: Database tables created/verified
+2025-08-18 02:23:23,056 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.187:5000
+2025-08-18 02:23:23,056 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2025-08-18 02:23:23,056 [INFO] werkzeug:  * Restarting with stat
+2025-08-18 02:23:24,220 [INFO] managers.database_manager: Database connection established
+2025-08-18 02:23:24,234 [INFO] managers.database_manager: Database tables created/verified
+2025-08-18 02:23:24,277 [WARNING] werkzeug:  * Debugger is active!
+2025-08-18 02:23:24,281 [INFO] werkzeug:  * Debugger PIN: 281-547-217
+2025-08-18 02:23:27,231 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:23:27] "GET / HTTP/1.1" 200 -
+2025-08-18 02:23:27,248 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:23:27] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 02:23:27,480 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:23:27] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 02:23:28,463 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:23:28] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-08-18 02:23:34,624 [INFO] managers.auth_manager: User authenticated: abc
+2025-08-18 02:23:34,626 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:23:34] "[32mPOST /auth/login HTTP/1.1[0m" 302 -
+2025-08-18 02:23:34,830 [ERROR] services.routes: Dashboard error: Encountered unknown tag 'break'. Jinja was looking for the following tags: 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.
+2025-08-18 02:23:34,844 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:23:34] "[35m[1mGET /dashboard HTTP/1.1[0m" 500 -
+2025-08-18 02:23:35,185 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:23:35] "GET /dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-08-18 02:23:35,190 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:23:35] "GET /dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-08-18 02:23:35,440 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:23:35] "GET /dashboard?__debugger__=yes&cmd=resource&f=console.png&s=M45giS8v248ZCsDgxtng HTTP/1.1" 200 -
+2025-08-18 02:23:35,544 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:23:35] "GET /dashboard?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-08-18 02:24:24,520 [INFO] werkzeug:  * Detected change in 'E:\\gamified_public_speaking\\services\\routes.py', reloading
+2025-08-18 02:24:24,651 [INFO] werkzeug:  * Restarting with stat
+2025-08-18 02:24:25,810 [INFO] managers.database_manager: Database connection established
+2025-08-18 02:24:25,824 [INFO] managers.database_manager: Database tables created/verified
+2025-08-18 02:24:25,852 [WARNING] werkzeug:  * Debugger is active!
+2025-08-18 02:24:25,855 [INFO] werkzeug:  * Debugger PIN: 281-547-217
+2025-08-18 02:26:28,310 [INFO] managers.database_manager: Database connection established
+2025-08-18 02:26:28,318 [INFO] managers.database_manager: Database tables created/verified
+2025-08-18 02:26:28,356 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.187:5000
+2025-08-18 02:26:28,356 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2025-08-18 02:26:28,358 [INFO] werkzeug:  * Restarting with stat
+2025-08-18 02:26:29,693 [INFO] managers.database_manager: Database connection established
+2025-08-18 02:26:29,701 [INFO] managers.database_manager: Database tables created/verified
+2025-08-18 02:26:29,733 [WARNING] werkzeug:  * Debugger is active!
+2025-08-18 02:26:29,736 [INFO] werkzeug:  * Debugger PIN: 281-547-217
+2025-08-18 02:26:36,880 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:26:36] "[32mGET / HTTP/1.1[0m" 302 -
+2025-08-18 02:26:36,900 [ERROR] services.routes: Dashboard error: Encountered unknown tag 'break'. Jinja was looking for the following tags: 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.
+2025-08-18 02:26:36,918 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:26:36] "[35m[1mGET /dashboard HTTP/1.1[0m" 500 -
+2025-08-18 02:26:37,125 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:26:37] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-08-18 02:26:37,248 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:26:37] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-08-18 02:26:38,142 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:26:38] "GET /dashboard?__debugger__=yes&cmd=resource&f=console.png&s=5eiroDm234fwWaDp8XrX HTTP/1.1" 200 -
+2025-08-18 02:26:59,598 [INFO] managers.database_manager: Database connection established
+2025-08-18 02:26:59,616 [INFO] managers.database_manager: Database tables created/verified
+2025-08-18 02:26:59,667 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.187:5000
+2025-08-18 02:26:59,667 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2025-08-18 02:26:59,669 [INFO] werkzeug:  * Restarting with stat
+2025-08-18 02:27:00,831 [INFO] managers.database_manager: Database connection established
+2025-08-18 02:27:00,838 [INFO] managers.database_manager: Database tables created/verified
+2025-08-18 02:27:00,875 [WARNING] werkzeug:  * Debugger is active!
+2025-08-18 02:27:00,875 [INFO] werkzeug:  * Debugger PIN: 281-547-217
+2025-08-18 02:27:07,898 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:27:07] "[32mGET / HTTP/1.1[0m" 302 -
+2025-08-18 02:27:07,920 [ERROR] services.routes: Dashboard error: Encountered unknown tag 'break'. Jinja was looking for the following tags: 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.
+2025-08-18 02:27:07,938 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:27:07] "[35m[1mGET /dashboard HTTP/1.1[0m" 500 -
+2025-08-18 02:27:08,153 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:27:08] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-08-18 02:27:08,261 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:27:08] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-08-18 02:27:09,118 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:27:09] "GET /dashboard?__debugger__=yes&cmd=resource&f=console.png&s=geeZiso34Z278wsm96CO HTTP/1.1" 200 -
+2025-08-18 02:29:11,210 [INFO] managers.database_manager: Database connection established
+2025-08-18 02:29:11,219 [INFO] managers.database_manager: Database tables created/verified
+2025-08-18 02:29:11,279 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.187:5000
+2025-08-18 02:29:11,280 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2025-08-18 02:29:11,280 [INFO] werkzeug:  * Restarting with stat
+2025-08-18 02:29:12,557 [INFO] managers.database_manager: Database connection established
+2025-08-18 02:29:12,557 [INFO] managers.database_manager: Database tables created/verified
+2025-08-18 02:29:12,600 [WARNING] werkzeug:  * Debugger is active!
+2025-08-18 02:29:12,600 [INFO] werkzeug:  * Debugger PIN: 281-547-217
+2025-08-18 02:29:15,011 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:29:15] "[32mGET / HTTP/1.1[0m" 302 -
+2025-08-18 02:29:15,047 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:29:15] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 02:29:15,247 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:29:15] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 02:29:15,372 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:29:15] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 02:29:16,308 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:29:16] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 02:29:36,866 [ERROR] managers.ai_manager: Quick task generation error: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-08-18 02:29:36,870 [ERROR] services.routes: Quick task error: Unexpected end of template. Jinja was looking for the following tags: 'endblock'. The innermost block that needs to be closed is 'block'.
+2025-08-18 02:29:36,871 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:29:36] "[32mGET /quick-task HTTP/1.1[0m" 302 -
+2025-08-18 02:29:36,880 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:29:36] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 02:29:37,210 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:29:37] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 02:29:37,211 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:29:37] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 02:29:37,473 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:29:37] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 02:31:15,356 [INFO] werkzeug:  * Detected change in 'E:\\gamified_public_speaking\\managers\\ai_manager.py', reloading
+2025-08-18 02:31:17,496 [INFO] werkzeug:  * Restarting with stat
+2025-08-18 02:31:18,602 [INFO] managers.database_manager: Database connection established
+2025-08-18 02:31:18,612 [INFO] managers.database_manager: Database tables created/verified
+2025-08-18 02:31:18,640 [WARNING] werkzeug:  * Debugger is active!
+2025-08-18 02:31:18,644 [INFO] werkzeug:  * Debugger PIN: 281-547-217
+2025-08-18 02:31:33,300 [INFO] managers.ai_manager: Quick task generated successfully
+2025-08-18 02:31:33,304 [ERROR] services.routes: Quick task error: Unexpected end of template. Jinja was looking for the following tags: 'endblock'. The innermost block that needs to be closed is 'block'.
+2025-08-18 02:31:33,305 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:31:33] "[32mGET /quick-task HTTP/1.1[0m" 302 -
+2025-08-18 02:31:33,329 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:31:33] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 02:31:33,349 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:31:33] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 02:31:33,658 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:31:33] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 02:31:33,974 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:31:33] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 02:31:55,253 [INFO] managers.ai_manager: Quick task generated successfully
+2025-08-18 02:31:55,254 [ERROR] services.routes: Quick task error: Unexpected end of template. Jinja was looking for the following tags: 'endblock'. The innermost block that needs to be closed is 'block'.
+2025-08-18 02:31:55,255 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:31:55] "[32mGET /quick-task HTTP/1.1[0m" 302 -
+2025-08-18 02:31:55,264 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:31:55] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 02:31:55,588 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:31:55] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 02:31:55,588 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:31:55] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 02:31:55,854 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:31:55] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 02:32:55,758 [INFO] managers.database_manager: Database connection established
+2025-08-18 02:32:55,767 [INFO] managers.database_manager: Database tables created/verified
+2025-08-18 02:32:55,810 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.187:5000
+2025-08-18 02:32:55,810 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2025-08-18 02:32:55,812 [INFO] werkzeug:  * Restarting with stat
+2025-08-18 02:32:56,936 [INFO] managers.database_manager: Database connection established
+2025-08-18 02:32:56,945 [INFO] managers.database_manager: Database tables created/verified
+2025-08-18 02:32:56,989 [WARNING] werkzeug:  * Debugger is active!
+2025-08-18 02:32:56,993 [INFO] werkzeug:  * Debugger PIN: 281-547-217
+2025-08-18 02:32:59,581 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:32:59] "[32mGET / HTTP/1.1[0m" 302 -
+2025-08-18 02:32:59,606 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:32:59] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 02:32:59,836 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:32:59] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 02:32:59,935 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:32:59] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 02:33:00,950 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:33:00] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 02:33:26,727 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:33:26] "GET /profile HTTP/1.1" 200 -
+2025-08-18 02:33:27,010 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:33:27] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 02:33:27,057 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:33:27] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 02:33:27,384 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:33:27] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 02:33:38,913 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:33:38] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 02:33:39,208 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:33:39] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 02:33:39,251 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:33:39] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 02:33:39,583 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:33:39] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 02:34:01,371 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:34:01] "GET /level/1 HTTP/1.1" 200 -
+2025-08-18 02:34:01,668 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:34:01] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 02:34:01,699 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:34:01] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 02:34:02,025 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:34:02] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 02:35:38,929 [INFO] managers.transcription_manager: Uploading audio file for transcription
+2025-08-18 02:35:40,613 [INFO] managers.transcription_manager: Audio uploaded successfully
+2025-08-18 02:35:41,449 [INFO] managers.transcription_manager: Transcription started with ID: 7e0dc208-82e0-432c-8c90-eab1f08ec8af
+2025-08-18 02:35:41,449 [INFO] managers.transcription_manager: Waiting for transcription completion
+2025-08-18 02:35:42,240 [ERROR] managers.transcription_manager: Transcription error: Transcoding failed. File does not appear to contain audio. File type is application/octet-stream (data).
+2025-08-18 02:35:42,241 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:35:42] "[31m[1mPOST /api/upload-audio HTTP/1.1[0m" 400 -
+2025-08-18 02:37:04,411 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:37:04] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 02:37:04,494 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:37:04] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 02:37:04,672 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:37:04] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 02:37:05,164 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:37:05] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 02:53:05,009 [INFO] managers.database_manager: Database connection established
+2025-08-18 02:53:05,017 [INFO] managers.database_manager: Database tables created/verified
+2025-08-18 02:53:05,064 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.187:5000
+2025-08-18 02:53:05,065 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2025-08-18 02:53:05,066 [INFO] werkzeug:  * Restarting with stat
+2025-08-18 02:53:06,206 [INFO] managers.database_manager: Database connection established
+2025-08-18 02:53:06,215 [INFO] managers.database_manager: Database tables created/verified
+2025-08-18 02:53:06,253 [WARNING] werkzeug:  * Debugger is active!
+2025-08-18 02:53:06,256 [INFO] werkzeug:  * Debugger PIN: 281-547-217
+2025-08-18 02:53:08,198 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:53:08] "[32mGET / HTTP/1.1[0m" 302 -
+2025-08-18 02:53:08,224 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:53:08] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 02:53:08,457 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:53:08] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-08-18 02:53:08,570 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:53:08] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-08-18 02:53:09,465 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:53:09] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 02:53:25,002 [INFO] managers.ai_manager: Quick task generated successfully
+2025-08-18 02:53:25,004 [ERROR] services.routes: Quick task error: Unexpected end of template. Jinja was looking for the following tags: 'endblock'. The innermost block that needs to be closed is 'block'.
+2025-08-18 02:53:25,005 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:53:25] "[32mGET /quick-task HTTP/1.1[0m" 302 -
+2025-08-18 02:53:25,015 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:53:25] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 02:53:25,342 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:53:25] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 02:53:25,342 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:53:25] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 02:53:25,595 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:53:25] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 02:53:31,157 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:53:31] "GET /level/1 HTTP/1.1" 200 -
+2025-08-18 02:53:31,448 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:53:31] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 02:53:31,484 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:53:31] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 02:53:31,821 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:53:31] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 02:54:03,889 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:54:03] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 02:54:04,194 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:54:04] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 02:54:04,226 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:54:04] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 02:54:04,551 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:54:04] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 02:54:06,989 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:54:06] "GET /level/1 HTTP/1.1" 200 -
+2025-08-18 02:54:07,300 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:54:07] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 02:54:07,315 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:54:07] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 02:54:07,642 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:54:07] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 02:54:16,921 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:54:16] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 02:54:17,220 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:54:17] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 02:54:17,249 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:54:17] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 02:54:17,575 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:54:17] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 02:54:22,976 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:54:22] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 02:54:23,276 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:54:23] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 02:54:23,296 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:54:23] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 02:54:23,619 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:54:23] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 02:54:24,541 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:54:24] "GET /profile HTTP/1.1" 200 -
+2025-08-18 02:54:24,830 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:54:24] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 02:54:24,867 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:54:24] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 02:54:25,187 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:54:25] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 02:54:42,941 [INFO] managers.ai_manager: Quick task generated successfully
+2025-08-18 02:54:42,943 [ERROR] services.routes: Quick task error: Unexpected end of template. Jinja was looking for the following tags: 'endblock'. The innermost block that needs to be closed is 'block'.
+2025-08-18 02:54:42,944 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:54:42] "[32mGET /quick-task HTTP/1.1[0m" 302 -
+2025-08-18 02:54:42,952 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:54:42] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 02:54:43,279 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:54:43] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 02:54:43,280 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:54:43] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 02:54:43,551 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:54:43] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 02:55:04,670 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:55:04] "GET /level/1 HTTP/1.1" 200 -
+2025-08-18 02:55:04,974 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:55:04] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 02:55:05,004 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:55:05] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 02:55:05,338 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:55:05] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 02:55:05,773 [INFO] managers.ai_manager: Quick task generated successfully
+2025-08-18 02:55:05,775 [ERROR] services.routes: Quick task error: Unexpected end of template. Jinja was looking for the following tags: 'endblock'. The innermost block that needs to be closed is 'block'.
+2025-08-18 02:55:05,775 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:55:05] "[32mGET /quick-task HTTP/1.1[0m" 302 -
+2025-08-18 02:56:52,790 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:56:52] "GET /level/1 HTTP/1.1" 200 -
+2025-08-18 02:56:52,808 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:56:52] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 02:56:53,038 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:56:53] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 02:56:53,364 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 02:56:53] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 03:01:01,634 [INFO] managers.database_manager: Database connection established
+2025-08-18 03:01:01,648 [INFO] managers.database_manager: Database tables created/verified
+2025-08-18 03:01:01,698 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.187:5000
+2025-08-18 03:01:01,698 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2025-08-18 03:01:01,700 [INFO] werkzeug:  * Restarting with stat
+2025-08-18 03:01:02,744 [INFO] managers.database_manager: Database connection established
+2025-08-18 03:01:02,754 [INFO] managers.database_manager: Database tables created/verified
+2025-08-18 03:01:02,790 [WARNING] werkzeug:  * Debugger is active!
+2025-08-18 03:01:02,793 [INFO] werkzeug:  * Debugger PIN: 281-547-217
+2025-08-18 03:01:06,686 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:01:06] "[32mGET / HTTP/1.1[0m" 302 -
+2025-08-18 03:01:06,716 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:01:06] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 03:01:06,948 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:01:06] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 03:01:07,038 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:01:07] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 03:01:08,040 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:01:08] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 03:01:23,713 [INFO] managers.ai_manager: Quick task generated successfully
+2025-08-18 03:01:23,715 [ERROR] services.routes: Quick task error: Unexpected end of template. Jinja was looking for the following tags: 'endblock'. The innermost block that needs to be closed is 'block'.
+2025-08-18 03:01:23,717 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:01:23] "[32mGET /quick-task HTTP/1.1[0m" 302 -
+2025-08-18 03:01:23,725 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:01:23] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 03:01:24,053 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:01:24] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 03:01:24,053 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:01:24] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 03:01:24,317 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:01:24] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 03:01:30,936 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:01:30] "GET /level/1 HTTP/1.1" 200 -
+2025-08-18 03:01:31,226 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:01:31] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 03:01:31,263 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:01:31] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 03:01:31,588 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:01:31] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 03:04:42,319 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:04:42] "GET /level/1 HTTP/1.1" 200 -
+2025-08-18 03:04:42,337 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:04:42] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 03:04:42,539 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:04:42] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 03:04:42,866 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:04:42] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 03:04:58,926 [INFO] services.routes: Audio file saved: static/audio\user_1_1755466498.webm, size: 128639 bytes
+2025-08-18 03:04:58,926 [INFO] managers.transcription_manager: Processing audio file: static/audio\user_1_1755466498.webm, size: 128639 bytes
+2025-08-18 03:04:58,927 [INFO] managers.transcription_manager: Uploading audio file for transcription
+2025-08-18 03:05:00,531 [INFO] managers.transcription_manager: Audio uploaded successfully
+2025-08-18 03:05:01,361 [INFO] managers.transcription_manager: Transcription started with ID: 9ebe1c88-2da0-4c36-8e6b-fa255c6e4f02
+2025-08-18 03:05:01,361 [INFO] managers.transcription_manager: Waiting for transcription completion
+2025-08-18 03:05:09,730 [ERROR] managers.transcription_manager: Transcription error: Transcoding failed. File does not appear to contain audio. File type is application/octet-stream (data).
+2025-08-18 03:05:09,730 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:05:09] "[31m[1mPOST /api/upload-audio HTTP/1.1[0m" 400 -
+2025-08-18 03:09:41,163 [INFO] managers.database_manager: Database connection established
+2025-08-18 03:09:41,171 [INFO] managers.database_manager: Database tables created/verified
+2025-08-18 03:09:41,217 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.187:5000
+2025-08-18 03:09:41,218 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2025-08-18 03:09:41,219 [INFO] werkzeug:  * Restarting with stat
+2025-08-18 03:09:42,231 [INFO] managers.database_manager: Database connection established
+2025-08-18 03:09:42,238 [INFO] managers.database_manager: Database tables created/verified
+2025-08-18 03:09:42,273 [WARNING] werkzeug:  * Debugger is active!
+2025-08-18 03:09:42,276 [INFO] werkzeug:  * Debugger PIN: 281-547-217
+2025-08-18 03:09:44,465 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:09:44] "[32mGET / HTTP/1.1[0m" 302 -
+2025-08-18 03:09:44,491 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:09:44] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 03:09:44,727 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:09:44] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 03:09:44,842 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:09:44] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-08-18 03:09:45,788 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:09:45] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 03:09:48,853 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:09:48] "GET /level/1 HTTP/1.1" 200 -
+2025-08-18 03:09:49,155 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:09:49] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 03:09:49,187 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:09:49] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 03:09:49,509 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:09:49] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 03:09:58,780 [INFO] services.routes: Audio file saved: static/audio\user_1_1755466798.wav, size: 702764 bytes, type: audio/wav
+2025-08-18 03:09:58,781 [INFO] managers.transcription_manager: Processing audio file: static/audio\user_1_1755466798.wav, size: 702764 bytes, type: audio/wav
+2025-08-18 03:09:58,781 [INFO] managers.transcription_manager: Uploading audio file for transcription with content type: audio/wav
+2025-08-18 03:10:01,047 [INFO] managers.transcription_manager: Audio uploaded successfully
+2025-08-18 03:10:01,888 [INFO] managers.transcription_manager: Transcription started with ID: 6dbb4c09-6ff4-47e1-8ea0-685d2f566865
+2025-08-18 03:10:01,888 [INFO] managers.transcription_manager: Waiting for transcription completion
+2025-08-18 03:10:02,979 [ERROR] managers.transcription_manager: Transcription error: Transcoding failed. File does not appear to contain audio. File type is application/octet-stream (data).
+2025-08-18 03:10:02,981 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:10:02] "[31m[1mPOST /api/upload-audio HTTP/1.1[0m" 400 -
+2025-08-18 03:11:15,392 [INFO] services.routes: Audio file saved: static/audio\user_1_1755466875.wav, size: 645164 bytes, type: audio/wav
+2025-08-18 03:11:15,393 [INFO] managers.transcription_manager: Processing audio file: static/audio\user_1_1755466875.wav, size: 645164 bytes, type: audio/wav
+2025-08-18 03:11:15,393 [INFO] managers.transcription_manager: Uploading audio file for transcription with content type: audio/wav
+2025-08-18 03:11:17,474 [INFO] managers.transcription_manager: Audio uploaded successfully
+2025-08-18 03:11:18,313 [INFO] managers.transcription_manager: Transcription started with ID: f80a210e-a10f-4693-81c2-38783b0da7f8
+2025-08-18 03:11:18,313 [INFO] managers.transcription_manager: Waiting for transcription completion
+2025-08-18 03:11:19,156 [ERROR] managers.transcription_manager: Transcription error: Transcoding failed. File does not appear to contain audio. File type is application/octet-stream (data).
+2025-08-18 03:11:19,157 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:11:19] "[31m[1mPOST /api/upload-audio HTTP/1.1[0m" 400 -
+2025-08-18 03:13:34,025 [INFO] services.routes: Audio file saved: static/audio\user_1_1755467014.wav, size: 852524 bytes, type: audio/wav
+2025-08-18 03:13:34,026 [INFO] managers.transcription_manager: Processing audio file: static/audio\user_1_1755467014.wav, size: 852524 bytes, type: audio/wav
+2025-08-18 03:13:34,026 [INFO] managers.transcription_manager: Uploading audio file for transcription with content type: audio/wav
+2025-08-18 03:13:36,251 [INFO] managers.transcription_manager: Audio uploaded successfully
+2025-08-18 03:13:37,056 [INFO] managers.transcription_manager: Transcription started with ID: 7771a0aa-ce02-42c4-a903-f019c30094ff
+2025-08-18 03:13:37,056 [INFO] managers.transcription_manager: Waiting for transcription completion
+2025-08-18 03:13:37,844 [ERROR] managers.transcription_manager: Transcription error: Transcoding failed. File does not appear to contain audio. File type is application/octet-stream (data).
+2025-08-18 03:13:37,845 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:13:37] "[31m[1mPOST /api/upload-audio HTTP/1.1[0m" 400 -
+2025-08-18 03:18:07,888 [INFO] managers.database_manager: Database connection established
+2025-08-18 03:18:07,898 [INFO] managers.database_manager: Database tables created/verified
+2025-08-18 03:18:07,946 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.187:5000
+2025-08-18 03:18:07,946 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2025-08-18 03:18:07,948 [INFO] werkzeug:  * Restarting with stat
+2025-08-18 03:18:08,981 [INFO] managers.database_manager: Database connection established
+2025-08-18 03:18:08,990 [INFO] managers.database_manager: Database tables created/verified
+2025-08-18 03:18:09,031 [WARNING] werkzeug:  * Debugger is active!
+2025-08-18 03:18:09,034 [INFO] werkzeug:  * Debugger PIN: 281-547-217
+2025-08-18 03:18:10,639 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:18:10] "[32mGET / HTTP/1.1[0m" 302 -
+2025-08-18 03:18:10,664 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:18:10] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 03:18:10,906 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:18:10] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 03:18:11,008 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:18:11] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-08-18 03:18:11,956 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:18:11] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 03:18:13,748 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:18:13] "GET /level/1 HTTP/1.1" 200 -
+2025-08-18 03:18:14,051 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:18:14] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 03:18:14,081 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:18:14] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 03:18:14,405 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:18:14] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 03:18:21,944 [INFO] services.routes: Audio file saved: static/audio\user_1_1755467301.webm, size: 97727 bytes, type: audio/webm
+2025-08-18 03:18:21,945 [INFO] managers.transcription_manager: Processing audio file: static/audio\user_1_1755467301.webm, size: 97727 bytes, type: audio/webm
+2025-08-18 03:18:21,945 [INFO] managers.transcription_manager: Uploading audio file for transcription with content type: audio/webm
+2025-08-18 03:18:23,334 [INFO] managers.transcription_manager: Audio uploaded successfully
+2025-08-18 03:18:24,167 [INFO] managers.transcription_manager: Transcription started with ID: 0d815f53-da94-4b43-98a8-308188917eb4
+2025-08-18 03:18:24,167 [INFO] managers.transcription_manager: Waiting for transcription completion
+2025-08-18 03:18:55,463 [ERROR] managers.transcription_manager: Transcription error: Transcoding failed. File does not appear to contain audio. File type is application/octet-stream (data).
+2025-08-18 03:18:55,464 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 03:18:55] "[31m[1mPOST /api/upload-audio HTTP/1.1[0m" 400 -
