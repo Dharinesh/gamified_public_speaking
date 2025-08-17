@@ -8,6 +8,7 @@ class AudioRecorder {
         this.analyser = null;
         this.recordingStartTime = null;
         this.timerInterval = null;
+        this.isProcessing = false; // Prevent multiple calls
         
         // WAV recording setup
         this.sampleRate = 44100;
@@ -25,28 +26,47 @@ class AudioRecorder {
         this.loadingOverlay = document.getElementById('loading-overlay');
         
         if (this.micBtn) {
-            this.micBtn.addEventListener('click', () => this.toggleRecording());
+            // Remove any existing listeners
+            this.micBtn.onclick = null;
+            // Add single click listener with debounce
+            this.micBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                this.handleMicrophoneClick();
+            });
         }
     }
 
-    async toggleRecording() {
+    handleMicrophoneClick() {
+        // Prevent multiple clicks during processing
+        if (this.isProcessing) {
+            console.log('Already processing, ignoring click');
+            return;
+        }
+
         if (this.isRecording) {
             this.stopRecording();
         } else {
-            await this.startRecording();
+            this.startRecording();
         }
     }
 
     async startRecording() {
+        if (this.isRecording || this.isProcessing) {
+            console.log('Already recording or processing');
+            return;
+        }
+
         try {
             console.log('Starting WAV recording...');
+            this.isProcessing = true;
             
             // Request microphone access
             this.stream = await navigator.mediaDevices.getUserMedia({ 
                 audio: {
-                    echoCancellation: false,
-                    noiseSuppression: false,
-                    autoGainControl: false,
+                    echoCancellation: true,
+                    noiseSuppression: true,
+                    autoGainControl: true,
                     sampleRate: this.sampleRate,
                     channelCount: 1
                 },
@@ -89,6 +109,7 @@ class AudioRecorder {
             this.processor.connect(this.audioContext.destination);
 
             this.isRecording = true;
+            this.isProcessing = false; // Allow stopping
             this.recordingStartTime = Date.now();
 
             console.log('WAV recording started');
@@ -99,34 +120,40 @@ class AudioRecorder {
 
         } catch (error) {
             console.error('Error accessing microphone:', error);
+            this.isProcessing = false;
             this.showError('Could not access microphone. Please check permissions and try again.');
         }
     }
 
     stopRecording() {
-        console.log('Stopping WAV recording...');
-        
-        if (this.isRecording) {
-            this.isRecording = false;
-            
-            if (this.processor) {
-                this.processor.disconnect();
-                this.processor = null;
-            }
-            
-            if (this.stream) {
-                this.stream.getTracks().forEach(track => {
-                    track.stop();
-                    console.log('Track stopped:', track.kind);
-                });
-            }
-
-            this.stopTimer();
-            this.updateUI('processing');
-            
-            // Process the recorded buffers into WAV
-            this.processWAVRecording();
+        if (!this.isRecording || this.isProcessing) {
+            console.log('Not recording or already processing');
+            return;
         }
+
+        console.log('Stopping WAV recording...');
+        this.isProcessing = true;
+        this.isRecording = false;
+        
+        if (this.processor) {
+            this.processor.disconnect();
+            this.processor = null;
+        }
+        
+        if (this.stream) {
+            this.stream.getTracks().forEach(track => {
+                track.stop();
+                console.log('Track stopped:', track.kind);
+            });
+        }
+
+        this.stopTimer();
+        this.updateUI('processing');
+        
+        // Process the recorded buffers into WAV
+        setTimeout(() => {
+            this.processWAVRecording();
+        }, 100); // Small delay to ensure all processing is done
     }
 
     processWAVRecording() {
@@ -135,7 +162,7 @@ class AudioRecorder {
         
         if (this.recordedBuffers.length === 0) {
             this.showError('No audio recorded');
-            this.updateUI('idle');
+            this.resetRecorder();
             return;
         }
 
@@ -145,7 +172,14 @@ class AudioRecorder {
 
         if (totalLength === 0) {
             this.showError('Audio recording is empty. Please try again.');
-            this.updateUI('idle');
+            this.resetRecorder();
+            return;
+        }
+
+        // Check if we have enough audio (at least 1 second at 44100 Hz)
+        if (totalLength < 44100) {
+            this.showError('Recording too short. Please speak for at least 1 second.');
+            this.resetRecorder();
             return;
         }
 
@@ -161,6 +195,13 @@ class AudioRecorder {
         // Convert to WAV format
         const wavBlob = this.createWAVBlob(combinedBuffer, this.sampleRate);
         console.log('Created WAV blob:', wavBlob.size, 'bytes');
+
+        // Verify the blob has content
+        if (wavBlob.size < 1000) {
+            this.showError('Audio file too small. Please try recording again.');
+            this.resetRecorder();
+            return;
+        }
 
         this.uploadAudio(wavBlob);
     }
@@ -286,8 +327,10 @@ class AudioRecorder {
             this.micBtn.innerHTML = '<i class="fas fa-stop"></i>';
         } else if (state === 'processing') {
             this.micBtn.innerHTML = '<i class="fas fa-cog fa-spin"></i>';
+            this.micBtn.disabled = true;
         } else {
             this.micBtn.innerHTML = '<i class="fas fa-microphone"></i>';
+            this.micBtn.disabled = false;
         }
     }
 
@@ -299,7 +342,7 @@ class AudioRecorder {
 
         const formData = new FormData();
         
-        // Use proper WAV filename
+        // Use proper WAV filename with timestamp
         const fileName = `recording_${Date.now()}.wav`;
         formData.append('audio', audioBlob, fileName);
         
@@ -322,33 +365,48 @@ class AudioRecorder {
                 body: formData
             });
 
-            const result = await response.json();
-
-            if (response.ok && result.success) {
-                this.displayResults(result);
+            if (response.ok) {
+                const result = await response.json();
+                if (result.success) {
+                    this.displayResults(result);
+                } else {
+                    this.showError(result.error || 'Failed to process audio');
+                }
             } else {
-                this.showError(result.error || 'Failed to process audio');
+                // Get error details from response
+                const errorResult = await response.json().catch(() => ({ error: 'Unknown server error' }));
+                console.error('Server error:', errorResult);
+                this.showError(errorResult.error || `Server error: ${response.status}`);
             }
         } catch (error) {
             console.error('Upload error:', error);
             this.showError('Network error. Please try again.');
         } finally {
-            // Hide loading overlay
-            if (this.loadingOverlay) {
-                this.loadingOverlay.classList.remove('show');
-            }
-            this.updateUI('idle');
-            
-            // Reset timer display
-            if (this.recordingTimer) {
-                this.recordingTimer.textContent = '0:00';
-            }
-
-            // Clean up audio context
-            if (this.audioContext && this.audioContext.state !== 'closed') {
-                this.audioContext.close();
-            }
+            this.resetRecorder();
         }
+    }
+
+    resetRecorder() {
+        // Hide loading overlay
+        if (this.loadingOverlay) {
+            this.loadingOverlay.classList.remove('show');
+        }
+        
+        this.updateUI('idle');
+        this.isProcessing = false;
+        
+        // Reset timer display
+        if (this.recordingTimer) {
+            this.recordingTimer.textContent = '0:00';
+        }
+
+        // Clean up audio context
+        if (this.audioContext && this.audioContext.state !== 'closed') {
+            this.audioContext.close();
+        }
+
+        // Clear recorded data
+        this.recordedBuffers = [];
     }
 
     displayResults(result) {

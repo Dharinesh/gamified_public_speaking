@@ -130,6 +130,8 @@
 
 {% block scripts %}
 <script>
+let audioRecorderInstance = null;
+
 // Task selection functionality
 function selectTask(taskId, prompt, example) {
     console.log('Selecting task:', taskId, prompt);
@@ -151,6 +153,11 @@ function selectTask(taskId, prompt, example) {
     if (tasksSection) tasksSection.style.display = 'none';
     if (selectedTask) selectedTask.style.display = 'block';
     if (recordingSection) recordingSection.style.display = 'block';
+    
+    // Initialize audio recorder for this task
+    if (!audioRecorderInstance) {
+        audioRecorderInstance = new AudioRecorder();
+    }
     
     // Scroll to recording section
     if (recordingSection) {
@@ -174,6 +181,19 @@ function backToTaskSelection() {
     const taskIdInput = document.getElementById('task-id');
     if (taskIdInput) taskIdInput.value = '';
     
+    // Clean up audio recorder
+    if (audioRecorderInstance) {
+        // Stop any ongoing recording
+        if (audioRecorderInstance.isRecording) {
+            audioRecorderInstance.stopRecording();
+        }
+        // Clean up audio context
+        if (audioRecorderInstance.audioContext && audioRecorderInstance.audioContext.state !== 'closed') {
+            audioRecorderInstance.audioContext.close();
+        }
+        audioRecorderInstance = null;
+    }
+    
     // Scroll to task selection
     if (tasksSection) {
         tasksSection.scrollIntoView({ behavior: 'smooth' });
@@ -191,26 +211,25 @@ document.addEventListener('DOMContentLoaded', function() {
     taskCards.forEach(function(card, index) {
         console.log('Setting up card', index);
         
+        // Add click handler to the card itself
         card.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            
-            console.log('Task card clicked!');
+            // Don't trigger if clicking on the button directly
+            if (e.target.closest('.task-select-btn')) {
+                return;
+            }
             
             const taskId = card.getAttribute('data-task-id');
             const prompt = card.getAttribute('data-prompt');
             const example = card.getAttribute('data-example');
             
-            console.log('Task data:', { taskId, prompt, example });
+            console.log('Task card clicked:', { taskId, prompt, example });
             
             if (taskId && prompt) {
                 selectTask(taskId, prompt, example);
-            } else {
-                console.error('Missing task data');
             }
         });
         
-        // Also add click handler to the button inside
+        // Add click handler to the button inside
         const selectBtn = card.querySelector('.task-select-btn');
         if (selectBtn) {
             selectBtn.addEventListener('click', function(e) {
@@ -228,10 +247,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         }
-    });
-    
-    // Add hover effects to task cards
-    taskCards.forEach(function(card) {
+        
+        // Add hover effects to task cards
         card.addEventListener('mouseenter', function() {
             this.style.transform = 'translateY(-3px)';
             this.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.4)';

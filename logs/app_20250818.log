@@ -808,3 +808,179 @@
 2025-08-18 04:51:12,330 [INFO] managers.transcription_manager: Transcription completed successfully
 2025-08-18 04:51:12,331 [INFO] managers.transcription_manager: Cleaned up temporary file: static/audio\user_1_1755472865.mp3
 2025-08-18 04:51:12,332 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 04:51:12] "[31m[1mPOST /api/upload-audio HTTP/1.1[0m" 400 -
+2025-08-18 05:05:39,508 [INFO] managers.database_manager: Database connection established
+2025-08-18 05:05:39,516 [INFO] managers.database_manager: Database tables created/verified
+2025-08-18 05:05:39,561 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.187:5000
+2025-08-18 05:05:39,562 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2025-08-18 05:05:39,563 [INFO] werkzeug:  * Restarting with stat
+2025-08-18 05:05:40,830 [INFO] managers.database_manager: Database connection established
+2025-08-18 05:05:40,838 [INFO] managers.database_manager: Database tables created/verified
+2025-08-18 05:05:40,880 [WARNING] werkzeug:  * Debugger is active!
+2025-08-18 05:05:40,882 [INFO] werkzeug:  * Debugger PIN: 281-547-217
+2025-08-18 05:05:42,090 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:05:42] "[32mGET / HTTP/1.1[0m" 302 -
+2025-08-18 05:05:42,115 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:05:42] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 05:05:42,353 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:05:42] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:05:42,447 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:05:42] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:05:43,367 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:05:43] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:05:49,984 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:05:49] "GET /level/1 HTTP/1.1" 200 -
+2025-08-18 05:05:50,279 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:05:50] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:05:50,306 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:05:50] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:05:50,625 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:05:50] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:06:01,983 [INFO] services.routes: Audio file saved: static/audio\user_1_1755473761.wav, size: 786476 bytes
+2025-08-18 05:06:01,994 [INFO] managers.transcription_manager: Processing audio file: static/audio\user_1_1755473761.wav, size: 786476 bytes
+2025-08-18 05:06:01,994 [INFO] managers.transcription_manager: Converting WAV to MP3 for AssemblyAI compatibility...
+2025-08-18 05:06:01,994 [INFO] managers.transcription_manager: Converting static/audio\user_1_1755473761.wav to static/audio\user_1_1755473761.mp3
+2025-08-18 05:06:02,118 [INFO] managers.transcription_manager: Successfully converted to MP3: 143821 bytes
+2025-08-18 05:06:02,118 [INFO] managers.transcription_manager: Uploading audio file to AssemblyAI...
+2025-08-18 05:06:03,745 [INFO] managers.transcription_manager: Audio uploaded successfully!
+2025-08-18 05:06:03,746 [INFO] managers.transcription_manager: Starting transcription...
+2025-08-18 05:06:04,611 [INFO] managers.transcription_manager: Transcription started with ID: 4534f488-5d83-40ac-bb5c-bce019881587
+2025-08-18 05:06:04,611 [INFO] managers.transcription_manager: Waiting for transcription completion
+2025-08-18 05:06:05,461 [INFO] managers.transcription_manager: Transcription completed successfully
+2025-08-18 05:06:05,462 [INFO] managers.transcription_manager: Cleaned up temporary file: static/audio\user_1_1755473761.mp3
+2025-08-18 05:06:05,463 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:06:05] "[31m[1mPOST /api/upload-audio HTTP/1.1[0m" 400 -
+2025-08-18 05:06:51,172 [INFO] managers.database_manager: Database connection established
+2025-08-18 05:06:51,180 [INFO] managers.database_manager: Database tables created/verified
+2025-08-18 05:06:51,232 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.187:5000
+2025-08-18 05:06:51,232 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2025-08-18 05:06:51,233 [INFO] werkzeug:  * Restarting with stat
+2025-08-18 05:06:52,379 [INFO] managers.database_manager: Database connection established
+2025-08-18 05:06:52,387 [INFO] managers.database_manager: Database tables created/verified
+2025-08-18 05:06:52,418 [WARNING] werkzeug:  * Debugger is active!
+2025-08-18 05:06:52,421 [INFO] werkzeug:  * Debugger PIN: 281-547-217
+2025-08-18 05:06:53,756 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:06:53] "[32mGET / HTTP/1.1[0m" 302 -
+2025-08-18 05:06:53,781 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:06:53] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 05:06:54,015 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:06:54] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:06:54,100 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:06:54] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:06:55,010 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:06:55] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:06:56,471 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:06:56] "GET /level/1 HTTP/1.1" 200 -
+2025-08-18 05:06:56,751 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:06:56] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:06:56,799 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:06:56] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:06:57,120 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:06:57] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:07:04,124 [INFO] services.routes: Audio file saved: static/audio\user_1_1755473824.wav, size: 458796 bytes
+2025-08-18 05:07:04,134 [INFO] managers.transcription_manager: Processing audio file: static/audio\user_1_1755473824.wav, size: 458796 bytes
+2025-08-18 05:07:04,134 [INFO] managers.transcription_manager: Converting WAV to MP3 for AssemblyAI compatibility...
+2025-08-18 05:07:04,134 [INFO] managers.transcription_manager: Converting static/audio\user_1_1755473824.wav to static/audio\user_1_1755473824.mp3
+2025-08-18 05:07:04,248 [INFO] managers.transcription_manager: Successfully converted to MP3: 84470 bytes
+2025-08-18 05:07:04,248 [INFO] managers.transcription_manager: Uploading audio file to AssemblyAI...
+2025-08-18 05:07:04,436 [INFO] services.routes: Audio file saved: static/audio\user_1_1755473824.wav, size: 450604 bytes
+2025-08-18 05:07:04,446 [INFO] managers.transcription_manager: Processing audio file: static/audio\user_1_1755473824.wav, size: 450604 bytes
+2025-08-18 05:07:04,446 [INFO] managers.transcription_manager: Converting WAV to MP3 for AssemblyAI compatibility...
+2025-08-18 05:07:04,446 [INFO] managers.transcription_manager: Converting static/audio\user_1_1755473824.wav to static/audio\user_1_1755473824.mp3
+2025-08-18 05:07:04,556 [INFO] managers.transcription_manager: Successfully converted to MP3: 82798 bytes
+2025-08-18 05:07:04,556 [INFO] managers.transcription_manager: Uploading audio file to AssemblyAI...
+2025-08-18 05:07:05,578 [INFO] managers.transcription_manager: Audio uploaded successfully!
+2025-08-18 05:07:05,578 [INFO] managers.transcription_manager: Starting transcription...
+2025-08-18 05:07:05,868 [INFO] managers.transcription_manager: Audio uploaded successfully!
+2025-08-18 05:07:05,869 [INFO] managers.transcription_manager: Starting transcription...
+2025-08-18 05:07:06,426 [INFO] managers.transcription_manager: Transcription started with ID: 72ec2b34-7f48-4286-883d-57f43a1731df
+2025-08-18 05:07:06,427 [INFO] managers.transcription_manager: Waiting for transcription completion
+2025-08-18 05:07:06,752 [INFO] managers.transcription_manager: Transcription started with ID: e28eb420-8c55-4fa1-9a1c-edf278ee3378
+2025-08-18 05:07:06,752 [INFO] managers.transcription_manager: Waiting for transcription completion
+2025-08-18 05:07:07,275 [INFO] managers.transcription_manager: Processing...
+2025-08-18 05:07:07,578 [INFO] managers.transcription_manager: Transcription completed successfully
+2025-08-18 05:07:07,579 [INFO] managers.transcription_manager: Cleaned up temporary file: static/audio\user_1_1755473824.mp3
+2025-08-18 05:07:07,580 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:07:07] "[31m[1mPOST /api/upload-audio HTTP/1.1[0m" 400 -
+2025-08-18 05:07:11,073 [INFO] managers.transcription_manager: Transcription completed successfully
+2025-08-18 05:07:11,074 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:07:11] "[31m[1mPOST /api/upload-audio HTTP/1.1[0m" 400 -
+2025-08-18 05:09:58,565 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:09:58] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-08-18 05:09:58,565 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:09:58] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:10:07,179 [INFO] services.routes: Audio file saved: static/audio\user_1_1755474007.wav, size: 426028 bytes
+2025-08-18 05:10:07,194 [INFO] managers.transcription_manager: Processing audio file: static/audio\user_1_1755474007.wav, size: 426028 bytes
+2025-08-18 05:10:07,194 [INFO] managers.transcription_manager: Converting WAV to MP3 for AssemblyAI compatibility...
+2025-08-18 05:10:07,195 [INFO] managers.transcription_manager: Converting static/audio\user_1_1755474007.wav to static/audio\user_1_1755474007.mp3
+2025-08-18 05:10:07,310 [INFO] managers.transcription_manager: Successfully converted to MP3: 78201 bytes
+2025-08-18 05:10:07,311 [INFO] managers.transcription_manager: Uploading audio file to AssemblyAI...
+2025-08-18 05:10:07,495 [INFO] services.routes: Audio file saved: static/audio\user_1_1755474007.wav, size: 426028 bytes
+2025-08-18 05:10:07,504 [INFO] managers.transcription_manager: Processing audio file: static/audio\user_1_1755474007.wav, size: 426028 bytes
+2025-08-18 05:10:07,504 [INFO] managers.transcription_manager: Converting WAV to MP3 for AssemblyAI compatibility...
+2025-08-18 05:10:07,504 [INFO] managers.transcription_manager: Converting static/audio\user_1_1755474007.wav to static/audio\user_1_1755474007.mp3
+2025-08-18 05:10:07,609 [INFO] managers.transcription_manager: Successfully converted to MP3: 78201 bytes
+2025-08-18 05:10:07,609 [INFO] managers.transcription_manager: Uploading audio file to AssemblyAI...
+2025-08-18 05:10:08,660 [INFO] managers.transcription_manager: Audio uploaded successfully!
+2025-08-18 05:10:08,660 [INFO] managers.transcription_manager: Starting transcription...
+2025-08-18 05:10:08,974 [INFO] managers.transcription_manager: Audio uploaded successfully!
+2025-08-18 05:10:08,974 [INFO] managers.transcription_manager: Starting transcription...
+2025-08-18 05:10:09,516 [INFO] managers.transcription_manager: Transcription started with ID: d851f86a-2a90-473a-9fe5-7f531b966f4b
+2025-08-18 05:10:09,516 [INFO] managers.transcription_manager: Waiting for transcription completion
+2025-08-18 05:10:09,789 [INFO] managers.transcription_manager: Transcription started with ID: 0ad21164-a64f-4e2e-a424-3a5272651b3a
+2025-08-18 05:10:09,790 [INFO] managers.transcription_manager: Waiting for transcription completion
+2025-08-18 05:10:10,312 [INFO] managers.transcription_manager: Processing...
+2025-08-18 05:10:10,584 [INFO] managers.transcription_manager: Processing...
+2025-08-18 05:10:14,182 [INFO] managers.transcription_manager: Transcription completed successfully
+2025-08-18 05:10:14,183 [INFO] managers.transcription_manager: Cleaned up temporary file: static/audio\user_1_1755474007.mp3
+2025-08-18 05:10:14,183 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:10:14] "[31m[1mPOST /api/upload-audio HTTP/1.1[0m" 400 -
+2025-08-18 05:10:14,426 [INFO] managers.transcription_manager: Transcription completed successfully
+2025-08-18 05:10:14,427 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:10:14] "[31m[1mPOST /api/upload-audio HTTP/1.1[0m" 400 -
+2025-08-18 05:17:10,708 [INFO] managers.database_manager: Database connection established
+2025-08-18 05:17:10,717 [INFO] managers.database_manager: Database tables created/verified
+2025-08-18 05:17:10,765 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.187:5000
+2025-08-18 05:17:10,765 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2025-08-18 05:17:10,767 [INFO] werkzeug:  * Restarting with stat
+2025-08-18 05:17:12,033 [INFO] managers.database_manager: Database connection established
+2025-08-18 05:17:12,041 [INFO] managers.database_manager: Database tables created/verified
+2025-08-18 05:17:12,083 [WARNING] werkzeug:  * Debugger is active!
+2025-08-18 05:17:12,086 [INFO] werkzeug:  * Debugger PIN: 281-547-217
+2025-08-18 05:17:13,357 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:17:13] "[32mGET / HTTP/1.1[0m" 302 -
+2025-08-18 05:17:13,383 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:17:13] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 05:17:13,619 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:17:13] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:17:13,736 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:17:13] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-08-18 05:17:14,655 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:17:14] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:17:17,555 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:17:17] "GET /level/1 HTTP/1.1" 200 -
+2025-08-18 05:17:17,856 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:17:17] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:17:17,889 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:17:17] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:17:18,215 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:17:18] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:17:25,753 [INFO] services.routes: Audio file saved: static/audio\user_1_1755474445.wav, size: 507948 bytes
+2025-08-18 05:17:25,763 [INFO] managers.transcription_manager: Processing audio file: static/audio\user_1_1755474445.wav, size: 507948 bytes
+2025-08-18 05:17:25,764 [INFO] managers.transcription_manager: Converting WAV to MP3 for AssemblyAI compatibility...
+2025-08-18 05:17:25,764 [INFO] managers.transcription_manager: Converting static/audio\user_1_1755474445.wav to static/audio\user_1_1755474445.mp3
+2025-08-18 05:17:25,906 [INFO] managers.transcription_manager: Successfully converted to MP3: 93247 bytes
+2025-08-18 05:17:25,906 [INFO] managers.transcription_manager: Uploading audio file to AssemblyAI...
+2025-08-18 05:17:26,072 [INFO] services.routes: Audio file saved: static/audio\user_1_1755474446.wav, size: 507948 bytes
+2025-08-18 05:17:26,081 [INFO] managers.transcription_manager: Processing audio file: static/audio\user_1_1755474446.wav, size: 507948 bytes
+2025-08-18 05:17:26,082 [INFO] managers.transcription_manager: Converting WAV to MP3 for AssemblyAI compatibility...
+2025-08-18 05:17:26,082 [INFO] managers.transcription_manager: Converting static/audio\user_1_1755474446.wav to static/audio\user_1_1755474446.mp3
+2025-08-18 05:17:26,215 [INFO] managers.transcription_manager: Successfully converted to MP3: 93247 bytes
+2025-08-18 05:17:26,215 [INFO] managers.transcription_manager: Uploading audio file to AssemblyAI...
+2025-08-18 05:17:27,203 [INFO] managers.transcription_manager: Audio uploaded successfully!
+2025-08-18 05:17:27,204 [INFO] managers.transcription_manager: Starting transcription...
+2025-08-18 05:17:27,514 [INFO] managers.transcription_manager: Audio uploaded successfully!
+2025-08-18 05:17:27,515 [INFO] managers.transcription_manager: Starting transcription...
+2025-08-18 05:17:28,097 [INFO] managers.transcription_manager: Transcription started with ID: 8e892459-b529-4baf-87eb-47599ab4a7ba
+2025-08-18 05:17:28,098 [INFO] managers.transcription_manager: Waiting for transcription completion
+2025-08-18 05:17:28,345 [INFO] managers.transcription_manager: Transcription started with ID: 6f5d3792-223e-4fc0-9f2c-50b5f51c261c
+2025-08-18 05:17:28,345 [INFO] managers.transcription_manager: Waiting for transcription completion
+2025-08-18 05:17:28,888 [INFO] managers.transcription_manager: Processing...
+2025-08-18 05:17:29,162 [INFO] managers.transcription_manager: Processing...
+2025-08-18 05:17:32,694 [INFO] managers.transcription_manager: Transcription completed successfully
+2025-08-18 05:17:32,695 [INFO] managers.transcription_manager: Cleaned up temporary file: static/audio\user_1_1755474445.mp3
+2025-08-18 05:17:32,695 [INFO] services.routes: Transcription successful: Check? Yes. Oh my God. It is recording. Finally. Let's go....
+2025-08-18 05:17:33,004 [INFO] managers.transcription_manager: Transcription completed successfully
+2025-08-18 05:17:33,005 [INFO] managers.transcription_manager: Cleaned up temporary file: static/audio\user_1_1755474446.mp3
+2025-08-18 05:17:33,005 [INFO] services.routes: Transcription successful: Check? Yes. Oh my God. It is recording. Finally. Let's go....
+2025-08-18 05:17:51,249 [INFO] managers.ai_manager: Speech analysis completed successfully
+2025-08-18 05:17:51,254 [INFO] managers.game_manager: Speech response saved with ID: 1
+2025-08-18 05:17:51,258 [INFO] services.routes: Cleaned up audio file: static/audio\user_1_1755474445.wav
+2025-08-18 05:17:51,259 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:17:51] "POST /api/upload-audio HTTP/1.1" 200 -
+2025-08-18 05:17:52,993 [INFO] managers.ai_manager: Speech analysis completed successfully
+2025-08-18 05:17:52,996 [INFO] managers.game_manager: Speech response saved with ID: 2
+2025-08-18 05:17:53,001 [INFO] services.routes: Cleaned up audio file: static/audio\user_1_1755474446.wav
+2025-08-18 05:17:53,001 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:17:53] "POST /api/upload-audio HTTP/1.1" 200 -
+2025-08-18 05:18:16,454 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:18:16] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 05:18:16,549 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:18:16] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:18:16,704 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:18:16] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:18:16,781 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:18:16] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:18:40,619 [INFO] managers.ai_manager: Quick task generated successfully
+2025-08-18 05:18:40,654 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:18:40] "GET /quick-task HTTP/1.1" 200 -
+2025-08-18 05:18:40,671 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:18:40] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:18:40,980 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:18:40] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:18:41,324 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:18:41] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -

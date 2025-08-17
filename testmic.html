@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Microphone Test</title>
+</head>
+<body>
+    <h1>Microphone Access Test</h1>
+    <button id="testMic">Test Microphone</button>
+    <p id="status">Click the button to test microphone access</p>
+    
+    <script>
+        document.getElementById('testMic').addEventListener('click', async () => {
+            const status = document.getElementById('status');
+            
+            try {
+                status.textContent = 'Requesting microphone access...';
+                
+                const stream = await navigator.mediaDevices.getUserMedia({ 
+                    audio: {
+                        echoCancellation: false,
+                        noiseSuppression: false,
+                        autoGainControl: false,
+                        sampleRate: 44100,
+                        channelCount: 1
+                    }
+                });
+                
+                status.textContent = '✅ Microphone access granted! Stream active.';
+                console.log('Stream:', stream);
+                console.log('Audio tracks:', stream.getAudioTracks());
+                
+                // Test audio context
+                const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                const source = audioContext.createMediaStreamSource(stream);
+                
+                status.textContent += ' AudioContext created successfully.';
+                console.log('AudioContext:', audioContext);
+                console.log('MediaStreamSource:', source);
+                
+                // Stop stream after test
+                setTimeout(() => {
+                    stream.getTracks().forEach(track => track.stop());
+                    audioContext.close();
+                    status.textContent += ' Test completed - stream stopped.';
+                }, 3000);
+                
+            } catch (error) {
+                status.textContent = `❌ Error: ${error.message}`;
+                console.error('Microphone test error:', error);
+            }
+        });
+    </script>
+</body>
+</html>
