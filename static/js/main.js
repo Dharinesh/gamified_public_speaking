@@ -8,7 +8,8 @@ class AudioRecorder {
         this.analyser = null;
         this.recordingStartTime = null;
         this.timerInterval = null;
-        this.isProcessing = false; // Prevent multiple calls
+        this.isProcessing = false;
+        this.isUploading = false; // NEW: Prevent duplicate uploads
         
         // WAV recording setup
         this.sampleRate = 44100;
@@ -26,21 +27,24 @@ class AudioRecorder {
         this.loadingOverlay = document.getElementById('loading-overlay');
         
         if (this.micBtn) {
-            // Remove any existing listeners
-            this.micBtn.onclick = null;
-            // Add single click listener with debounce
+            // Remove any existing listeners to prevent duplicates
+            this.micBtn.replaceWith(this.micBtn.cloneNode(true));
+            this.micBtn = document.getElementById('microphone-btn');
+            
+            // Add single click listener with comprehensive debounce
             this.micBtn.addEventListener('click', (e) => {
                 e.preventDefault();
                 e.stopPropagation();
+                e.stopImmediatePropagation();
                 this.handleMicrophoneClick();
-            });
+            }, { once: false });
         }
     }
 
     handleMicrophoneClick() {
-        // Prevent multiple clicks during processing
-        if (this.isProcessing) {
-            console.log('Already processing, ignoring click');
+        // Comprehensive state checking to prevent multiple clicks
+        if (this.isProcessing || this.isUploading) {
+            console.log('Already processing/uploading, ignoring click');
             return;
         }
 
@@ -52,8 +56,8 @@ class AudioRecorder {
     }
 
     async startRecording() {
-        if (this.isRecording || this.isProcessing) {
-            console.log('Already recording or processing');
+        if (this.isRecording || this.isProcessing || this.isUploading) {
+            console.log('Already recording, processing, or uploading');
             return;
         }
 
@@ -256,17 +260,99 @@ class AudioRecorder {
         return new Blob([arrayBuffer], { type: 'audio/wav' });
     }
 
+    async uploadAudio(audioBlob) {
+        // CRITICAL: Check if already uploading to prevent duplicates
+        if (this.isUploading) {
+            console.log('Upload already in progress, skipping');
+            return;
+        }
+
+        this.isUploading = true; // Set upload flag immediately
+        
+        try {
+            // Show loading overlay
+            if (this.loadingOverlay) {
+                this.loadingOverlay.classList.add('show');
+            }
+
+            const formData = new FormData();
+            
+            // Use proper WAV filename with timestamp
+            const fileName = `recording_${Date.now()}.wav`;
+            formData.append('audio', audioBlob, fileName);
+            
+            console.log('Uploading WAV audio blob of size:', audioBlob.size);
+
+            // Add task info if available
+            const levelNumber = window.currentLevelNumber || null;
+            const taskId = window.currentTaskId || null;
+            const isQuickTask = window.isQuickTask || false;
+            const taskPrompt = window.currentTaskPrompt || '';
+            
+            if (levelNumber) formData.append('level_number', levelNumber);
+            if (taskId) formData.append('task_id', taskId);
+            formData.append('is_quick_task', isQuickTask);
+            if (taskPrompt) formData.append('task_prompt', taskPrompt);
+
+            // SINGLE REQUEST - with timeout to prevent hanging
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 30000); // 30 second timeout
+
+            const response = await fetch('/api/upload-audio', {
+                method: 'POST',
+                body: formData,
+                signal: controller.signal
+            });
+
+            clearTimeout(timeoutId);
+
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.error || 'Upload failed');
+            }
+
+            const result = await response.json();
+            console.log('Upload successful:', result);
+            
+            this.displayResults(result.transcription, result.analysis);
+
+        } catch (error) {
+            if (error.name === 'AbortError') {
+                this.showError('Upload timed out. Please try again.');
+            } else {
+                console.error('Upload error:', error);
+                this.showError(`Upload failed: ${error.message}`);
+            }
+        } finally {
+            // Always reset states
+            this.isProcessing = false;
+            this.isUploading = false;
+            if (this.loadingOverlay) {
+                this.loadingOverlay.classList.remove('show');
+            }
+            this.updateUI('idle');
+        }
+    }
+
+    resetRecorder() {
+        this.isRecording = false;
+        this.isProcessing = false;
+        this.isUploading = false;
+        this.recordedBuffers = [];
+        this.updateUI('idle');
+        
+        if (this.recordingTimer) {
+            this.recordingTimer.textContent = '0:00';
+        }
+    }
+
     startTimer() {
         this.timerInterval = setInterval(() => {
-            if (this.recordingStartTime) {
+            if (this.recordingStartTime && this.recordingTimer) {
                 const elapsed = Math.floor((Date.now() - this.recordingStartTime) / 1000);
                 const minutes = Math.floor(elapsed / 60);
                 const seconds = elapsed % 60;
-                
-                if (this.recordingTimer) {
-                    this.recordingTimer.textContent = 
-                        `${minutes}:${seconds.toString().padStart(2, '0')}`;
-                }
+                this.recordingTimer.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
             }
         }, 1000);
     }
@@ -279,27 +365,21 @@ class AudioRecorder {
     }
 
     startVisualization() {
+        if (!this.analyser || !this.voiceVisualizer) return;
+
+        const dataArray = new Uint8Array(this.analyser.frequencyBinCount);
+        
         const animate = () => {
-            if (!this.isRecording || !this.analyser) return;
-
-            const bufferLength = this.analyser.frequencyBinCount;
-            const dataArray = new Uint8Array(bufferLength);
+            if (!this.isRecording) return;
+            
             this.analyser.getByteFrequencyData(dataArray);
-
-            // Calculate average volume
-            const average = dataArray.reduce((sum, value) => sum + value, 0) / bufferLength;
-            const normalizedAverage = average / 255;
-
-            // Update visualizer based on audio input
-            if (this.voiceVisualizer && normalizedAverage > 0.1) {
+            const average = dataArray.reduce((a, b) => a + b) / dataArray.length;
+            
+            const scale = Math.min(average / 50, 1);
+            if (this.voiceVisualizer) {
                 this.voiceVisualizer.classList.add('active');
-                
-                // Scale based on audio intensity
-                const scale = 1 + (normalizedAverage * 0.5);
                 this.voiceVisualizer.style.transform = 
-                    `translate(-50%, -50%) scale(${scale})`;
-            } else if (this.voiceVisualizer) {
-                this.voiceVisualizer.classList.remove('active');
+                    `translate(-50%, -50%) scale(${1 + scale})`;
             }
 
             requestAnimationFrame(animate);
@@ -325,6 +405,7 @@ class AudioRecorder {
 
         if (state === 'recording') {
             this.micBtn.innerHTML = '<i class="fas fa-stop"></i>';
+            this.micBtn.disabled = false;
         } else if (state === 'processing') {
             this.micBtn.innerHTML = '<i class="fas fa-cog fa-spin"></i>';
             this.micBtn.disabled = true;
@@ -332,208 +413,145 @@ class AudioRecorder {
             this.micBtn.innerHTML = '<i class="fas fa-microphone"></i>';
             this.micBtn.disabled = false;
         }
-    }
 
-    async uploadAudio(audioBlob) {
-        // Show loading overlay
-        if (this.loadingOverlay) {
-            this.loadingOverlay.classList.add('show');
-        }
-
-        const formData = new FormData();
-        
-        // Use proper WAV filename with timestamp
-        const fileName = `recording_${Date.now()}.wav`;
-        formData.append('audio', audioBlob, fileName);
-        
-        console.log('Uploading WAV audio blob:', audioBlob.size, 'bytes');
-        
-        // Get task context
-        const levelNumber = document.getElementById('level-number')?.value;
-        const taskId = document.getElementById('task-id')?.value;
-        const isQuickTask = document.getElementById('is-quick-task')?.value === 'true';
-        const taskPrompt = document.getElementById('task-prompt')?.textContent || '';
-
-        if (levelNumber) formData.append('level_number', levelNumber);
-        if (taskId) formData.append('task_id', taskId);
-        if (isQuickTask !== undefined) formData.append('is_quick_task', isQuickTask);
-        if (taskPrompt) formData.append('task_prompt', taskPrompt);
-
-        try {
-            const response = await fetch('/api/upload-audio', {
-                method: 'POST',
-                body: formData
-            });
-
-            if (response.ok) {
-                const result = await response.json();
-                if (result.success) {
-                    this.displayResults(result);
-                } else {
-                    this.showError(result.error || 'Failed to process audio');
-                }
+        // Update voice visualizer
+        if (this.voiceVisualizer) {
+            if (state === 'recording') {
+                this.voiceVisualizer.classList.add('active');
             } else {
-                // Get error details from response
-                const errorResult = await response.json().catch(() => ({ error: 'Unknown server error' }));
-                console.error('Server error:', errorResult);
-                this.showError(errorResult.error || `Server error: ${response.status}`);
+                this.voiceVisualizer.classList.remove('active');
+                this.voiceVisualizer.style.transform = 'translate(-50%, -50%) scale(1)';
             }
-        } catch (error) {
-            console.error('Upload error:', error);
-            this.showError('Network error. Please try again.');
-        } finally {
-            this.resetRecorder();
         }
     }
 
-    resetRecorder() {
-        // Hide loading overlay
-        if (this.loadingOverlay) {
-            this.loadingOverlay.classList.remove('show');
-        }
-        
-        this.updateUI('idle');
-        this.isProcessing = false;
-        
-        // Reset timer display
-        if (this.recordingTimer) {
-            this.recordingTimer.textContent = '0:00';
-        }
-
-        // Clean up audio context
-        if (this.audioContext && this.audioContext.state !== 'closed') {
-            this.audioContext.close();
-        }
-
-        // Clear recorded data
-        this.recordedBuffers = [];
-    }
-
-    displayResults(result) {
+    displayResults(transcription, analysis) {
         const resultsContainer = document.getElementById('results-container');
-        if (!resultsContainer) return;
-
-        const { transcription, analysis } = result;
-
-        resultsContainer.innerHTML = `
-            <div class="results-container">
-                <div class="transcription-display">
-                    <h4><i class="fas fa-quote-left"></i> Your Speech</h4>
-                    <p>${transcription}</p>
-                </div>
-
-                <div class="analysis-grid">
-                    <div class="metric-card">
-                        <div class="metric-value">${analysis.flow_score || 0}</div>
-                        <div class="metric-label">Flow Score</div>
+        if (resultsContainer) {
+            resultsContainer.innerHTML = `
+                <div class="results-display">
+                    <div class="transcription-display">
+                        <h4><i class="fas fa-quote-left"></i> Your Speech</h4>
+                        <p>${transcription}</p>
                     </div>
-                    <div class="metric-card">
-                        <div class="metric-value">${analysis.confidence_score || 0}</div>
-                        <div class="metric-label">Confidence</div>
-                    </div>
-                    <div class="metric-card">
-                        <div class="metric-value">${analysis.filler_count || 0}</div>
-                        <div class="metric-label">Filler Words</div>
-                    </div>
-                    <div class="metric-card">
-                        <div class="metric-value">${analysis.repetition_score || 0}</div>
-                        <div class="metric-label">Clarity</div>
-                    </div>
-                </div>
 
-                <div class="feedback-section">
-                    <h4><i class="fas fa-lightbulb"></i> AI Feedback</h4>
-                    <div class="feedback-grid">
-                        <div class="feedback-item">
-                            <h5>Flow Assessment</h5>
-                            <p>${analysis.summary?.flow || 'No feedback available'}</p>
+                    <div class="analysis-grid">
+                        <div class="metric-card">
+                            <div class="metric-value">${analysis.flow_score || 0}</div>
+                            <div class="metric-label">Flow Score</div>
                         </div>
-                        <div class="feedback-item">
-                            <h5>Areas to Improve</h5>
-                            <p>${analysis.summary?.weakness || 'No feedback available'}</p>
+                        <div class="metric-card">
+                            <div class="metric-value">${analysis.confidence_score || 0}</div>
+                            <div class="metric-label">Confidence</div>
                         </div>
-                        <div class="feedback-item">
-                            <h5>Growth Potential</h5>
-                            <p>${analysis.summary?.growth_potential || 'No feedback available'}</p>
+                        <div class="metric-card">
+                            <div class="metric-value">${analysis.filler_count || 0}</div>
+                            <div class="metric-label">Filler Words</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value">${analysis.repetition_score || 0}</div>
+                            <div class="metric-label">Clarity</div>
                         </div>
                     </div>
-                    
-                    ${analysis.detailed_feedback ? `
-                        <div style="margin-top: 1rem; padding: 1rem; background: var(--bg-primary); border-radius: var(--radius);">
-                            <h5>Detailed Analysis</h5>
-                            <p>${analysis.detailed_feedback}</p>
+
+                    <div class="feedback-section">
+                        <h4><i class="fas fa-lightbulb"></i> AI Feedback</h4>
+                        <div class="feedback-grid">
+                            <div class="feedback-item">
+                                <h5>Flow Assessment</h5>
+                                <p>${analysis.summary?.flow || 'No feedback available'}</p>
+                            </div>
+                            <div class="feedback-item">
+                                <h5>Areas to Improve</h5>
+                                <p>${analysis.summary?.weakness || 'No feedback available'}</p>
+                            </div>
+                            <div class="feedback-item">
+                                <h5>Growth Potential</h5>
+                                <p>${analysis.summary?.growth_potential || 'No feedback available'}</p>
+                            </div>
                         </div>
-                    ` : ''}
+                        
+                        ${analysis.detailed_feedback ? `
+                            <div class="detailed-feedback">
+                                <h5>Detailed Analysis</h5>
+                                <p>${analysis.detailed_feedback}</p>
+                            </div>
+                        ` : ''}
+                    </div>
                 </div>
-
-                <div style="text-align: center; margin-top: 2rem;">
-                    <button class="btn btn-primary" onclick="location.reload()">
-                        <i class="fas fa-redo"></i> Try Again
-                    </button>
-                    <a href="/dashboard" class="btn btn-secondary">
-                        <i class="fas fa-home"></i> Back to Dashboard
-                    </a>
-                </div>
-            </div>
-        `;
-
-        resultsContainer.scrollIntoView({ behavior: 'smooth' });
+            `;
+            resultsContainer.style.display = 'block';
+            resultsContainer.scrollIntoView({ behavior: 'smooth' });
+        }
     }
 
     showError(message) {
-        // Create error flash message
-        const flashContainer = document.querySelector('.flash-messages') || 
-                             document.querySelector('.main-content');
-        
-        if (flashContainer) {
-            const errorDiv = document.createElement('div');
-            errorDiv.className = 'flash-message flash-error';
-            errorDiv.innerHTML = `
-                <span>${message}</span>
-                <button class="flash-close" onclick="this.parentElement.remove()">
-                    <i class="fas fa-times"></i>
-                </button>
+        // Create or update error display
+        let errorDiv = document.getElementById('error-message');
+        if (!errorDiv) {
+            errorDiv = document.createElement('div');
+            errorDiv.id = 'error-message';
+            errorDiv.className = 'error-message';
+            errorDiv.style.cssText = `
+                background: #ff4444;
+                color: white;
+                padding: 1rem;
+                border-radius: 8px;
+                margin: 1rem 0;
+                text-align: center;
+                font-weight: 500;
             `;
-            
-            if (flashContainer.classList.contains('flash-messages')) {
-                flashContainer.appendChild(errorDiv);
-            } else {
-                flashContainer.insertBefore(errorDiv, flashContainer.firstChild);
-            }
-
-            // Auto-remove after 5 seconds
-            setTimeout(() => errorDiv.remove(), 5000);
+            const container = document.querySelector('#recording-section') || document.body;
+            container.appendChild(errorDiv);
         }
+        errorDiv.textContent = message;
+        
+        // Auto-hide after 5 seconds
+        setTimeout(() => {
+            if (errorDiv && errorDiv.parentNode) {
+                errorDiv.remove();
+            }
+        }, 5000);
     }
 }
 
-// Quick Task Generator
+// Quick Task Generator class
 class QuickTaskGenerator {
     constructor() {
         this.generateBtn = document.getElementById('generate-task-btn');
+        this.initializeElements();
+    }
+
+    initializeElements() {
         if (this.generateBtn) {
-            this.generateBtn.addEventListener('click', () => this.generateNewTask());
+            this.generateBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                this.generateTask();
+            });
         }
     }
 
-    async generateNewTask() {
-        const taskContainer = document.getElementById('quick-task-container');
-        if (!taskContainer) return;
+    async generateTask() {
+        if (this.generateBtn.disabled) return;
 
         try {
             this.generateBtn.disabled = true;
             this.generateBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating...';
 
             const response = await fetch('/api/generate-quick-task');
-            const task = await response.json();
-
-            if (response.ok) {
-                this.displayTask(task);
-            } else {
-                throw new Error(task.error || 'Failed to generate task');
+            if (!response.ok) {
+                throw new Error('Failed to generate task');
             }
+
+            const task = await response.json();
+            this.displayTask(task);
+
+            // Update global variables for task context
+            window.currentTaskPrompt = task.sentence_starter;
+            window.isQuickTask = true;
+
         } catch (error) {
-            console.error('Task generation error:', error);
+            console.error('Generate task error:', error);
             this.showError('Failed to generate new task. Please try again.');
         } finally {
             this.generateBtn.disabled = false;
@@ -556,16 +574,63 @@ class QuickTaskGenerator {
     }
 }
 
+// Level page functionality
+function setupLevelPage() {
+    // Task selection handlers
+    const taskBtns = document.querySelectorAll('.task-select-btn');
+    taskBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const taskId = this.dataset.taskId;
+            const taskCard = this.closest('.task-card');
+            const prompt = taskCard.querySelector('.task-prompt').textContent.trim();
+            const example = taskCard.querySelector('.task-example')?.textContent.trim();
+            
+            // Set global variables
+            window.currentTaskId = taskId;
+            window.currentTaskPrompt = prompt;
+            window.isQuickTask = false;
+            
+            // Update UI
+            document.getElementById('task-prompt').textContent = prompt;
+            if (example) {
+                document.getElementById('task-example').textContent = example;
+                document.getElementById('task-example').style.display = 'block';
+            }
+            
+            // Show recording interface
+            document.getElementById('task-selection').style.display = 'none';
+            document.getElementById('selected-task').style.display = 'block';
+            document.getElementById('recording-section').style.display = 'block';
+        });
+    });
+}
+
+function backToTaskSelection() {
+    document.getElementById('task-selection').style.display = 'block';
+    document.getElementById('selected-task').style.display = 'none';
+    document.getElementById('recording-section').style.display = 'none';
+    document.getElementById('results-container').style.display = 'none';
+    
+    // Clear global variables
+    window.currentTaskId = null;
+    window.currentTaskPrompt = '';
+}
+
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize audio recorder if microphone button exists
     if (document.getElementById('microphone-btn')) {
-        new AudioRecorder();
+        window.audioRecorder = new AudioRecorder();
     }
 
     // Initialize quick task generator if on quick task page
     if (document.getElementById('generate-task-btn')) {
         new QuickTaskGenerator();
+    }
+
+    // Setup level page functionality
+    if (document.querySelector('.task-select-btn')) {
+        setupLevelPage();
     }
 
     // Auto-remove flash messages after 5 seconds

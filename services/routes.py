@@ -4,6 +4,7 @@ from werkzeug.utils import secure_filename
 import os
 import json
 import logging
+import time
 
 from managers.transcription_manager import TranscriptionManager
 from managers.ai_manager import AIManager
@@ -11,6 +12,10 @@ from managers.game_manager import GameManager
 from services.auth_routes import create_auth_routes
 
 logger = logging.getLogger(__name__)
+
+# Simple in-memory cache to prevent duplicate uploads
+upload_cache = {}
+CACHE_TIMEOUT = 30  # seconds
 
 def create_routes(app, db_manager, auth_manager):
     # Initialize managers
@@ -95,89 +100,116 @@ def create_routes(app, db_manager, auth_manager):
     @login_required
     def upload_audio():
         try:
+            # Create unique request identifier based on user, timestamp, and file size
+            user_id = current_user.id
+            current_time = int(time.time())
+            
             if 'audio' not in request.files:
                 return jsonify({'error': 'No audio file provided'}), 400
             
             audio_file = request.files['audio']
-            level_number = request.form.get('level_number', type=int)
-            task_id = request.form.get('task_id', type=int)
-            is_quick_task = request.form.get('is_quick_task', 'false').lower() == 'true'
-            task_prompt = request.form.get('task_prompt', '')
-            
             if audio_file.filename == '':
                 return jsonify({'error': 'No file selected'}), 400
             
-            # Generate timestamp-based filename
-            import time
-            timestamp = int(time.time())
+            # Get file size for duplicate detection
+            audio_file.seek(0, 2)  # Seek to end
+            file_size = audio_file.tell()
+            audio_file.seek(0)  # Reset to beginning
             
-            # Always save as WAV since we're recording in WAV format
-            filename = f"user_{current_user.id}_{timestamp}.wav"
-            filepath = os.path.join(current_app.config['UPLOAD_FOLDER'], filename)
+            # Create cache key to prevent duplicate uploads
+            cache_key = f"{user_id}_{file_size}_{current_time // 5}"  # 5-second window
             
-            # Save the audio file
-            audio_file.save(filepath)
+            # Check if this upload is already in progress
+            if cache_key in upload_cache:
+                logger.warning(f"Duplicate upload attempt detected for user {user_id}")
+                return jsonify({'error': 'Upload already in progress'}), 429
             
-            # Verify file was saved and has content
-            if not os.path.exists(filepath):
-                return jsonify({'error': 'Failed to save audio file'}), 500
+            # Mark this upload as in progress
+            upload_cache[cache_key] = current_time
             
-            file_size = os.path.getsize(filepath)
-            logger.info(f"Audio file saved: {filepath}, size: {file_size} bytes")
-            
-            # Check minimum file size 
-            if file_size < 1000:  # Less than 1KB is likely empty
-                logger.error(f"Audio file too small: {file_size} bytes")
-                return jsonify({'error': 'Audio file is too small. Please record a longer message.'}), 400
-            
-            # Get audio duration
-            audio_duration = transcription_manager.get_audio_duration(filepath)
-            
-            # Transcribe audio using simplified method
-            transcription, error = transcription_manager.transcribe_audio(filepath, 'audio/wav')
-            if error:
-                logger.error(f"Transcription failed: {error}")
-                return jsonify({'error': f'Transcription failed: {error}'}), 500
-            
-            if not transcription or len(transcription.strip()) < 3:
-                return jsonify({'error': 'Could not transcribe audio or speech too short. Please speak clearly for at least 3-5 seconds.'}), 400
-            
-            logger.info(f"Transcription successful: {transcription[:100]}...")
-            
-            # Analyze speech with AI
-            ai_feedback = ai_manager.analyze_speech(transcription, task_prompt)
-            
-            # Save response to database
-            response_id = game_manager.save_speech_response(
-                current_user.id, level_number, task_id, 
-                transcription, ai_feedback, audio_duration, is_quick_task
-            )
-            
-            # Update user statistics
-            auth_manager.update_user_statistics(current_user.id, ai_feedback)
-            
-            # Calculate and save level completion if not quick task
-            if not is_quick_task and level_number:
-                score = game_manager.calculate_level_score(ai_feedback)
-                if score >= 60:  # Passing score
-                    game_manager.complete_level(current_user.id, level_number, score)
-            
-            # Clean up audio file ONLY after successful processing
             try:
-                os.remove(filepath)
-                logger.info(f"Cleaned up audio file: {filepath}")
-            except Exception as cleanup_error:
-                logger.warning(f"Could not clean up file: {cleanup_error}")
-            
-            return jsonify({
-                'success': True,
-                'transcription': transcription,
-                'analysis': ai_feedback,
-                'response_id': response_id
-            })
-            
+                level_number = request.form.get('level_number', type=int)
+                task_id = request.form.get('task_id', type=int)
+                is_quick_task = request.form.get('is_quick_task', 'false').lower() == 'true'
+                task_prompt = request.form.get('task_prompt', '')
+                
+                # Clean up old cache entries
+                cleanup_cache()
+                
+                # Generate timestamp-based filename
+                timestamp = int(time.time())
+                filename = f"user_{user_id}_{timestamp}.wav"
+                filepath = os.path.join(current_app.config['UPLOAD_FOLDER'], filename)
+                
+                # Save the audio file
+                audio_file.save(filepath)
+                
+                # Verify file was saved and has content
+                if not os.path.exists(filepath):
+                    return jsonify({'error': 'Failed to save audio file'}), 500
+                
+                actual_file_size = os.path.getsize(filepath)
+                logger.info(f"Audio file saved: {filepath}, size: {actual_file_size} bytes")
+                
+                # Check minimum file size 
+                if actual_file_size < 1000:  # Less than 1KB is likely empty
+                    logger.error(f"Audio file too small: {actual_file_size} bytes")
+                    cleanup_file(filepath)
+                    return jsonify({'error': 'Audio file is too small. Please record a longer message.'}), 400
+                
+                # Get audio duration (this does NOT call transcription)
+                audio_duration = transcription_manager.get_audio_duration(filepath)
+                
+                # Transcribe audio using simplified method
+                transcription, error = transcription_manager.transcribe_audio(filepath, 'audio/wav')
+                if error:
+                    logger.error(f"Transcription failed: {error}")
+                    cleanup_file(filepath)
+                    return jsonify({'error': f'Transcription failed: {error}'}), 500
+                
+                if not transcription or len(transcription.strip()) < 3:
+                    cleanup_file(filepath)
+                    return jsonify({'error': 'Could not transcribe audio or speech too short. Please speak clearly for at least 3-5 seconds.'}), 400
+                
+                logger.info(f"Transcription successful: {transcription[:100]}...")
+                
+                # Analyze speech with AI
+                ai_feedback = ai_manager.analyze_speech(transcription, task_prompt)
+                
+                # Save response to database
+                response_id = game_manager.save_speech_response(
+                    user_id, level_number, task_id, 
+                    transcription, ai_feedback, audio_duration, is_quick_task
+                )
+                
+                # Update user statistics
+                auth_manager.update_user_statistics(user_id, ai_feedback)
+                
+                # Calculate and save level completion if not quick task
+                if not is_quick_task and level_number:
+                    score = game_manager.calculate_level_score(ai_feedback)
+                    if score >= 60:  # Passing score
+                        game_manager.complete_level(user_id, level_number, score)
+                
+                # Clean up audio file ONLY after successful processing
+                cleanup_file(filepath)
+                
+                return jsonify({
+                    'success': True,
+                    'transcription': transcription,
+                    'analysis': ai_feedback,
+                    'response_id': response_id
+                })
+                
+            finally:
+                # Always remove from cache when done (success or failure)
+                upload_cache.pop(cache_key, None)
+                
         except Exception as e:
             logger.error(f"Upload audio error: {e}")
+            # Clean up cache entry on error
+            if 'cache_key' in locals():
+                upload_cache.pop(cache_key, None)
             return jsonify({'error': 'Processing failed. Please try again.'}), 500
     
     @app.route('/api/generate-quick-task')
@@ -228,3 +260,24 @@ def create_routes(app, db_manager, auth_manager):
             <p>Something went wrong. Please try again later.</p>
             <a href="/">Go Home</a>
             ''', 500
+
+def cleanup_file(filepath):
+    """Clean up uploaded file"""
+    try:
+        if os.path.exists(filepath):
+            os.remove(filepath)
+            logger.info(f"Cleaned up audio file: {filepath}")
+    except Exception as cleanup_error:
+        logger.warning(f"Could not clean up file: {cleanup_error}")
+
+def cleanup_cache():
+    """Remove old entries from upload cache"""
+    current_time = int(time.time())
+    keys_to_remove = []
+    
+    for key, timestamp in upload_cache.items():
+        if current_time - timestamp > CACHE_TIMEOUT:
+            keys_to_remove.append(key)
+    
+    for key in keys_to_remove:
+        upload_cache.pop(key, None)

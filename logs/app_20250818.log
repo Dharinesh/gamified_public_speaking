@@ -984,3 +984,614 @@
 2025-08-18 05:18:40,671 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:18:40] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
 2025-08-18 05:18:40,980 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:18:40] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
 2025-08-18 05:18:41,324 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:18:41] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:23:14,466 [INFO] managers.database_manager: Database connection established
+2025-08-18 05:23:14,472 [INFO] managers.database_manager: Database tables created/verified
+2025-08-18 05:23:14,514 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.187:5000
+2025-08-18 05:23:14,514 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2025-08-18 05:23:14,516 [INFO] werkzeug:  * Restarting with stat
+2025-08-18 05:23:15,733 [INFO] managers.database_manager: Database connection established
+2025-08-18 05:23:15,741 [INFO] managers.database_manager: Database tables created/verified
+2025-08-18 05:23:15,776 [WARNING] werkzeug:  * Debugger is active!
+2025-08-18 05:23:15,779 [INFO] werkzeug:  * Debugger PIN: 281-547-217
+2025-08-18 05:23:17,769 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:23:17] "[32mGET / HTTP/1.1[0m" 302 -
+2025-08-18 05:23:17,793 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:23:17] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 05:23:18,033 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:23:18] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:23:18,121 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:23:18] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:23:19,036 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:23:19] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:23:34,441 [ERROR] services.routes: Profile error: 'max' is undefined
+2025-08-18 05:23:34,441 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:23:34] "[32mGET /profile HTTP/1.1[0m" 302 -
+2025-08-18 05:23:34,725 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:23:34] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 05:23:35,052 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:23:35] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:23:35,053 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:23:35] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:23:35,317 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:23:35] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:23:45,071 [ERROR] services.routes: Profile error: 'max' is undefined
+2025-08-18 05:23:45,072 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:23:45] "[32mGET /profile HTTP/1.1[0m" 302 -
+2025-08-18 05:23:45,380 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:23:45] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 05:23:45,698 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:23:45] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:23:45,699 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:23:45] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:23:45,958 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:23:45] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:23:48,041 [ERROR] services.routes: Profile error: 'max' is undefined
+2025-08-18 05:23:48,042 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:23:48] "[32mGET /profile HTTP/1.1[0m" 302 -
+2025-08-18 05:23:48,342 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:23:48] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 05:23:48,662 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:23:48] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:23:48,663 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:23:48] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:23:48,911 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:23:48] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:23:50,023 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:23:50] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 05:23:50,324 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:23:50] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:23:50,340 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:23:50] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:23:50,661 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:23:50] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:23:55,581 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:23:55] "GET /level/1 HTTP/1.1" 200 -
+2025-08-18 05:23:55,879 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:23:55] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:23:55,910 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:23:55] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:23:56,236 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:23:56] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:24:05,058 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:24:05] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:24:07,293 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:24:07] "GET /level/1 HTTP/1.1" 200 -
+2025-08-18 05:24:07,313 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:24:07] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:24:07,549 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:24:07] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:24:07,870 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:24:07] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:24:21,599 [INFO] services.routes: Audio file saved: static/audio\user_1_1755474861.wav, size: 729132 bytes
+2025-08-18 05:24:21,610 [INFO] managers.transcription_manager: Processing audio file: static/audio\user_1_1755474861.wav, size: 729132 bytes
+2025-08-18 05:24:21,610 [INFO] managers.transcription_manager: Converting WAV to MP3 for AssemblyAI compatibility...
+2025-08-18 05:24:21,610 [INFO] managers.transcription_manager: Converting static/audio\user_1_1755474861.wav to static/audio\user_1_1755474861.mp3
+2025-08-18 05:24:21,765 [INFO] managers.transcription_manager: Successfully converted to MP3: 133372 bytes
+2025-08-18 05:24:21,765 [INFO] managers.transcription_manager: Uploading audio file to AssemblyAI...
+2025-08-18 05:24:21,920 [INFO] services.routes: Audio file saved: static/audio\user_1_1755474861.wav, size: 729132 bytes
+2025-08-18 05:24:21,928 [INFO] managers.transcription_manager: Processing audio file: static/audio\user_1_1755474861.wav, size: 729132 bytes
+2025-08-18 05:24:21,928 [INFO] managers.transcription_manager: Converting WAV to MP3 for AssemblyAI compatibility...
+2025-08-18 05:24:21,928 [INFO] managers.transcription_manager: Converting static/audio\user_1_1755474861.wav to static/audio\user_1_1755474861.mp3
+2025-08-18 05:24:22,075 [INFO] managers.transcription_manager: Successfully converted to MP3: 133372 bytes
+2025-08-18 05:24:22,075 [INFO] managers.transcription_manager: Uploading audio file to AssemblyAI...
+2025-08-18 05:24:23,333 [INFO] managers.transcription_manager: Audio uploaded successfully!
+2025-08-18 05:24:23,335 [INFO] managers.transcription_manager: Starting transcription...
+2025-08-18 05:24:23,644 [INFO] managers.transcription_manager: Audio uploaded successfully!
+2025-08-18 05:24:23,645 [INFO] managers.transcription_manager: Starting transcription...
+2025-08-18 05:24:24,181 [INFO] managers.transcription_manager: Transcription started with ID: de9693e2-4e54-4f5f-bbc7-60dca4ddf509
+2025-08-18 05:24:24,182 [INFO] managers.transcription_manager: Waiting for transcription completion
+2025-08-18 05:24:24,435 [INFO] managers.transcription_manager: Transcription started with ID: fe3d1b59-ae6b-487a-ab2b-ccebe23e645b
+2025-08-18 05:24:24,436 [INFO] managers.transcription_manager: Waiting for transcription completion
+2025-08-18 05:24:24,967 [INFO] managers.transcription_manager: Processing...
+2025-08-18 05:24:25,230 [INFO] managers.transcription_manager: Processing...
+2025-08-18 05:24:28,811 [INFO] managers.transcription_manager: Transcription completed successfully
+2025-08-18 05:24:28,812 [INFO] managers.transcription_manager: Cleaned up temporary file: static/audio\user_1_1755474861.mp3
+2025-08-18 05:24:28,812 [INFO] services.routes: Transcription successful: Learning is like riding a bicycle. Because once you get the hang of it, you never forget....
+2025-08-18 05:24:29,068 [INFO] managers.transcription_manager: Transcription completed successfully
+2025-08-18 05:24:29,069 [INFO] services.routes: Transcription successful: Learning is like riding a bicycle. Because once you get the hang of it, you never forget....
+2025-08-18 05:24:44,600 [INFO] managers.ai_manager: Speech analysis completed successfully
+2025-08-18 05:24:44,603 [INFO] managers.game_manager: Speech response saved with ID: 3
+2025-08-18 05:24:44,615 [INFO] managers.game_manager: Level 1 completed for user 1
+2025-08-18 05:24:44,616 [INFO] services.routes: Cleaned up audio file: static/audio\user_1_1755474861.wav
+2025-08-18 05:24:44,617 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:24:44] "POST /api/upload-audio HTTP/1.1" 200 -
+2025-08-18 05:24:47,631 [INFO] managers.ai_manager: Speech analysis completed successfully
+2025-08-18 05:24:47,635 [INFO] managers.game_manager: Speech response saved with ID: 4
+2025-08-18 05:24:47,643 [INFO] managers.game_manager: Level 1 completed for user 1
+2025-08-18 05:24:47,644 [WARNING] services.routes: Could not clean up file: [WinError 2] The system cannot find the file specified: 'static/audio\\user_1_1755474861.wav'
+2025-08-18 05:24:47,645 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:24:47] "POST /api/upload-audio HTTP/1.1" 200 -
+2025-08-18 05:25:36,026 [ERROR] managers.auth_manager: Get user error: 'NoneType' object has no attribute 'settimeout'
+2025-08-18 05:25:36,026 [ERROR] managers.auth_manager: Get user error: Packet sequence number wrong - got 1 expected 1
+2025-08-18 05:25:36,027 [ERROR] managers.auth_manager: Get user error: (0, '')
+2025-08-18 05:25:36,027 [ERROR] managers.auth_manager: Get user error: (0, '')
+2025-08-18 05:25:36,027 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:25:36] "[32mPOST /api/upload-audio HTTP/1.1[0m" 302 -
+2025-08-18 05:25:36,028 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:25:36] "[32mPOST /api/upload-audio HTTP/1.1[0m" 302 -
+2025-08-18 05:25:36,032 [ERROR] managers.auth_manager: Get user error: (0, '')
+2025-08-18 05:25:36,033 [ERROR] managers.auth_manager: Get user error: (0, '')
+2025-08-18 05:25:36,034 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:25:36] "[32mPOST /api/upload-audio HTTP/1.1[0m" 302 -
+2025-08-18 05:25:36,274 [ERROR] managers.auth_manager: Get user error: (0, '')
+2025-08-18 05:25:36,275 [ERROR] managers.auth_manager: Get user error: (0, '')
+2025-08-18 05:25:36,278 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:25:36] "GET /auth/login?next=/api/upload-audio HTTP/1.1" 200 -
+2025-08-18 05:25:36,350 [ERROR] managers.auth_manager: Get user error: (0, '')
+2025-08-18 05:25:36,351 [ERROR] managers.auth_manager: Get user error: (0, '')
+2025-08-18 05:25:36,351 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:25:36] "GET /auth/login?next=/api/upload-audio HTTP/1.1" 200 -
+2025-08-18 05:25:36,588 [ERROR] managers.auth_manager: Get user error: (0, '')
+2025-08-18 05:25:36,588 [ERROR] managers.auth_manager: Get user error: (0, '')
+2025-08-18 05:25:36,589 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:25:36] "GET /auth/login?next=/api/upload-audio HTTP/1.1" 200 -
+2025-08-18 05:26:10,547 [ERROR] managers.auth_manager: Get user error: (0, '')
+2025-08-18 05:26:10,547 [ERROR] managers.auth_manager: Get user error: (0, '')
+2025-08-18 05:26:10,548 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:26:10] "[32mPOST /api/upload-audio HTTP/1.1[0m" 302 -
+2025-08-18 05:26:10,854 [ERROR] managers.auth_manager: Get user error: (0, '')
+2025-08-18 05:26:10,854 [ERROR] managers.auth_manager: Get user error: (0, '')
+2025-08-18 05:26:10,855 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:26:10] "[32mPOST /api/upload-audio HTTP/1.1[0m" 302 -
+2025-08-18 05:26:10,862 [ERROR] managers.auth_manager: Get user error: (0, '')
+2025-08-18 05:26:10,864 [ERROR] managers.auth_manager: Get user error: (0, '')
+2025-08-18 05:26:10,864 [ERROR] managers.auth_manager: Get user error: (0, '')
+2025-08-18 05:26:10,865 [ERROR] managers.auth_manager: Get user error: (0, '')
+2025-08-18 05:26:10,866 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:26:10] "[32mPOST /api/upload-audio HTTP/1.1[0m" 302 -
+2025-08-18 05:26:10,867 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:26:10] "GET /auth/login?next=/api/upload-audio HTTP/1.1" 200 -
+2025-08-18 05:26:11,173 [ERROR] managers.auth_manager: Get user error: (0, '')
+2025-08-18 05:26:11,174 [ERROR] managers.auth_manager: Get user error: (0, '')
+2025-08-18 05:26:11,175 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:26:11] "GET /auth/login?next=/api/upload-audio HTTP/1.1" 200 -
+2025-08-18 05:26:11,485 [ERROR] managers.auth_manager: Get user error: (0, '')
+2025-08-18 05:26:11,485 [ERROR] managers.auth_manager: Get user error: (0, '')
+2025-08-18 05:26:11,486 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:26:11] "GET /auth/login?next=/api/upload-audio HTTP/1.1" 200 -
+2025-08-18 05:26:20,247 [ERROR] managers.auth_manager: Get user error: (0, '')
+2025-08-18 05:26:20,247 [ERROR] managers.auth_manager: Get user error: (0, '')
+2025-08-18 05:26:20,248 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:26:20] "[32mGET /dashboard HTTP/1.1[0m" 302 -
+2025-08-18 05:26:20,326 [ERROR] managers.auth_manager: Get user error: (0, '')
+2025-08-18 05:26:20,326 [ERROR] managers.auth_manager: Get user error: (0, '')
+2025-08-18 05:26:20,327 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:26:20] "GET /auth/login?next=/dashboard HTTP/1.1" 200 -
+2025-08-18 05:26:20,515 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:26:20] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:26:20,658 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:26:20] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:26:21,053 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:26:21] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:26:29,658 [ERROR] managers.auth_manager: Get user error: (0, '')
+2025-08-18 05:26:29,658 [ERROR] managers.auth_manager: Get user error: (0, '')
+2025-08-18 05:26:29,660 [ERROR] managers.auth_manager: Authentication error: (0, '')
+2025-08-18 05:26:29,660 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:26:29] "POST /auth/login HTTP/1.1" 200 -
+2025-08-18 05:26:29,682 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:26:29] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:26:29,925 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:26:29] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:26:30,250 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:26:30] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:28:18,063 [INFO] managers.database_manager: Database connection established
+2025-08-18 05:28:18,070 [INFO] managers.database_manager: Database tables created/verified
+2025-08-18 05:28:18,119 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.187:5000
+2025-08-18 05:28:18,119 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2025-08-18 05:28:18,121 [INFO] werkzeug:  * Restarting with stat
+2025-08-18 05:28:19,330 [INFO] managers.database_manager: Database connection established
+2025-08-18 05:28:19,338 [INFO] managers.database_manager: Database tables created/verified
+2025-08-18 05:28:19,377 [WARNING] werkzeug:  * Debugger is active!
+2025-08-18 05:28:19,380 [INFO] werkzeug:  * Debugger PIN: 281-547-217
+2025-08-18 05:28:21,693 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:28:21] "[32mGET / HTTP/1.1[0m" 302 -
+2025-08-18 05:28:21,719 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:28:21] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 05:28:21,961 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:28:21] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:28:22,039 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:28:22] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:28:22,996 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:28:22] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:28:27,893 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:28:27] "GET /level/1 HTTP/1.1" 200 -
+2025-08-18 05:28:28,182 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:28:28] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:28:28,227 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:28:28] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:28:28,557 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:28:28] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:28:33,053 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:28:33] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:28:36,504 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:28:36] "GET /level/1 HTTP/1.1" 200 -
+2025-08-18 05:28:36,526 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:28:36] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:28:36,756 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:28:36] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:28:37,071 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:28:37] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:28:43,607 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:28:43] "GET /level/2 HTTP/1.1" 200 -
+2025-08-18 05:28:43,914 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:28:43] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:28:43,929 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:28:43] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:28:44,256 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:28:44] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:28:46,066 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:28:46] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:28:50,282 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:28:50] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 05:28:50,306 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:28:50] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:28:50,527 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:28:50] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:28:50,849 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:28:50] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:28:53,735 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:28:53] "GET /level/1 HTTP/1.1" 200 -
+2025-08-18 05:28:54,034 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:28:54] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:28:54,065 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:28:54] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:28:54,387 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:28:54] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:28:55,773 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:28:55] "GET /level/2 HTTP/1.1" 200 -
+2025-08-18 05:28:56,073 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:28:56] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:28:56,104 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:28:56] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:28:56,419 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:28:56] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:29:18,993 [INFO] services.routes: Audio file saved: static/audio\user_1_1755475158.wav, size: 1712172 bytes
+2025-08-18 05:29:19,008 [INFO] managers.transcription_manager: Processing audio file: static/audio\user_1_1755475158.wav, size: 1712172 bytes
+2025-08-18 05:29:19,009 [INFO] managers.transcription_manager: Converting WAV to MP3 for AssemblyAI compatibility...
+2025-08-18 05:29:19,009 [INFO] managers.transcription_manager: Converting static/audio\user_1_1755475158.wav to static/audio\user_1_1755475158.mp3
+2025-08-18 05:29:19,240 [INFO] managers.transcription_manager: Successfully converted to MP3: 311840 bytes
+2025-08-18 05:29:19,240 [INFO] managers.transcription_manager: Uploading audio file to AssemblyAI...
+2025-08-18 05:29:19,324 [INFO] services.routes: Audio file saved: static/audio\user_1_1755475159.wav, size: 1712172 bytes
+2025-08-18 05:29:19,333 [INFO] managers.transcription_manager: Processing audio file: static/audio\user_1_1755475159.wav, size: 1712172 bytes
+2025-08-18 05:29:19,333 [INFO] managers.transcription_manager: Converting WAV to MP3 for AssemblyAI compatibility...
+2025-08-18 05:29:19,333 [INFO] managers.transcription_manager: Converting static/audio\user_1_1755475159.wav to static/audio\user_1_1755475159.mp3
+2025-08-18 05:29:19,540 [INFO] managers.transcription_manager: Successfully converted to MP3: 311840 bytes
+2025-08-18 05:29:19,540 [INFO] managers.transcription_manager: Uploading audio file to AssemblyAI...
+2025-08-18 05:29:21,092 [INFO] managers.transcription_manager: Audio uploaded successfully!
+2025-08-18 05:29:21,093 [INFO] managers.transcription_manager: Starting transcription...
+2025-08-18 05:29:21,415 [INFO] managers.transcription_manager: Audio uploaded successfully!
+2025-08-18 05:29:21,416 [INFO] managers.transcription_manager: Starting transcription...
+2025-08-18 05:29:21,941 [INFO] managers.transcription_manager: Transcription started with ID: 7edf7779-c717-4fdb-8b73-e7946ecfa9d3
+2025-08-18 05:29:21,942 [INFO] managers.transcription_manager: Waiting for transcription completion
+2025-08-18 05:29:22,229 [INFO] managers.transcription_manager: Transcription started with ID: ecd57858-d717-4482-99a0-c82073371c1c
+2025-08-18 05:29:22,229 [INFO] managers.transcription_manager: Waiting for transcription completion
+2025-08-18 05:29:22,716 [INFO] managers.transcription_manager: Processing...
+2025-08-18 05:29:23,159 [INFO] managers.transcription_manager: Processing...
+2025-08-18 05:29:26,528 [INFO] managers.transcription_manager: Transcription completed successfully
+2025-08-18 05:29:26,528 [INFO] managers.transcription_manager: Cleaned up temporary file: static/audio\user_1_1755475158.mp3
+2025-08-18 05:29:26,528 [INFO] services.routes: Transcription successful: One day I overcame a challenge when I was riding a bicycle. I was caught between two leaves stuck in...
+2025-08-18 05:29:26,976 [INFO] managers.transcription_manager: Transcription completed successfully
+2025-08-18 05:29:26,978 [INFO] managers.transcription_manager: Cleaned up temporary file: static/audio\user_1_1755475159.mp3
+2025-08-18 05:29:26,978 [INFO] services.routes: Transcription successful: One day I overcame a challenge when I was riding a bicycle. I was caught between two leaves stuck in...
+2025-08-18 05:29:45,466 [INFO] managers.ai_manager: Speech analysis completed successfully
+2025-08-18 05:29:45,469 [INFO] managers.game_manager: Speech response saved with ID: 5
+2025-08-18 05:29:45,477 [INFO] managers.game_manager: Level 2 completed for user 1
+2025-08-18 05:29:45,479 [INFO] services.routes: Cleaned up audio file: static/audio\user_1_1755475159.wav
+2025-08-18 05:29:45,480 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:29:45] "POST /api/upload-audio HTTP/1.1" 200 -
+2025-08-18 05:29:45,656 [INFO] managers.ai_manager: Speech analysis completed successfully
+2025-08-18 05:29:45,659 [INFO] managers.game_manager: Speech response saved with ID: 6
+2025-08-18 05:29:45,668 [INFO] managers.game_manager: Level 2 completed for user 1
+2025-08-18 05:29:45,669 [INFO] services.routes: Cleaned up audio file: static/audio\user_1_1755475158.wav
+2025-08-18 05:29:45,670 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:29:45] "POST /api/upload-audio HTTP/1.1" 200 -
+2025-08-18 05:29:56,712 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:29:56] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 05:29:56,792 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:29:56] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:29:56,965 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:29:56] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:29:57,041 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:29:57] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:29:59,903 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:29:59] "GET /level/2 HTTP/1.1" 200 -
+2025-08-18 05:30:00,212 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:30:00] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:30:00,229 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:30:00] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:30:00,553 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:30:00] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:30:08,228 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:30:08] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 05:30:08,530 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:30:08] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:30:08,562 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:30:08] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:30:08,879 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:30:08] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:35:40,098 [INFO] managers.database_manager: Database connection established
+2025-08-18 05:35:40,106 [INFO] managers.database_manager: Database tables created/verified
+2025-08-18 05:35:40,149 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.187:5000
+2025-08-18 05:35:40,149 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2025-08-18 05:35:40,151 [INFO] werkzeug:  * Restarting with stat
+2025-08-18 05:35:41,338 [INFO] managers.database_manager: Database connection established
+2025-08-18 05:35:41,345 [INFO] managers.database_manager: Database tables created/verified
+2025-08-18 05:35:41,378 [WARNING] werkzeug:  * Debugger is active!
+2025-08-18 05:35:41,380 [INFO] werkzeug:  * Debugger PIN: 281-547-217
+2025-08-18 05:35:43,105 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:35:43] "[32mGET / HTTP/1.1[0m" 302 -
+2025-08-18 05:35:43,130 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:35:43] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 05:35:43,376 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:35:43] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:35:43,475 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:35:43] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-08-18 05:35:44,379 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:35:44] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:35:46,601 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:35:46] "[32mGET /auth/logout HTTP/1.1[0m" 302 -
+2025-08-18 05:35:46,913 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:35:46] "GET /auth/login HTTP/1.1" 200 -
+2025-08-18 05:35:47,239 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:35:47] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:35:47,240 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:35:47] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:35:47,501 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:35:47] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:35:49,120 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:35:49] "GET /auth/register HTTP/1.1" 200 -
+2025-08-18 05:35:49,419 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:35:49] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:35:49,451 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:35:49] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:35:49,776 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:35:49] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:36:03,226 [INFO] managers.auth_manager: New user created: def
+2025-08-18 05:36:03,227 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:36:03] "[32mPOST /auth/register HTTP/1.1[0m" 302 -
+2025-08-18 05:36:03,414 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:36:03] "GET /auth/login HTTP/1.1" 200 -
+2025-08-18 05:36:03,745 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:36:03] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:36:03,746 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:36:03] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:36:03,994 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:36:03] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:36:10,703 [INFO] managers.auth_manager: User authenticated: def
+2025-08-18 05:36:10,704 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:36:10] "[32mPOST /auth/login HTTP/1.1[0m" 302 -
+2025-08-18 05:36:10,901 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:36:10] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 05:36:11,242 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:36:11] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:36:11,243 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:36:11] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:36:11,481 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:36:11] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:36:25,260 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:36:25] "GET /profile HTTP/1.1" 200 -
+2025-08-18 05:36:25,550 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:36:25] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:36:25,583 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:36:25] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:36:25,905 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:36:25] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:36:32,738 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:36:32] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 05:36:33,040 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:36:33] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:36:33,071 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:36:33] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:36:33,396 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:36:33] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:36:35,307 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:36:35] "GET /level/1 HTTP/1.1" 200 -
+2025-08-18 05:36:35,602 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:36:35] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:36:35,632 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:36:35] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:36:35,951 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:36:35] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:36:51,335 [INFO] services.routes: Audio file saved: static/audio\user_2_1755475611.wav, size: 720940 bytes
+2025-08-18 05:36:51,346 [INFO] managers.transcription_manager: Processing audio file: static/audio\user_2_1755475611.wav, size: 720940 bytes
+2025-08-18 05:36:51,346 [INFO] managers.transcription_manager: Converting WAV to MP3 for AssemblyAI compatibility...
+2025-08-18 05:36:51,346 [INFO] managers.transcription_manager: Converting static/audio\user_2_1755475611.wav to static/audio\user_2_1755475611.mp3
+2025-08-18 05:36:51,499 [INFO] managers.transcription_manager: Successfully converted to MP3: 131700 bytes
+2025-08-18 05:36:51,499 [INFO] managers.transcription_manager: Uploading audio file to AssemblyAI...
+2025-08-18 05:36:53,107 [INFO] managers.transcription_manager: Audio uploaded successfully!
+2025-08-18 05:36:53,107 [INFO] managers.transcription_manager: Starting transcription...
+2025-08-18 05:36:53,952 [INFO] managers.transcription_manager: Transcription started with ID: abb0e0ec-813d-48e9-831a-022e06a84bc5
+2025-08-18 05:36:53,952 [INFO] managers.transcription_manager: Waiting for transcription completion
+2025-08-18 05:36:54,724 [INFO] managers.transcription_manager: Processing...
+2025-08-18 05:36:58,613 [INFO] managers.transcription_manager: Transcription completed successfully
+2025-08-18 05:36:58,615 [INFO] managers.transcription_manager: Cleaned up temporary file: static/audio\user_2_1755475611.mp3
+2025-08-18 05:36:58,615 [INFO] services.routes: Transcription successful: Friendship is like a....
+2025-08-18 05:37:11,394 [INFO] managers.ai_manager: Speech analysis completed successfully
+2025-08-18 05:37:11,397 [INFO] managers.game_manager: Speech response saved with ID: 7
+2025-08-18 05:37:11,400 [INFO] services.routes: Cleaned up audio file: static/audio\user_2_1755475611.wav
+2025-08-18 05:37:11,401 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:37:11] "POST /api/upload-audio HTTP/1.1" 200 -
+2025-08-18 05:38:09,012 [INFO] services.routes: Audio file saved: static/audio\user_2_1755475689.wav, size: 819244 bytes
+2025-08-18 05:38:09,020 [INFO] managers.transcription_manager: Processing audio file: static/audio\user_2_1755475689.wav, size: 819244 bytes
+2025-08-18 05:38:09,021 [INFO] managers.transcription_manager: Converting WAV to MP3 for AssemblyAI compatibility...
+2025-08-18 05:38:09,021 [INFO] managers.transcription_manager: Converting static/audio\user_2_1755475689.wav to static/audio\user_2_1755475689.mp3
+2025-08-18 05:38:09,176 [INFO] managers.transcription_manager: Successfully converted to MP3: 149672 bytes
+2025-08-18 05:38:09,177 [INFO] managers.transcription_manager: Uploading audio file to AssemblyAI...
+2025-08-18 05:38:10,887 [INFO] managers.transcription_manager: Audio uploaded successfully!
+2025-08-18 05:38:10,887 [INFO] managers.transcription_manager: Starting transcription...
+2025-08-18 05:38:11,730 [INFO] managers.transcription_manager: Transcription started with ID: 9c9babcc-2d15-4b78-b805-843f94c5ecd8
+2025-08-18 05:38:11,731 [INFO] managers.transcription_manager: Waiting for transcription completion
+2025-08-18 05:38:12,728 [INFO] managers.transcription_manager: Processing...
+2025-08-18 05:38:16,577 [INFO] managers.transcription_manager: Transcription completed successfully
+2025-08-18 05:38:16,578 [INFO] managers.transcription_manager: Cleaned up temporary file: static/audio\user_2_1755475689.mp3
+2025-08-18 05:38:16,579 [INFO] services.routes: Transcription successful: Friendship is naked garden because it needs constant care to flesh. Mhm....
+2025-08-18 05:38:30,035 [INFO] managers.ai_manager: Speech analysis completed successfully
+2025-08-18 05:38:30,041 [INFO] managers.game_manager: Speech response saved with ID: 8
+2025-08-18 05:38:30,044 [INFO] services.routes: Cleaned up audio file: static/audio\user_2_1755475689.wav
+2025-08-18 05:38:30,045 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:38:30] "POST /api/upload-audio HTTP/1.1" 200 -
+2025-08-18 05:40:04,641 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:40:04] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 05:40:04,744 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:40:04] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:40:04,901 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:40:04] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:40:05,385 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:40:05] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:40:20,388 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:40:20] "[32mGET /auth/logout HTTP/1.1[0m" 302 -
+2025-08-18 05:40:20,446 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:40:20] "GET /auth/login HTTP/1.1" 200 -
+2025-08-18 05:40:20,653 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:40:20] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:40:20,777 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:40:20] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:40:20,791 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:40:20] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:41:19,126 [INFO] managers.auth_manager: User authenticated: def
+2025-08-18 05:41:19,127 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:41:19] "[32mPOST /auth/login HTTP/1.1[0m" 302 -
+2025-08-18 05:41:19,136 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:41:19] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 05:41:19,273 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:41:19] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:41:19,477 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:41:19] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:41:19,798 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:41:19] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:41:33,226 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:41:33] "GET /level/1 HTTP/1.1" 200 -
+2025-08-18 05:41:33,533 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:41:33] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:41:33,565 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:41:33] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:41:33,889 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:41:33] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:41:48,106 [INFO] services.routes: Audio file saved: static/audio\user_2_1755475908.wav, size: 671788 bytes
+2025-08-18 05:41:48,118 [INFO] managers.transcription_manager: Processing audio file: static/audio\user_2_1755475908.wav, size: 671788 bytes
+2025-08-18 05:41:48,118 [INFO] managers.transcription_manager: Converting WAV to MP3 for AssemblyAI compatibility...
+2025-08-18 05:41:48,119 [INFO] managers.transcription_manager: Converting static/audio\user_2_1755475908.wav to static/audio\user_2_1755475908.mp3
+2025-08-18 05:41:48,279 [INFO] managers.transcription_manager: Successfully converted to MP3: 122923 bytes
+2025-08-18 05:41:48,279 [INFO] managers.transcription_manager: Uploading audio file to AssemblyAI...
+2025-08-18 05:41:49,870 [INFO] managers.transcription_manager: Audio uploaded successfully!
+2025-08-18 05:41:49,871 [INFO] managers.transcription_manager: Starting transcription...
+2025-08-18 05:41:50,720 [INFO] managers.transcription_manager: Transcription started with ID: f22e7ed4-b3e1-4303-a1a6-78771bca1f56
+2025-08-18 05:41:50,720 [INFO] managers.transcription_manager: Waiting for transcription completion
+2025-08-18 05:41:51,545 [INFO] managers.transcription_manager: Processing...
+2025-08-18 05:41:55,387 [INFO] managers.transcription_manager: Transcription completed successfully
+2025-08-18 05:41:55,387 [INFO] managers.transcription_manager: Cleaned up temporary file: static/audio\user_2_1755475908.mp3
+2025-08-18 05:41:55,387 [INFO] services.routes: Transcription successful: Learning is like riding a bicycle. Because once you get the hang of it, you never forget....
+2025-08-18 05:42:10,465 [INFO] managers.ai_manager: Speech analysis completed successfully
+2025-08-18 05:42:10,471 [INFO] managers.game_manager: Speech response saved with ID: 9
+2025-08-18 05:42:10,476 [INFO] services.routes: Cleaned up audio file: static/audio\user_2_1755475908.wav
+2025-08-18 05:42:10,477 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:42:10] "POST /api/upload-audio HTTP/1.1" 200 -
+2025-08-18 05:43:04,238 [INFO] services.routes: Audio file saved: static/audio\user_2_1755475984.wav, size: 778284 bytes
+2025-08-18 05:43:04,248 [INFO] managers.transcription_manager: Processing audio file: static/audio\user_2_1755475984.wav, size: 778284 bytes
+2025-08-18 05:43:04,248 [INFO] managers.transcription_manager: Converting WAV to MP3 for AssemblyAI compatibility...
+2025-08-18 05:43:04,248 [INFO] managers.transcription_manager: Converting static/audio\user_2_1755475984.wav to static/audio\user_2_1755475984.mp3
+2025-08-18 05:43:04,413 [INFO] managers.transcription_manager: Successfully converted to MP3: 142149 bytes
+2025-08-18 05:43:04,413 [INFO] managers.transcription_manager: Uploading audio file to AssemblyAI...
+2025-08-18 05:43:05,980 [INFO] managers.transcription_manager: Audio uploaded successfully!
+2025-08-18 05:43:05,981 [INFO] managers.transcription_manager: Starting transcription...
+2025-08-18 05:43:06,795 [INFO] managers.transcription_manager: Transcription started with ID: e23ff70e-b884-4d64-9c41-0f78fe45dbd2
+2025-08-18 05:43:06,796 [INFO] managers.transcription_manager: Waiting for transcription completion
+2025-08-18 05:43:07,618 [INFO] managers.transcription_manager: Processing...
+2025-08-18 05:43:11,443 [INFO] managers.transcription_manager: Transcription completed successfully
+2025-08-18 05:43:11,444 [INFO] managers.transcription_manager: Cleaned up temporary file: static/audio\user_2_1755475984.mp3
+2025-08-18 05:43:11,444 [INFO] services.routes: Transcription successful: Time is like water because it flows constantly and cannot be held back. Umm. Um, okay....
+2025-08-18 05:43:24,832 [INFO] managers.ai_manager: Speech analysis completed successfully
+2025-08-18 05:43:24,836 [INFO] managers.game_manager: Speech response saved with ID: 10
+2025-08-18 05:43:24,839 [INFO] services.routes: Cleaned up audio file: static/audio\user_2_1755475984.wav
+2025-08-18 05:43:24,840 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:43:24] "POST /api/upload-audio HTTP/1.1" 200 -
+2025-08-18 05:44:15,279 [INFO] services.routes: Audio file saved: static/audio\user_2_1755476055.wav, size: 704556 bytes
+2025-08-18 05:44:15,291 [INFO] managers.transcription_manager: Processing audio file: static/audio\user_2_1755476055.wav, size: 704556 bytes
+2025-08-18 05:44:15,291 [INFO] managers.transcription_manager: Converting WAV to MP3 for AssemblyAI compatibility...
+2025-08-18 05:44:15,292 [INFO] managers.transcription_manager: Converting static/audio\user_2_1755476055.wav to static/audio\user_2_1755476055.mp3
+2025-08-18 05:44:15,445 [INFO] managers.transcription_manager: Successfully converted to MP3: 128774 bytes
+2025-08-18 05:44:15,445 [INFO] managers.transcription_manager: Uploading audio file to AssemblyAI...
+2025-08-18 05:44:17,645 [INFO] managers.transcription_manager: Audio uploaded successfully!
+2025-08-18 05:44:17,645 [INFO] managers.transcription_manager: Starting transcription...
+2025-08-18 05:44:18,506 [INFO] managers.transcription_manager: Transcription started with ID: 061876fb-4cc7-434b-b36a-40aeb25c6671
+2025-08-18 05:44:18,507 [INFO] managers.transcription_manager: Waiting for transcription completion
+2025-08-18 05:44:19,302 [INFO] managers.transcription_manager: Processing...
+2025-08-18 05:44:23,176 [INFO] managers.transcription_manager: Transcription completed successfully
+2025-08-18 05:44:23,177 [INFO] managers.transcription_manager: Cleaned up temporary file: static/audio\user_2_1755476055.mp3
+2025-08-18 05:44:23,178 [INFO] services.routes: Transcription successful: Friendship is like a garden because it needs constant care to flourish. Umm. Um, yeah....
+2025-08-18 05:44:38,165 [INFO] managers.ai_manager: Speech analysis completed successfully
+2025-08-18 05:44:38,169 [INFO] managers.game_manager: Speech response saved with ID: 11
+2025-08-18 05:44:38,172 [INFO] services.routes: Cleaned up audio file: static/audio\user_2_1755476055.wav
+2025-08-18 05:44:38,173 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:44:38] "POST /api/upload-audio HTTP/1.1" 200 -
+2025-08-18 05:44:59,856 [INFO] services.routes: Audio file saved: static/audio\user_2_1755476099.wav, size: 237612 bytes
+2025-08-18 05:44:59,868 [INFO] managers.transcription_manager: Processing audio file: static/audio\user_2_1755476099.wav, size: 237612 bytes
+2025-08-18 05:44:59,869 [INFO] managers.transcription_manager: Converting WAV to MP3 for AssemblyAI compatibility...
+2025-08-18 05:44:59,869 [INFO] managers.transcription_manager: Converting static/audio\user_2_1755476099.wav to static/audio\user_2_1755476099.mp3
+2025-08-18 05:45:00,000 [INFO] managers.transcription_manager: Successfully converted to MP3: 44346 bytes
+2025-08-18 05:45:00,001 [INFO] managers.transcription_manager: Uploading audio file to AssemblyAI...
+2025-08-18 05:45:01,144 [INFO] managers.transcription_manager: Audio uploaded successfully!
+2025-08-18 05:45:01,144 [INFO] managers.transcription_manager: Starting transcription...
+2025-08-18 05:45:01,992 [INFO] managers.transcription_manager: Transcription started with ID: 4f5ea03e-f4b6-4342-8050-83f4ede59398
+2025-08-18 05:45:01,994 [INFO] managers.transcription_manager: Waiting for transcription completion
+2025-08-18 05:45:02,805 [INFO] managers.transcription_manager: Processing...
+2025-08-18 05:45:06,625 [INFO] managers.transcription_manager: Transcription completed successfully
+2025-08-18 05:45:06,626 [INFO] managers.transcription_manager: Cleaned up temporary file: static/audio\user_2_1755476099.mp3
+2025-08-18 05:45:06,626 [INFO] services.routes: Transcription successful: Hey, uh, my name is....
+2025-08-18 05:45:19,196 [INFO] managers.ai_manager: Speech analysis completed successfully
+2025-08-18 05:45:19,201 [INFO] managers.game_manager: Speech response saved with ID: 12
+2025-08-18 05:45:19,207 [INFO] services.routes: Cleaned up audio file: static/audio\user_2_1755476099.wav
+2025-08-18 05:45:19,207 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:45:19] "POST /api/upload-audio HTTP/1.1" 200 -
+2025-08-18 05:45:22,095 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:45:22] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 05:45:22,187 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:45:22] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:45:22,358 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:45:22] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:45:22,847 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:45:22] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:45:24,980 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:45:24] "GET /level/1 HTTP/1.1" 200 -
+2025-08-18 05:45:24,999 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:45:24] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:45:25,229 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:45:25] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:45:25,548 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:45:25] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:45:49,523 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:45:49] "[32mGET /auth/logout HTTP/1.1[0m" 302 -
+2025-08-18 05:45:49,824 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:45:49] "GET /auth/login HTTP/1.1" 200 -
+2025-08-18 05:45:50,152 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:45:50] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:45:50,153 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:45:50] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:45:50,413 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:45:50] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:46:27,990 [INFO] managers.auth_manager: User authenticated: abc
+2025-08-18 05:46:27,991 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:46:27] "[32mPOST /auth/login HTTP/1.1[0m" 302 -
+2025-08-18 05:46:28,174 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:46:28] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 05:46:28,515 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:46:28] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:46:28,515 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:46:28] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:46:28,751 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:46:28] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:46:34,775 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:46:34] "GET /level/1 HTTP/1.1" 200 -
+2025-08-18 05:46:35,075 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:46:35] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:46:35,107 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:46:35] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:46:35,435 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:46:35] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:46:50,521 [INFO] services.routes: Audio file saved: static/audio\user_1_1755476210.wav, size: 663596 bytes
+2025-08-18 05:46:50,531 [INFO] managers.transcription_manager: Processing audio file: static/audio\user_1_1755476210.wav, size: 663596 bytes
+2025-08-18 05:46:50,531 [INFO] managers.transcription_manager: Converting WAV to MP3 for AssemblyAI compatibility...
+2025-08-18 05:46:50,531 [INFO] managers.transcription_manager: Converting static/audio\user_1_1755476210.wav to static/audio\user_1_1755476210.mp3
+2025-08-18 05:46:50,705 [INFO] managers.transcription_manager: Successfully converted to MP3: 121251 bytes
+2025-08-18 05:46:50,705 [INFO] managers.transcription_manager: Uploading audio file to AssemblyAI...
+2025-08-18 05:46:52,360 [INFO] managers.transcription_manager: Audio uploaded successfully!
+2025-08-18 05:46:52,361 [INFO] managers.transcription_manager: Starting transcription...
+2025-08-18 05:46:53,225 [INFO] managers.transcription_manager: Transcription started with ID: de2fb45e-2522-4241-87f4-9e75486e9ac9
+2025-08-18 05:46:53,225 [INFO] managers.transcription_manager: Waiting for transcription completion
+2025-08-18 05:46:54,047 [INFO] managers.transcription_manager: Processing...
+2025-08-18 05:46:57,863 [INFO] managers.transcription_manager: Transcription completed successfully
+2025-08-18 05:46:57,864 [INFO] managers.transcription_manager: Cleaned up temporary file: static/audio\user_1_1755476210.mp3
+2025-08-18 05:46:57,865 [INFO] services.routes: Transcription successful: Friendship is like a garden because it needs constant care to flourish....
+2025-08-18 05:47:12,091 [INFO] managers.ai_manager: Speech analysis completed successfully
+2025-08-18 05:47:12,097 [INFO] managers.game_manager: Speech response saved with ID: 13
+2025-08-18 05:47:12,102 [INFO] services.routes: Cleaned up audio file: static/audio\user_1_1755476210.wav
+2025-08-18 05:47:12,103 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:47:12] "POST /api/upload-audio HTTP/1.1" 200 -
+2025-08-18 05:47:21,794 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:47:21] "GET /level/2 HTTP/1.1" 200 -
+2025-08-18 05:47:21,866 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:47:21] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:47:22,031 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:47:22] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:47:22,116 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:47:22] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:47:37,350 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:47:37] "GET /level/3 HTTP/1.1" 200 -
+2025-08-18 05:47:37,651 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:47:37] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:47:37,682 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:47:37] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:47:38,000 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:47:38] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:47:48,519 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:47:48] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 05:47:48,817 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:47:48] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:47:48,847 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:47:48] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:47:49,175 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:47:49] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:48:14,525 [INFO] managers.ai_manager: Quick task generated successfully
+2025-08-18 05:48:14,529 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:48:14] "GET /quick-task HTTP/1.1" 200 -
+2025-08-18 05:48:14,858 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:48:14] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:48:14,858 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:48:14] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:48:15,122 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:48:15] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:49:12,161 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:49:12] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 05:49:12,501 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:49:12] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:49:12,502 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:49:12] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:49:12,839 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:49:12] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:49:16,797 [INFO] managers.ai_manager: Quick task generated successfully
+2025-08-18 05:49:16,797 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:49:16] "GET /api/generate-quick-task HTTP/1.1" 200 -
+2025-08-18 05:49:22,988 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:49:22] "GET /level/2 HTTP/1.1" 200 -
+2025-08-18 05:49:23,009 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:49:23] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:49:23,252 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:49:23] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:49:23,579 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:49:23] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:49:29,070 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:49:29] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 05:49:29,380 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:49:29] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:49:29,395 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:49:29] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:49:29,720 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:49:29] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:49:41,603 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:49:41] "[32mGET /auth/logout HTTP/1.1[0m" 302 -
+2025-08-18 05:49:41,905 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:49:41] "GET /auth/login HTTP/1.1" 200 -
+2025-08-18 05:49:42,236 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:49:42] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:49:42,236 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:49:42] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:49:42,495 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:49:42] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:50:37,625 [INFO] managers.auth_manager: User authenticated: abc
+2025-08-18 05:50:37,626 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:50:37] "[32mPOST /auth/login HTTP/1.1[0m" 302 -
+2025-08-18 05:50:37,816 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:50:37] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 05:50:38,145 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:50:38] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:50:38,149 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:50:38] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:50:38,407 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:50:38] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:50:52,110 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:50:52] "GET /level/2 HTTP/1.1" 200 -
+2025-08-18 05:50:52,422 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:50:52] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:50:52,454 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:50:52] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:50:52,775 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:50:52] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:51:23,128 [INFO] services.routes: Audio file saved: static/audio\user_1_1755476483.wav, size: 794668 bytes
+2025-08-18 05:51:23,137 [INFO] managers.transcription_manager: Processing audio file: static/audio\user_1_1755476483.wav, size: 794668 bytes
+2025-08-18 05:51:23,137 [INFO] managers.transcription_manager: Converting WAV to MP3 for AssemblyAI compatibility...
+2025-08-18 05:51:23,139 [INFO] managers.transcription_manager: Converting static/audio\user_1_1755476483.wav to static/audio\user_1_1755476483.mp3
+2025-08-18 05:51:23,313 [INFO] managers.transcription_manager: Successfully converted to MP3: 145074 bytes
+2025-08-18 05:51:23,313 [INFO] managers.transcription_manager: Uploading audio file to AssemblyAI...
+2025-08-18 05:51:24,882 [INFO] managers.transcription_manager: Audio uploaded successfully!
+2025-08-18 05:51:24,882 [INFO] managers.transcription_manager: Starting transcription...
+2025-08-18 05:51:25,719 [INFO] managers.transcription_manager: Transcription started with ID: 4cc37192-8ab3-4fc9-865d-ddf2e86f87b5
+2025-08-18 05:51:25,720 [INFO] managers.transcription_manager: Waiting for transcription completion
+2025-08-18 05:51:26,562 [INFO] managers.transcription_manager: Processing...
+2025-08-18 05:51:30,393 [INFO] managers.transcription_manager: Transcription completed successfully
+2025-08-18 05:51:30,394 [INFO] managers.transcription_manager: Cleaned up temporary file: static/audio\user_1_1755476483.mp3
+2025-08-18 05:51:30,394 [INFO] services.routes: Transcription successful: Okay. Dreams are like seeds, um, because they need nurturing. Um, um, to grow into reality....
+2025-08-18 05:51:48,617 [INFO] managers.ai_manager: Speech analysis completed successfully
+2025-08-18 05:51:48,621 [INFO] managers.game_manager: Speech response saved with ID: 14
+2025-08-18 05:51:48,625 [INFO] services.routes: Cleaned up audio file: static/audio\user_1_1755476483.wav
+2025-08-18 05:51:48,626 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:51:48] "POST /api/upload-audio HTTP/1.1" 200 -
+2025-08-18 05:52:13,572 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:52:13] "GET /level/3 HTTP/1.1" 200 -
+2025-08-18 05:52:13,645 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:52:13] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:52:13,834 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:52:13] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:52:13,897 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:52:13] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:52:30,302 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:52:30] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 05:52:30,601 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:52:30] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:52:30,639 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:52:30] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:52:30,967 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:52:30] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:52:59,727 [INFO] managers.ai_manager: Quick task generated successfully
+2025-08-18 05:52:59,728 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:52:59] "GET /quick-task HTTP/1.1" 200 -
+2025-08-18 05:53:03,899 [INFO] managers.ai_manager: Quick task generated successfully
+2025-08-18 05:53:03,900 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:53:03] "GET /quick-task HTTP/1.1" 200 -
+2025-08-18 05:53:06,480 [INFO] managers.ai_manager: Quick task generated successfully
+2025-08-18 05:53:06,480 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:53:06] "GET /quick-task HTTP/1.1" 200 -
+2025-08-18 05:53:07,433 [INFO] managers.ai_manager: Quick task generated successfully
+2025-08-18 05:53:07,434 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:53:07] "GET /quick-task HTTP/1.1" 200 -
+2025-08-18 05:53:07,460 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:53:07] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:53:07,769 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:53:07] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:53:08,099 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:53:08] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:53:21,711 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:53:21] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 05:53:22,023 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:53:22] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:53:22,035 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:53:22] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:53:22,367 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:53:22] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:53:24,513 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:53:24] "[32mGET /auth/logout HTTP/1.1[0m" 302 -
+2025-08-18 05:53:24,813 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:53:24] "GET /auth/login HTTP/1.1" 200 -
+2025-08-18 05:53:25,143 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:53:25] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:53:25,143 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:53:25] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:53:25,392 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:53:25] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:53:58,161 [INFO] managers.auth_manager: User authenticated: abc
+2025-08-18 05:53:58,163 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:53:58] "[32mPOST /auth/login HTTP/1.1[0m" 302 -
+2025-08-18 05:53:58,346 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:53:58] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 05:53:58,678 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:53:58] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:53:58,679 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:53:58] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:53:58,946 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:53:58] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:54:15,213 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:54:15] "GET /level/2 HTTP/1.1" 200 -
+2025-08-18 05:54:15,528 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:54:15] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:54:15,552 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:54:15] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:54:15,889 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:54:15] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:54:37,290 [INFO] services.routes: Audio file saved: static/audio\user_1_1755476677.wav, size: 770092 bytes
+2025-08-18 05:54:37,297 [INFO] managers.transcription_manager: Processing audio file: static/audio\user_1_1755476677.wav, size: 770092 bytes
+2025-08-18 05:54:37,299 [INFO] managers.transcription_manager: Converting WAV to MP3 for AssemblyAI compatibility...
+2025-08-18 05:54:37,299 [INFO] managers.transcription_manager: Converting static/audio\user_1_1755476677.wav to static/audio\user_1_1755476677.mp3
+2025-08-18 05:54:37,469 [INFO] managers.transcription_manager: Successfully converted to MP3: 140895 bytes
+2025-08-18 05:54:37,469 [INFO] managers.transcription_manager: Uploading audio file to AssemblyAI...
+2025-08-18 05:54:39,072 [INFO] managers.transcription_manager: Audio uploaded successfully!
+2025-08-18 05:54:39,072 [INFO] managers.transcription_manager: Starting transcription...
+2025-08-18 05:54:39,878 [INFO] managers.transcription_manager: Transcription started with ID: d557a5e6-75c7-4019-bd55-cda2f4ef6723
+2025-08-18 05:54:39,878 [INFO] managers.transcription_manager: Waiting for transcription completion
+2025-08-18 05:54:40,646 [INFO] managers.transcription_manager: Processing...
+2025-08-18 05:54:44,453 [INFO] managers.transcription_manager: Processing...
+2025-08-18 05:54:48,222 [INFO] managers.transcription_manager: Processing...
+2025-08-18 05:54:52,064 [INFO] managers.transcription_manager: Transcription completed successfully
+2025-08-18 05:54:52,064 [INFO] managers.transcription_manager: Cleaned up temporary file: static/audio\user_1_1755476677.mp3
+2025-08-18 05:54:52,064 [INFO] services.routes: Transcription successful: Dreams are like, um, seeds. Because they need nurturing, um, uh, to grow into reality....
+2025-08-18 05:55:05,370 [INFO] managers.ai_manager: Speech analysis completed successfully
+2025-08-18 05:55:05,374 [INFO] managers.game_manager: Speech response saved with ID: 15
+2025-08-18 05:55:05,379 [INFO] services.routes: Cleaned up audio file: static/audio\user_1_1755476677.wav
+2025-08-18 05:55:05,380 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:55:05] "POST /api/upload-audio HTTP/1.1" 200 -
+2025-08-18 05:56:10,222 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:56:10] "GET /level/3 HTTP/1.1" 200 -
+2025-08-18 05:56:10,309 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:56:10] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:56:10,478 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:56:10] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:56:10,556 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:56:10] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:56:30,489 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:56:30] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 05:56:30,798 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:56:30] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:56:30,825 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:56:30] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:56:31,156 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:56:31] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:56:46,476 [INFO] managers.ai_manager: Quick task generated successfully
+2025-08-18 05:56:46,477 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:56:46] "GET /quick-task HTTP/1.1" 200 -
+2025-08-18 05:56:46,502 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:56:46] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:56:46,816 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:56:46] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:56:47,138 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:56:47] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:57:30,937 [INFO] services.routes: Audio file saved: static/audio\user_1_1755476850.wav, size: 1933356 bytes
+2025-08-18 05:57:30,948 [INFO] managers.transcription_manager: Processing audio file: static/audio\user_1_1755476850.wav, size: 1933356 bytes
+2025-08-18 05:57:30,948 [INFO] managers.transcription_manager: Converting WAV to MP3 for AssemblyAI compatibility...
+2025-08-18 05:57:30,948 [INFO] managers.transcription_manager: Converting static/audio\user_1_1755476850.wav to static/audio\user_1_1755476850.mp3
+2025-08-18 05:57:31,195 [INFO] managers.transcription_manager: Successfully converted to MP3: 351964 bytes
+2025-08-18 05:57:31,195 [INFO] managers.transcription_manager: Uploading audio file to AssemblyAI...
+2025-08-18 05:57:33,146 [INFO] managers.transcription_manager: Audio uploaded successfully!
+2025-08-18 05:57:33,147 [INFO] managers.transcription_manager: Starting transcription...
+2025-08-18 05:57:33,990 [INFO] managers.transcription_manager: Transcription started with ID: 5b0e9844-c601-4080-a885-66b59cec1d5a
+2025-08-18 05:57:33,990 [INFO] managers.transcription_manager: Waiting for transcription completion
+2025-08-18 05:57:34,781 [INFO] managers.transcription_manager: Processing...
+2025-08-18 05:57:38,646 [INFO] managers.transcription_manager: Transcription completed successfully
+2025-08-18 05:57:38,647 [INFO] managers.transcription_manager: Cleaned up temporary file: static/audio\user_1_1755476850.mp3
+2025-08-18 05:57:38,647 [INFO] services.routes: Transcription successful: Just read it out. The emotional recent. Ah, renaissance of a place. Imagine walking into a room and ...
+2025-08-18 05:57:53,543 [INFO] managers.ai_manager: Speech analysis completed successfully
+2025-08-18 05:57:53,547 [INFO] managers.game_manager: Speech response saved with ID: 16
+2025-08-18 05:57:53,551 [INFO] services.routes: Cleaned up audio file: static/audio\user_1_1755476850.wav
+2025-08-18 05:57:53,553 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:57:53] "POST /api/upload-audio HTTP/1.1" 200 -
+2025-08-18 05:58:27,541 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:58:27] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 05:58:27,648 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:58:27] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:58:27,805 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:58:27] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:58:27,868 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:58:27] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 05:58:28,518 [ERROR] services.routes: Profile error: 'max' is undefined
+2025-08-18 05:58:28,519 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:58:28] "[32mGET /profile HTTP/1.1[0m" 302 -
+2025-08-18 05:58:28,823 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:58:28] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 05:58:29,166 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:58:29] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 05:58:29,167 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:58:29] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 05:58:29,403 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:58:29] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
