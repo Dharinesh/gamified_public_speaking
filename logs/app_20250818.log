@@ -1595,3 +1595,98 @@
 2025-08-18 05:58:29,166 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:58:29] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
 2025-08-18 05:58:29,167 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:58:29] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
 2025-08-18 05:58:29,403 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 05:58:29] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 09:06:56,302 [INFO] managers.database_manager: Database connection established
+2025-08-18 09:06:56,343 [INFO] managers.database_manager: Database tables created/verified
+2025-08-18 09:06:56,459 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.162.246:5000
+2025-08-18 09:06:56,459 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2025-08-18 09:06:56,459 [INFO] werkzeug:  * Restarting with stat
+2025-08-18 09:06:58,060 [INFO] managers.database_manager: Database connection established
+2025-08-18 09:06:58,074 [INFO] managers.database_manager: Database tables created/verified
+2025-08-18 09:06:58,130 [WARNING] werkzeug:  * Debugger is active!
+2025-08-18 09:06:58,136 [INFO] werkzeug:  * Debugger PIN: 131-036-041
+2025-08-18 09:07:01,182 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 09:07:01] "[32mGET / HTTP/1.1[0m" 302 -
+2025-08-18 09:07:01,310 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 09:07:01] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 09:07:01,429 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 09:07:01] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 09:07:01,712 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 09:07:01] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 09:07:03,691 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 09:07:03] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 09:07:05,696 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 09:07:05] "[32mGET /auth/logout HTTP/1.1[0m" 302 -
+2025-08-18 09:07:06,011 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 09:07:06] "GET /auth/login HTTP/1.1" 200 -
+2025-08-18 09:07:06,390 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 09:07:06] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 09:07:06,392 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 09:07:06] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 09:07:06,641 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 09:07:06] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 09:07:14,628 [INFO] managers.auth_manager: User authenticated: abc
+2025-08-18 09:07:14,640 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 09:07:14] "[32mPOST /auth/login HTTP/1.1[0m" 302 -
+2025-08-18 09:07:14,701 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 09:07:14] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 09:07:15,076 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 09:07:15] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 09:07:15,076 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 09:07:15] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 09:07:15,341 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 09:07:15] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 09:07:39,375 [INFO] managers.ai_manager: Quick task generated successfully
+2025-08-18 09:07:39,442 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 09:07:39] "GET /quick-task HTTP/1.1" 200 -
+2025-08-18 09:07:39,500 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 09:07:39] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 09:07:39,800 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 09:07:39] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 09:07:40,284 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 09:07:40] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 09:08:04,683 [INFO] services.routes: Audio file saved: static/audio\user_1_1755488284.wav, size: 532524 bytes
+2025-08-18 09:08:04,703 [INFO] managers.transcription_manager: Processing audio file: static/audio\user_1_1755488284.wav, size: 532524 bytes
+2025-08-18 09:08:04,705 [INFO] managers.transcription_manager: Converting WAV to MP3 for AssemblyAI compatibility...
+2025-08-18 09:08:04,705 [INFO] managers.transcription_manager: Converting static/audio\user_1_1755488284.wav to static/audio\user_1_1755488284.mp3
+2025-08-18 09:08:06,049 [INFO] managers.transcription_manager: Successfully converted to MP3: 97845 bytes
+2025-08-18 09:08:06,049 [INFO] managers.transcription_manager: Uploading audio file to AssemblyAI...
+2025-08-18 09:08:07,496 [INFO] managers.transcription_manager: Audio uploaded successfully!
+2025-08-18 09:08:07,496 [INFO] managers.transcription_manager: Starting transcription...
+2025-08-18 09:08:08,332 [INFO] managers.transcription_manager: Transcription started with ID: 1668c054-fbb9-418a-9ee0-d4484c8afa7a
+2025-08-18 09:08:08,332 [INFO] managers.transcription_manager: Waiting for transcription completion
+2025-08-18 09:08:09,154 [INFO] managers.transcription_manager: Processing...
+2025-08-18 09:08:12,997 [INFO] managers.transcription_manager: Transcription completed successfully
+2025-08-18 09:08:12,997 [INFO] managers.transcription_manager: Cleaned up temporary file: static/audio\user_1_1755488284.mp3
+2025-08-18 09:08:13,003 [INFO] services.routes: Transcription successful: We are all architects of our own invisible cages. And the key to mine is forged from....
+2025-08-18 09:08:28,047 [INFO] managers.ai_manager: Speech analysis completed successfully
+2025-08-18 09:08:28,058 [INFO] managers.game_manager: Speech response saved with ID: 17
+2025-08-18 09:08:28,064 [INFO] services.routes: Cleaned up audio file: static/audio\user_1_1755488284.wav
+2025-08-18 09:08:28,070 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 09:08:28] "POST /api/upload-audio HTTP/1.1" 200 -
+2025-08-18 09:08:43,153 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 09:08:43] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 09:08:43,375 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 09:08:43] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 09:08:43,422 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 09:08:43] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 09:08:43,536 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 09:08:43] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 09:08:46,135 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 09:08:46] "GET /level/1 HTTP/1.1" 200 -
+2025-08-18 09:08:46,184 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 09:08:46] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 09:08:46,309 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 09:08:46] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 09:08:46,801 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 09:08:46] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 09:08:48,550 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 09:08:48] "GET /level/2 HTTP/1.1" 200 -
+2025-08-18 09:08:48,856 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 09:08:48] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 09:08:48,920 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 09:08:48] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 09:08:49,284 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 09:08:49] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 09:08:52,313 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 09:08:52] "GET /level/3 HTTP/1.1" 200 -
+2025-08-18 09:08:52,606 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 09:08:52] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 09:08:52,663 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 09:08:52] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 09:08:53,018 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 09:08:53] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 09:08:55,900 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 09:08:55] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 09:08:56,199 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 09:08:56] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 09:08:56,270 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 09:08:56] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 09:08:56,650 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 09:08:56] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 09:08:57,835 [ERROR] services.routes: Profile error: 'max' is undefined
+2025-08-18 09:08:57,835 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 09:08:57] "[32mGET /profile HTTP/1.1[0m" 302 -
+2025-08-18 09:08:58,057 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 09:08:58] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 09:08:58,401 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 09:08:58] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 09:08:58,401 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 09:08:58] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 09:08:58,652 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 09:08:58] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 09:09:07,713 [ERROR] services.routes: Profile error: 'max' is undefined
+2025-08-18 09:09:07,713 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 09:09:07] "[32mGET /profile HTTP/1.1[0m" 302 -
+2025-08-18 09:09:07,999 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 09:09:07] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 09:09:08,365 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 09:09:08] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 09:09:08,368 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 09:09:08] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 09:09:08,617 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 09:09:08] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 09:09:15,871 [ERROR] services.routes: Profile error: 'max' is undefined
+2025-08-18 09:09:15,871 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 09:09:15] "[32mGET /profile HTTP/1.1[0m" 302 -
+2025-08-18 09:09:16,173 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 09:09:16] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 09:09:16,524 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 09:09:16] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 09:09:16,527 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 09:09:16] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 09:09:16,777 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 09:09:16] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 09:09:29,013 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 09:09:29] "GET /dashboard HTTP/1.1" 200 -
+2025-08-18 09:09:29,309 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 09:09:29] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-18 09:09:29,360 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 09:09:29] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-18 09:09:29,708 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 09:09:29] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-18 09:09:40,579 [INFO] managers.ai_manager: Quick task generated successfully
+2025-08-18 09:09:40,590 [INFO] werkzeug: 127.0.0.1 - - [18/Aug/2025 09:09:40] "GET /quick-task HTTP/1.1" 200 -
